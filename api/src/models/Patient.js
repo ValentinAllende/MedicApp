@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const patientSchema = new Schema({
@@ -29,5 +29,4 @@ const patientSchema = new Schema({
   timestamps: true,
   versionKey: false
 })
-
-export default model('Patient', patientSchema);
+module.exports = model('Patient', patientSchema);
