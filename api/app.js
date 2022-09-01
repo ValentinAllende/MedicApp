@@ -8,7 +8,7 @@ const  mongoose = require( "mongoose");
 mongoose.connect("mongodb+srv://esteban:12345@mediapp.yasrnqu.mongodb.net/test")
 .then(db => console.log("DB is connected"))
 .catch(error => console.log(error));
-
+require('./src/models/Admin')
 // var usersRouter = require('./routes/users');
 
 var app = express();
