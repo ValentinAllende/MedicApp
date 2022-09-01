@@ -1,7 +1,6 @@
-import { validationResult } from "express-validator";
-import { body, param } from "express-validator";
+const { validationResult, body, param } = require("express-validator");
 
-export const validationPatient = (req, res, next) => { 
+const validationPatient = (req, res, next) => { 
   const errorFormatter = ({ msg, param }) => {
     return {[param]: msg};
   };
@@ -13,14 +12,14 @@ export const validationPatient = (req, res, next) => {
 };
 
 /* Patient Routes Validations */
-export const paramIdPatientValidator = [
+const paramIdPatientValidator = [
   param("idPatient", "Formato de ID incorrecto")
     .trim()
     .notEmpty()
     .escape(),
     validationPatient
 ];
-export const bodyPatientValidator = [
+const bodyPatientValidatorPOST = [
   body("name")
     .trim()
     .notEmpty().withMessage("El campo nombre está vacio"),
@@ -39,3 +38,32 @@ export const bodyPatientValidator = [
     .isMobilePhone().withMessage("Formato teléfono incorrecto"),
   validationPatient
 ];
+const bodyPatientValidatorPATCH = [
+  body("name")
+    .trim()
+    .notEmpty().withMessage("El campo nombre está vacio")
+    .optional({nullable: true, checkFalsy: true}),
+  body("email")
+    .trim()
+    .notEmpty().withMessage("El campo email está vacio")
+    .isEmail().withMessage("Formato de email incorrecto")
+    .normalizeEmail()
+    .optional({nullable: true, checkFalsy: true}),
+  body("password")
+    .trim()
+    .notEmpty().withMessage("El campo password está vacio")
+    .isLength({min: 8}).withMessage("Password: Se requieren al menos 8 caracteres.")
+    .optional({nullable: true, checkFalsy: true}),
+  body("phoneNumber")
+    .trim()
+    .notEmpty().withMessage("El campo teléfono está vacio")
+    .isMobilePhone().withMessage("Formato teléfono incorrecto")
+    .optional({nullable: true, checkFalsy: true}),
+  validationPatient
+];
+
+module.exports = {
+  paramIdPatientValidator,
+  bodyPatientValidatorPOST,
+  bodyPatientValidatorPATCH
+}
