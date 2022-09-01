@@ -48,6 +48,10 @@ const doctorSchema = new Schema({
     ],
     active: {
         type: Boolean
+    },
+    rating: {
+        type: Number,
+        default: 0
     }
 }, { timestamps: true });
 
