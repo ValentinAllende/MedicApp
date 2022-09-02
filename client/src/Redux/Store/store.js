@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import doctores from "../Slicer/slicer";
 
 export default configureStore({
-  reducer: {},
+  reducer: {
+    doctores: doctores
+  }
 });
