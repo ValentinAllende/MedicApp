@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getDocsBySpecialities , getDocs, } from "../../../../Redux/actions/doctorActions"
 
 export default function SearchBar() {
   const dispatch = useDispatch();
   const [specialities, setSpecialities] = useState("");
   const [cities, setCities] = useState("");
+  const doctors = useSelector(state => state.doctores)
+  const doctoresFiltrados = useSelector(state => state.filteredDoctors)
+  const city = useSelector(state => state.cities)
 
-
-  const city = ["cordoba","BsAs","Bogota","Lima","CDMX"]
-
+    
   useEffect(() => {
-  
-  }, []);
+    dispatch(getDocs())
+    
+  }, [city]);
 
   const citySelected = (e) => {
     setCities(e.target.value);
@@ -22,8 +25,8 @@ export default function SearchBar() {
     setSpecialities(e.target.value);
   };
 
-  const handlerSearchButtonClick = () => {
-    // dispatch(function(specialities, cities))
+  const handlerSearchButton= () => {
+    dispatch(getDocsBySpecialities(specialities))
   
   };
 
@@ -38,6 +41,7 @@ export default function SearchBar() {
         }}
       />
 
+    <label>Ciudad</label>   
       <select
      
         onChange={(e) => {
@@ -53,7 +57,7 @@ export default function SearchBar() {
 
       <button
         onClick={() => {
-          handlerSearchButtonClick();
+          handlerSearchButton();
         }}
       >
         Buscar
