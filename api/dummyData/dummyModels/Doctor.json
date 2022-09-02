@@ -2,7 +2,7 @@
   {
     "id": "63114ae4fc13ae2bd6000000",
     "name": "Rebe Pawelski",
-    "specialities": [{ "speciality": "Ecografía" }],
+    "specialities": [ "Ecografía"],
     "license": "6910766660",
     "country": "Argentina",
     "city": "Mar del Plata",
@@ -21,8 +21,8 @@
     "id": "63114ae4fc13ae2bd6000001",
     "name": "Leoine Haily",
     "specialities": [
-      { "speciality": "Oncológica" },
-      { "speciality": "Alergología" }
+       "Oncológica",
+       "Alergología"
     ],
     "license": "9068942085",
     "country": "Argentina",
@@ -41,7 +41,7 @@
   {
     "id": "63114ae4fc13ae2bd6000002",
     "name": "Barby Crummy",
-    "specialities": [{ "speciality": "Alergología" }],
+    "specialities": [ "Alergología"],
     "license": "9263904561",
     "country": "Argentina",
     "city": "Buenos Aires",
@@ -60,9 +60,9 @@
     "id": "63114ae4fc13ae2bd6000003",
     "name": "Giuditta Burney",
     "specialities": [
-      { "speciality": "Medicina Física" },
-      { "speciality": "Ecografía" },
-      { "speciality": "Cardiología" }
+       "Medicina Física",
+       "Ecografía",
+       "Cardiología"
     ],
     "license": "6274037985",
     "country": "Argentina",
@@ -81,7 +81,7 @@
   {
     "id": "63114ae4fc13ae2bd6000004",
     "name": "Angelica Chander",
-    "specialities": [{ "speciality": "Ginecología" }],
+    "specialities": [ "Ginecología"],
     "license": "0300672128",
     "country": "Argentina",
     "city": "Salta",
@@ -99,7 +99,7 @@
   {
     "id": "63114ae4fc13ae2bd6000005",
     "name": "Zaria Pedri",
-    "specialities": [{ "speciality": "Cardiología" }],
+    "specialities": [ "Cardiología"],
     "license": "2988713316",
     "country": "Argentina",
     "city": "Buenos Aires",
@@ -118,8 +118,8 @@
     "id": "63114ae4fc13ae2bd6000006",
     "name": "Saundra Cole",
     "specialities": [
-      { "speciality": "Alergología" },
-      { "speciality": "Ginecología" }
+       "Alergología",
+       "Ginecología"
     ],
     "license": "3004490528",
     "country": "Argentina",
@@ -139,9 +139,9 @@
     "id": "63114ae4fc13ae2bd6000007",
     "name": "Amy Domoney",
     "specialities": [
-      { "speciality": "Endocrinología" },
-      { "speciality": "Ginecología" },
-      { "speciality": "Oncológica" }
+       "Endocrinología",
+       "Ginecología",
+       "Oncológica"
     ],
     "license": "8370304389",
     "country": "Argentina",
@@ -161,9 +161,9 @@
     "id": "63114ae4fc13ae2bd6000008",
     "name": "Frederik Bromage",
     "specialities": [
-      { "speciality": "Geriatría" },
-      { "speciality": "Ginecología" },
-      { "speciality": "Medicina General" }
+       "Geriatría",
+       "Ginecología",
+       "Medicina General"
     ],
     "license": "5690993751",
     "country": "Argentina",
@@ -182,7 +182,7 @@
   {
     "id": "63114ae4fc13ae2bd6000009",
     "name": "Ben Obray",
-    "specialities": [{ "speciality": "Ecografía" }],
+    "specialities": [ "Ecografía"],
     "license": "2531706364",
     "country": "Argentina",
     "city": "San Miguel de Tucumán",
@@ -200,7 +200,7 @@
   {
     "id": "63114ae4fc13ae2bd600000a",
     "name": "Dalis Saul",
-    "specialities": [{ "speciality": "Hematología" }],
+    "specialities": [ "Hematología"],
     "license": "2546878042",
     "country": "Argentina",
     "city": "San Miguel de Tucumán",
@@ -219,8 +219,8 @@
     "id": "63114ae4fc13ae2bd600000b",
     "name": "Minnaminnie Carrell",
     "specialities": [
-      { "speciality": "Medicina Interna" },
-      { "speciality": "Hematología" }
+       "Medicina Interna",
+       "Hematología"
     ],
     "license": "2826144901",
     "country": "Argentina",
@@ -240,9 +240,9 @@
     "id": "63114ae4fc13ae2bd600000c",
     "name": "Marilin Smye",
     "specialities": [
-      { "speciality": "Ecografía" },
-      { "speciality": "Ecografía" },
-      { "speciality": "Medicina General" }
+       "Ecografía",
+       "Ecografía",
+       "Medicina General"
     ],
     "license": "8432504181",
     "country": "Argentina",
@@ -262,9 +262,9 @@
     "id": "63114ae4fc13ae2bd600000d",
     "name": "Batholomew Booeln",
     "specialities": [
-      { "speciality": "Alergología" },
-      { "speciality": "Ginecología" },
-      { "speciality": "Geriatría" }
+       "Alergología",
+       "Ginecología",
+       "Geriatría"
     ],
     "license": "9851217328",
     "country": "Argentina",
@@ -284,8 +284,8 @@
     "id": "63114ae4fc13ae2bd600000e",
     "name": "Rickey Sharplin",
     "specialities": [
-      { "speciality": "Alergología" },
-      { "speciality": "Ecografía" }
+       "Alergología",
+       "Ecografía"
     ],
     "license": "0641934998",
     "country": "Argentina",
@@ -305,8 +305,8 @@
     "id": "63114ae4fc13ae2bd600000f",
     "name": "Phedra Galliard",
     "specialities": [
-      { "speciality": "Medicina Física" },
-      { "speciality": "Dermatología" }
+       "Medicina Física",
+       "Dermatología"
     ],
     "license": "5745473665",
     "country": "Argentina",
@@ -326,8 +326,8 @@
     "id": "63114ae4fc13ae2bd6000010",
     "name": "Shoshanna Scollan",
     "specialities": [
-      { "speciality": "Dermatología" },
-      { "speciality": "Mastología" }
+       "Dermatología",
+       "Mastología"
     ],
     "license": "3426708906",
     "country": "Argentina",
@@ -346,7 +346,7 @@
   {
     "id": "63114ae4fc13ae2bd6000011",
     "name": "Ammamaria Nelthorpe",
-    "specialities": [{ "speciality": "Oncológica" }],
+    "specialities": [ "Oncológica"],
     "license": "1346498245",
     "country": "Argentina",
     "city": "Buenos Aires",
@@ -365,9 +365,9 @@
     "id": "63114ae4fc13ae2bd6000012",
     "name": "Madlin Brugmann",
     "specialities": [
-      { "speciality": "Oncológica" },
-      { "speciality": "Mastología" },
-      { "speciality": "Medicina Interna" }
+       "Oncológica",
+       "Mastología",
+       "Medicina Interna"
     ],
     "license": "1794284338",
     "country": "Argentina",
@@ -387,9 +387,9 @@
     "id": "63114ae4fc13ae2bd6000013",
     "name": "Juana Woodfine",
     "specialities": [
-      { "speciality": "Medicina Interna" },
-      { "speciality": "Hematología" },
-      { "speciality": "Mastología" }
+       "Medicina Interna",
+       "Hematología",
+       "Mastología"
     ],
     "license": "5405734926",
     "country": "Argentina",
@@ -408,7 +408,7 @@
   {
     "id": "63114ae4fc13ae2bd6000014",
     "name": "Kiel Tolle",
-    "specialities": [{ "speciality": "Medicina General" }],
+    "specialities": [ "Medicina General"],
     "license": "4832918044",
     "country": "Argentina",
     "city": "Córdoba",
@@ -426,7 +426,7 @@
   {
     "id": "63114ae4fc13ae2bd6000015",
     "name": "Jenine Hards",
-    "specialities": [{ "speciality": "Alergología" }],
+    "specialities": [ "Alergología"],
     "license": "1218595493",
     "country": "Argentina",
     "city": "Santa Fe",
@@ -445,8 +445,8 @@
     "id": "63114ae4fc13ae2bd6000016",
     "name": "Neila Laskey",
     "specialities": [
-      { "speciality": "Oncológica" },
-      { "speciality": "Ginecología" }
+       "Oncológica",
+       "Ginecología"
     ],
     "license": "1792338988",
     "country": "Argentina",
@@ -465,7 +465,7 @@
   {
     "id": "63114ae4fc13ae2bd6000017",
     "name": "Web Djorvic",
-    "specialities": [{ "speciality": "Mastología" }],
+    "specialities": [ "Mastología"],
     "license": "8405041583",
     "country": "Argentina",
     "city": "Rosario",
@@ -483,7 +483,7 @@
   {
     "id": "63114ae4fc13ae2bd6000018",
     "name": "Michale Peachment",
-    "specialities": [{ "speciality": "Dermatología" }],
+    "specialities": [ "Dermatología"],
     "license": "4557954383",
     "country": "Argentina",
     "city": "Buenos Aires",
@@ -503,8 +503,8 @@
     "id": "63114b27fc13ae1dea000000",
     "name": "Elihu Hadgkiss",
     "specialities": [
-      { "speciality": "Alergología" },
-      { "speciality": "Alergología" }
+       "Alergología",
+       "Alergología"
     ],
     "license": "1526721872",
     "country": "Colombia",
@@ -524,9 +524,9 @@
     "id": "63114b27fc13ae1dea000001",
     "name": "Ximenes Pepler",
     "specialities": [
-      { "speciality": "Hematología" },
-      { "speciality": "Ecografía" },
-      { "speciality": "Ginecología" }
+       "Hematología",
+       "Ecografía",
+       "Ginecología"
     ],
     "license": "0885469429",
     "country": "Colombia",
@@ -545,7 +545,7 @@
   {
     "id": "63114b27fc13ae1dea000002",
     "name": "Marina Gaylord",
-    "specialities": [{ "speciality": "Mastología" }],
+    "specialities": [ "Mastología"],
     "license": "2796057585",
     "country": "Colombia",
     "city": "Bogotá",
@@ -564,9 +564,9 @@
     "id": "63114b27fc13ae1dea000003",
     "name": "Humbert Minghi",
     "specialities": [
-      { "speciality": "Ginecología" },
-      { "speciality": "Gastroenterología" },
-      { "speciality": "Dermatología" }
+       "Ginecología",
+       "Gastroenterología",
+       "Dermatología"
     ],
     "license": "9248686621",
     "country": "Colombia",
@@ -586,8 +586,8 @@
     "id": "63114b27fc13ae1dea000004",
     "name": "Cecilla Manthroppe",
     "specialities": [
-      { "speciality": "Ginecología" },
-      { "speciality": "Endocrinología" }
+       "Ginecología",
+       "Endocrinología"
     ],
     "license": "4968306598",
     "country": "Colombia",
@@ -607,9 +607,9 @@
     "id": "63114b27fc13ae1dea000005",
     "name": "Thadeus Ipsgrave",
     "specialities": [
-      { "speciality": "Medicina Física" },
-      { "speciality": "Medicina General" },
-      { "speciality": "Medicina General" }
+       "Medicina Física",
+       "Medicina General",
+       "Medicina General"
     ],
     "license": "3190484635",
     "country": "Colombia",
@@ -628,7 +628,7 @@
   {
     "id": "63114b27fc13ae1dea000006",
     "name": "Helena Nozzolii",
-    "specialities": [{ "speciality": "Alergología" }],
+    "specialities": [ "Alergología"],
     "license": "5770867396",
     "country": "Colombia",
     "city": "Bogotá",
@@ -646,7 +646,7 @@
   {
     "id": "63114b27fc13ae1dea000007",
     "name": "Calhoun Giannasi",
-    "specialities": [{ "speciality": "Oncológica" }],
+    "specialities": [ "Oncológica"],
     "license": "0652380964",
     "country": "Colombia",
     "city": "Barranquilla",
@@ -665,9 +665,9 @@
     "id": "63114b27fc13ae1dea000008",
     "name": "Nerissa Kharchinski",
     "specialities": [
-      { "speciality": "Oncológica" },
-      { "speciality": "Cardiología" },
-      { "speciality": "Medicina Interna" }
+       "Oncológica",
+       "Cardiología",
+       "Medicina Interna"
     ],
     "license": "5704151566",
     "country": "Colombia",
@@ -686,7 +686,7 @@
   {
     "id": "63114b27fc13ae1dea000009",
     "name": "Lalo Thrustle",
-    "specialities": [{ "speciality": "Ecografía" }],
+    "specialities": [ "Ecografía"],
     "license": "9402555005",
     "country": "Colombia",
     "city": "Medellín",
@@ -705,9 +705,9 @@
     "id": "63114b27fc13ae1dea00000a",
     "name": "Odessa Edscer",
     "specialities": [
-      { "speciality": "Alergología" },
-      { "speciality": "Medicina General" },
-      { "speciality": "Ecografía" }
+       "Alergología",
+       "Medicina General",
+       "Ecografía"
     ],
     "license": "3420931514",
     "country": "Colombia",
@@ -727,9 +727,9 @@
     "id": "63114b27fc13ae1dea00000b",
     "name": "Michele Rosettini",
     "specialities": [
-      { "speciality": "Ginecología" },
-      { "speciality": "Ginecología" },
-      { "speciality": "Mastología" }
+       "Ginecología",
+       "Ginecología",
+       "Mastología"
     ],
     "license": "0966716965",
     "country": "Colombia",
@@ -749,8 +749,8 @@
     "id": "63114b27fc13ae1dea00000c",
     "name": "Giana Hatley",
     "specialities": [
-      { "speciality": "Alergología" },
-      { "speciality": "Ecografía" }
+       "Alergología",
+       "Ecografía"
     ],
     "license": "3087081272",
     "country": "Colombia",
@@ -769,7 +769,7 @@
   {
     "id": "63114b27fc13ae1dea00000d",
     "name": "Maura Stowers",
-    "specialities": [{ "speciality": "Ginecología" }],
+    "specialities": [ "Ginecología"],
     "license": "4402211484",
     "country": "Colombia",
     "city": "Medellín",
@@ -788,8 +788,8 @@
     "id": "63114b27fc13ae1dea00000e",
     "name": "Thorstein Janes",
     "specialities": [
-      { "speciality": "Geriatría" },
-      { "speciality": "Mastología" }
+       "Geriatría",
+       "Mastología"
     ],
     "license": "0080578543",
     "country": "Colombia",
@@ -809,8 +809,8 @@
     "id": "63114b27fc13ae1dea00000f",
     "name": "Garrik Oen",
     "specialities": [
-      { "speciality": "Ginecología" },
-      { "speciality": "Ginecología" }
+       "Ginecología",
+       "Ginecología"
     ],
     "license": "7939515616",
     "country": "Colombia",
@@ -829,7 +829,7 @@
   {
     "id": "63114b27fc13ae1dea000010",
     "name": "Addy Comsty",
-    "specialities": [{ "speciality": "Ginecología" }],
+    "specialities": [ "Ginecología"],
     "license": "5467862383",
     "country": "Colombia",
     "city": "Bogotá",
@@ -848,9 +848,9 @@
     "id": "63114b27fc13ae1dea000011",
     "name": "Marchelle Szepe",
     "specialities": [
-      { "speciality": "Ginecología" },
-      { "speciality": "Ecografía" },
-      { "speciality": "Medicina General" }
+       "Ginecología",
+       "Ecografía",
+       "Medicina General"
     ],
     "license": "5494775917",
     "country": "Colombia",
@@ -870,8 +870,8 @@
     "id": "63114b27fc13ae1dea000012",
     "name": "Essie Sanderson",
     "specialities": [
-      { "speciality": "Oncológica" },
-      { "speciality": "Mastología" }
+       "Oncológica",
+       "Mastología"
     ],
     "license": "4706893291",
     "country": "Colombia",
@@ -891,9 +891,9 @@
     "id": "63114b27fc13ae1dea000013",
     "name": "Rhetta Wyon",
     "specialities": [
-      { "speciality": "Geriatría" },
-      { "speciality": "Ecografía" },
-      { "speciality": "Hematología" }
+       "Geriatría",
+       "Ecografía",
+       "Hematología"
     ],
     "license": "7165285024",
     "country": "Colombia",
@@ -913,9 +913,9 @@
     "id": "63114b27fc13ae1dea000014",
     "name": "Torey Samsin",
     "specialities": [
-      { "speciality": "Medicina Interna" },
-      { "speciality": "Dermatología" },
-      { "speciality": "Alergología" }
+       "Medicina Interna",
+       "Dermatología",
+       "Alergología"
     ],
     "license": "6238845430",
     "country": "Colombia",
@@ -934,7 +934,7 @@
   {
     "id": "63114b27fc13ae1dea000015",
     "name": "Angelle Noweak",
-    "specialities": [{ "speciality": "Endocrinología" }],
+    "specialities": [ "Endocrinología"],
     "license": "6149437604",
     "country": "Colombia",
     "city": "Cali",
@@ -952,7 +952,7 @@
   {
     "id": "63114b27fc13ae1dea000016",
     "name": "Kayla MacGillivrie",
-    "specialities": [{ "speciality": "Mastología" }],
+    "specialities": [ "Mastología"],
     "license": "3969055695",
     "country": "Colombia",
     "city": "Barranquilla",
@@ -971,9 +971,9 @@
     "id": "63114b27fc13ae1dea000017",
     "name": "Yance Vern",
     "specialities": [
-      { "speciality": "Medicina General" },
-      { "speciality": "Oncológica" },
-      { "speciality": "Gastroenterología" }
+       "Medicina General",
+       "Oncológica",
+       "Gastroenterología"
     ],
     "license": "3658465417",
     "country": "Colombia",
@@ -992,7 +992,7 @@
   {
     "id": "63114b27fc13ae1dea000018",
     "name": "Karney Karlsson",
-    "specialities": [{ "speciality": "Hematología" }],
+    "specialities": [ "Hematología"],
     "license": "2982371596",
     "country": "Colombia",
     "city": "Cali",
