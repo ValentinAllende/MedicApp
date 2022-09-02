@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-export default function Pagination({ resultsPerPage, totalResults, pages }) {
-  const [currentPage, setCurrentPage] = useState(0);
+export default function Pagination({ badgesPerPage, allBadges, pages, currentPage }) {
+  // const [currentPage, setCurrentPage] = useState(1);
 
   const pageNumbers = [];
-  const pageSum = Math.ceil(totalResults / resultsPerPage);
+  const pageSum = Math.ceil(allBadges / badgesPerPage);
 
   if (pageSum === 1) return null;
   for (let i = 0; i <= pageSum; i++) {
@@ -19,7 +19,7 @@ export default function Pagination({ resultsPerPage, totalResults, pages }) {
             href="#!"
             className="prev-page-link"
             onClick={() => {
-              setCurrentPage(currentPage - 1);
+              // setCurrentPage(currentPage - 1);
               pages(currentPage - 1);
             }}
           >
@@ -38,7 +38,7 @@ export default function Pagination({ resultsPerPage, totalResults, pages }) {
             className="next-page-link"
             href="!#"
             onClick={() => {
-              setCurrentPage(currentPage + 1);
+              // setCurrentPage(currentPage + 1);
               pages(currentPage + 1);
             }}
           >
