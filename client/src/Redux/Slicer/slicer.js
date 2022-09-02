@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  value: null,
-};
 
-export const placeholderSlice = createSlice({
-  name: "placeholder",
-  initialState,
+export const doctoresSlice = createSlice({
+  name: "doctores",
+  initialState:{
+    doctores :[],
+    detail:{}
+  },
   reducers: {
-    dummyReducer: (state) => {
-      //action goes here
-    },
+    getDoctorById:(state,action) =>{
+      state.detail= action.payload
+    }
   },
 });
 
-export const { dummyReducer } = placeholderSlice.actions;
+export const { getDoctorById } = doctoresSlice.actions;
 
-export default placeholderSlice.reducer;
+export default doctoresSlice.reducer;

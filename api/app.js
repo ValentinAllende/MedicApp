@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./src/routes/index');
 const  mongoose = require( "mongoose");
+const cors = require('cors')
 
 mongoose.connect("mongodb+srv://esteban:12345@mediapp.yasrnqu.mongodb.net/test")
 .then(db => console.log("DB is connected"))
@@ -13,6 +14,7 @@ mongoose.connect("mongodb+srv://esteban:12345@mediapp.yasrnqu.mongodb.net/test")
 
 var app = express();
 
+app.use(cors({origin:'*'}))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
