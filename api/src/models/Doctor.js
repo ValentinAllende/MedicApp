@@ -6,11 +6,23 @@ const doctorSchema = new Schema({
         type: String,
         required: true
     },
+    image: {
+        type: String,
+        // required: true
+    },
     specialities: {
         type: [String],
         required: true
     },
     license: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    country: {
         type: String,
         required: true
     },
