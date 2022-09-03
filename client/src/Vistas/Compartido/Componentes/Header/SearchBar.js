@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDocsBySpecialities , getDocs, } from "../../../../Redux/actions/doctorActions"
+import { getDocsBySpecialities , getDocs,getDocsByCities, getDocsFiltered} from "../../../../Redux/actions/doctorActions"
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -8,16 +8,22 @@ export default function SearchBar() {
   const [cities, setCities] = useState("");
   const doctors = useSelector(state => state.doctores)
   const doctoresFiltrados = useSelector(state => state.filteredDoctors)
-  const city = useSelector(state => state.cities)
-
-    
+  const city = useSelector(state => state.doctores.cities)
+  
+  
   useEffect(() => {
-    dispatch(getDocs())
-    
-  }, [city]);
 
+      dispatch(getDocs())
+      dispatch(getDocsByCities(cities))
+  
+  }, [cities]);
+  console.log(city,"cities")
+  console.log(doctors,"Doctores")
+  console.log(doctoresFiltrados,"Doctores Filtrados")
+  
   const citySelected = (e) => {
     setCities(e.target.value);
+    
   };
 
   const specialitiesSearch = (e) => {
@@ -25,9 +31,9 @@ export default function SearchBar() {
     setSpecialities(e.target.value);
   };
 
-  const handlerSearchButton= () => {
+  const handlerSearchButton = () => {
+    dispatch(getDocsFiltered({cities,specialities}))
     dispatch(getDocsBySpecialities(specialities))
-  
   };
 
   return (
@@ -41,17 +47,17 @@ export default function SearchBar() {
         }}
       />
 
-    <label>Ciudad</label>   
+ 
       <select
      
         onChange={(e) => {
           citySelected(e);
         }}
       >
-        <optgroup label="Ciudad" />
-
+        
+        <option>Ciudades</option>
         {city?.map((c) => {
-          return <option>{c}</option>;
+          return <option key={c}>{c}</option>;
         })}
       </select>
 
@@ -62,6 +68,7 @@ export default function SearchBar() {
       >
         Buscar
       </button>
+    
       </div>
       
     </div>
