@@ -36,7 +36,7 @@ function handleChange(e){
       ...input,
       [e.target.name] : e.target.value
   })) }
-// function handleSubmit(e){
+// functiona handleSubmit(e){
 //   e.preventDefault();
 //   dispatch(postDoctor({
 //       name: input.name,
