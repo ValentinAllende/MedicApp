@@ -1,10 +1,16 @@
-import SearchBar from "./Vistas/Compartido/Componentes/Header/SearchBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Vistas/Compartido/Componentes/Home";
+import DetalleDoctor from "./Vistas/Compartido/Componentes/Main/DetalleDoctor";
+
 function App() {
+  
   return (
-    <div className="App">
-  <h1 className=" text-center bg-slate-500">Hola mundo</h1>
-     <SearchBar/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={ <Home/>} />
+        <Route exact path="/dummy/doctors/:idDoctor" element={ <DetalleDoctor/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
