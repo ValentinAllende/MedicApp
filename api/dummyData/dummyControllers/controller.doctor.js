@@ -29,13 +29,12 @@ const controllerDoctors = {
       email,
       password,
       phoneNumber,
-      schedule:[
-        {
-          hour,
-          space,
-          checkUpPrice
-        }
-      ],
+      schedule:
+      {
+        hour,
+        space,
+      },
+      checkUpPrice,
       active: true,
       rating: 0,
       image,
@@ -75,9 +74,9 @@ const controllerDoctors = {
       DoctorFound.city = city;
       DoctorFound.address = address;
       DoctorFound.address = address;
-      DoctorFound.schedule[0].hour = hour;
-      DoctorFound.schedule[0].space = space;
-      DoctorFound.schedule[0].checkUpPrice = checkUpPrice;
+      DoctorFound.schedule.hour = hour;
+      DoctorFound.schedule.space = space;
+      DoctorFound.checkUpPrice = checkUpPrice;
       DoctorFound.email = email;
       DoctorFound.password = password;
       DoctorFound.phoneNumber = phoneNumber;

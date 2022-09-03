@@ -10,9 +10,8 @@
     "email": "rpawelski0@mediafire.com",
     "password": "DoKYsOVrXQd",
     "phoneNumber": "(881) 7607294",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 20, "checkUpPrice": "$582.85" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 20  },
+    "checkUpPrice": "$582.85",
     "active": true,
     "rating": 1.8,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -31,9 +30,7 @@
     "email": "lhaily1@webnode.com",
     "password": "hD7JTBT",
     "phoneNumber": "(772) 8739412",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$423.74" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$423.74"},
     "active": true,
     "rating": 2.1,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -49,9 +46,8 @@
     "email": "bcrummy2@hibu.com",
     "password": "30s0xDIOJLzh",
     "phoneNumber": "(838) 4520344",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 30, "checkUpPrice": "$794.15" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 30},
+    "checkUpPrice": "$794.15" ,
     "active": false,
     "rating": 4.5,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -71,9 +67,8 @@
     "email": "gburney3@infoseek.co.jp",
     "password": "SUbVGz4RsDV",
     "phoneNumber": "(347) 1628685",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 30, "checkUpPrice": "$520.24" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 30},
+    "checkUpPrice": "$520.24",
     "active": false,
     "rating": 0.9,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -89,9 +84,8 @@
     "email": "achander4@deliciousdays.com",
     "password": "etp6o5QwA8Nm",
     "phoneNumber": "(299) 5300586",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 20, "checkUpPrice": "$628.04" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 20},
+    "checkUpPrice": "$628.04",
     "active": false,
     "rating": 1.0,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -107,9 +101,8 @@
     "email": "zpedri5@plala.or.jp",
     "password": "YHxo1J5",
     "phoneNumber": "(269) 6446840",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$889.40" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$889.40",
     "active": false,
     "rating": 3.5,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -128,9 +121,8 @@
     "email": "scole6@ox.ac.uk",
     "password": "cuTRxPtXLV3",
     "phoneNumber": "(249) 2288653",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$437.88" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$437.88",
     "active": true,
     "rating": 3.6,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -150,9 +142,8 @@
     "email": "adomoney7@hao123.com",
     "password": "dRVkAZk",
     "phoneNumber": "(202) 8756746",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$408.66" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$408.66",
     "active": false,
     "rating": 1.5,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -172,9 +163,8 @@
     "email": "fbromage8@qq.com",
     "password": "6aaFYSL9hD1n",
     "phoneNumber": "(601) 4730897",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$136.82" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 30},
+    "checkUpPrice": "$136.82",
     "active": true,
     "rating": 3.0,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -190,9 +180,8 @@
     "email": "bobray9@gravatar.com",
     "password": "WFWgPf",
     "phoneNumber": "(342) 3356786",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$157.16" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$157.16",
     "active": true,
     "rating": 4.0,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -208,9 +197,8 @@
     "email": "dsaula@liveinternet.ru",
     "password": "11q5qXKTs",
     "phoneNumber": "(940) 6487688",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 20, "checkUpPrice": "$105.95" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 20},
+    "checkUpPrice": "$105.95",
     "active": false,
     "rating": 3.4,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -229,9 +217,8 @@
     "email": "mcarrellb@blogspot.com",
     "password": "uFDnpCoV",
     "phoneNumber": "(688) 7581270",
-    "schedule": [
-      { "hour": "9:00 - 20:00", "space": 20, "checkUpPrice": "$998.10" }
-    ],
+    "schedule": { "hour": "9:00 - 20:00", "space": 20},
+    "checkUpPrice": "$998.10",
     "active": true,
     "rating": 2.3,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -251,9 +238,8 @@
     "email": "msmyec@bbc.co.uk",
     "password": "cjnXt7BIXZ",
     "phoneNumber": "(980) 5858230",
-    "schedule": [
-      { "hour": "10:00 - 16:00", "space": 20, "checkUpPrice": "$932.76" }
-    ],
+    "schedule": { "hour": "10:00 - 16:00", "space": 20},
+    "checkUpPrice": "$932.76",
     "active": true,
     "rating": 4.4,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -273,9 +259,8 @@
     "email": "bbooelnd@whitehouse.gov",
     "password": "PJOG99emiypU",
     "phoneNumber": "(841) 1413975",
-    "schedule": [
-      { "hour": "10:00 - 17:00", "space": 30, "checkUpPrice": "$241.64" }
-    ],
+    "schedule": { "hour": "10:00 - 17:00", "space": 30},
+    "checkUpPrice": "$241.64",
     "active": false,
     "rating": 2.3,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -294,9 +279,8 @@
     "email": "rsharpline@imageshack.us",
     "password": "DZLhUKbqbc0M",
     "phoneNumber": "(759) 8106595",
-    "schedule": [
-      { "hour": "10:00 - 16:00", "space": 20, "checkUpPrice": "$449.98" }
-    ],
+    "schedule": { "hour": "10:00 - 16:00", "space": 20},
+    "checkUpPrice": "$449.98",
     "active": true,
     "rating": 2.7,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -315,9 +299,8 @@
     "email": "pgalliardf@stanford.edu",
     "password": "gw71SdCGFnMS",
     "phoneNumber": "(763) 9404032",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 30, "checkUpPrice": "$660.28" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 30},
+    "checkUpPrice": "$660.28",
     "active": false,
     "rating": 4.6,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -336,9 +319,8 @@
     "email": "sscollang@ocn.ne.jp",
     "password": "cSpptU",
     "phoneNumber": "(827) 5739147",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 20, "checkUpPrice": "$121.86" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 20},
+    "checkUpPrice": "$121.86",
     "active": false,
     "rating": 3.5,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -354,9 +336,8 @@
     "email": "anelthorpeh@webnode.com",
     "password": "bqHdX8NVR",
     "phoneNumber": "(875) 6296260",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 20, "checkUpPrice": "$537.71" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 20},
+    "checkUpPrice": "$537.71",
     "active": false,
     "rating": 4.3,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -376,9 +357,8 @@
     "email": "mbrugmanni@drupal.org",
     "password": "jr5x61q",
     "phoneNumber": "(270) 8661141",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$827.65" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$827.65",
     "active": true,
     "rating": 1.0,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -398,9 +378,8 @@
     "email": "jwoodfinej@bluehost.com",
     "password": "j5qFFy",
     "phoneNumber": "(514) 1982101",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 20, "checkUpPrice": "$993.44" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 20},
+    "checkUpPrice": "$993.44",
     "active": true,
     "rating": 4.1,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -416,9 +395,8 @@
     "email": "ktollek@berkeley.edu",
     "password": "aPPnuBF",
     "phoneNumber": "(774) 4657931",
-    "schedule": [
-      { "hour": "9:00 - 20:00", "space": 20, "checkUpPrice": "$785.65" }
-    ],
+    "schedule": { "hour": "9:00 - 20:00", "space": 20},
+    "checkUpPrice": "$785.65",
     "active": true,
     "rating": 4.8,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -434,9 +412,8 @@
     "email": "jhardsl@nydailynews.com",
     "password": "d1llB8z1I",
     "phoneNumber": "(637) 2734744",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 20, "checkUpPrice": "$695.74" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 20},
+    "checkUpPrice": "$695.74",
     "active": false,
     "rating": 0.2,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -455,9 +432,8 @@
     "email": "nlaskeym@smh.com.au",
     "password": "6x3xYa",
     "phoneNumber": "(298) 2685462",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 20, "checkUpPrice": "$227.06" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 20 },
+    "checkUpPrice": "$227.06",
     "active": true,
     "rating": 2.8,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -473,9 +449,8 @@
     "email": "wdjorvicn@bloglines.com",
     "password": "oqQc0eGJj",
     "phoneNumber": "(603) 1368702",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 30, "checkUpPrice": "$254.91" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 30},
+    "checkUpPrice": "$254.91",
     "active": false,
     "rating": 5.0,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -491,9 +466,8 @@
     "email": "mpeachmento@prweb.com",
     "password": "YRdMgE",
     "phoneNumber": "(671) 1321272",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$707.03" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$707.03" ,
     "active": false,
     "rating": 1.6,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -513,9 +487,8 @@
     "email": "ehadgkiss0@cpanel.net",
     "password": "hUvCPYDR",
     "phoneNumber": "(830) 5916559",
-    "schedule": [
-      { "hour": "9:00 - 20:00", "space": 20, "checkUpPrice": "$519.90" }
-    ],
+    "schedule": { "hour": "9:00 - 20:00", "space": 20},
+    "checkUpPrice": "$519.90",
     "active": true,
     "rating": 3.4,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -535,9 +508,8 @@
     "email": "xpepler1@vistaprint.com",
     "password": "ViMN2y",
     "phoneNumber": "(563) 1343818",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 20, "checkUpPrice": "$728.63" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 20},
+    "checkUpPrice": "$728.63",
     "active": false,
     "rating": 3.6,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -553,9 +525,8 @@
     "email": "mgaylord2@ocn.ne.jp",
     "password": "oh5KT4Tf",
     "phoneNumber": "(510) 4588100",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 20, "checkUpPrice": "$189.48" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 20},
+    "checkUpPrice": "$189.48",
     "active": false,
     "rating": 3.3,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -575,9 +546,8 @@
     "email": "hminghi3@gov.uk",
     "password": "EPETmNiWXj",
     "phoneNumber": "(933) 2871045",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$972.27" }
-    ],
+    "schedule":  { "hour": "8:00 - 17:00", "space": 30 },
+    "checkUpPrice": "$972.27",
     "active": true,
     "rating": 0.7,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -596,9 +566,8 @@
     "email": "cmanthroppe4@who.int",
     "password": "gkDPuTS",
     "phoneNumber": "(381) 1155552",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 30, "checkUpPrice": "$772.71" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 30},
+    "checkUpPrice": "$772.71",
     "active": false,
     "rating": 3.5,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -618,9 +587,8 @@
     "email": "tipsgrave5@mysql.com",
     "password": "LQsgDzR",
     "phoneNumber": "(707) 2465920",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$617.40" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 30},
+    "checkUpPrice": "$617.40",
     "active": false,
     "rating": 0.6,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -636,9 +604,8 @@
     "email": "hnozzolii6@cbslocal.com",
     "password": "7LMCgfECh",
     "phoneNumber": "(551) 2770200",
-    "schedule": [
-      { "hour": "10:00 - 17:00", "space": 30, "checkUpPrice": "$835.75" }
-    ],
+    "schedule": { "hour": "10:00 - 17:00", "space": 30},
+    "checkUpPrice": "$835.75",
     "active": true,
     "rating": 4.8,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -654,9 +621,8 @@
     "email": "cgiannasi7@sbwire.com",
     "password": "Sonra8bcn0",
     "phoneNumber": "(187) 2058331",
-    "schedule": [
-      { "hour": "9:00 - 20:00", "space": 20, "checkUpPrice": "$986.18" }
-    ],
+    "schedule": { "hour": "9:00 - 20:00", "space": 20},
+    "checkUpPrice": "$986.18",
     "active": true,
     "rating": 4.5,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -676,9 +642,8 @@
     "email": "nkharchinski8@twitter.com",
     "password": "kLxn7md",
     "phoneNumber": "(845) 6763960",
-    "schedule": [
-      { "hour": "10:00 - 17:00", "space": 20, "checkUpPrice": "$735.92" }
-    ],
+    "schedule": { "hour": "10:00 - 17:00", "space": 20},
+    "checkUpPrice": "$735.92",
     "active": true,
     "rating": 0.6,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -694,9 +659,8 @@
     "email": "lthrustle9@youtu.be",
     "password": "ouOVVq",
     "phoneNumber": "(707) 4999624",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$789.88" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$789.88",
     "active": false,
     "rating": 0.7,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -716,9 +680,8 @@
     "email": "oedscera@lycos.com",
     "password": "leqBfGie",
     "phoneNumber": "(631) 3679649",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 20, "checkUpPrice": "$384.88" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 20},
+    "checkUpPrice": "$384.88",
     "active": false,
     "rating": 0.4,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -738,9 +701,8 @@
     "email": "mrosettinib@ebay.co.uk",
     "password": "BKMjSgedBi",
     "phoneNumber": "(405) 9621037",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 20, "checkUpPrice": "$141.89" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 20},
+    "checkUpPrice": "$141.89",
     "active": false,
     "rating": 2.5,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -759,9 +721,8 @@
     "email": "ghatleyc@whitehouse.gov",
     "password": "CUUMYKLAX4",
     "phoneNumber": "(156) 3380429",
-    "schedule": [
-      { "hour": "10:00 - 17:00", "space": 20, "checkUpPrice": "$934.76" }
-    ],
+    "schedule": { "hour": "10:00 - 17:00", "space": 20},
+    "checkUpPrice": "$934.76",
     "active": true,
     "rating": 2.7,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -777,9 +738,8 @@
     "email": "mstowersd@mozilla.org",
     "password": "g5UlddL",
     "phoneNumber": "(631) 1309921",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$441.18" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 30},
+    "checkUpPrice": "$441.18",
     "active": true,
     "rating": 1.9,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
@@ -798,9 +758,8 @@
     "email": "tjanese@virginia.edu",
     "password": "uIxsrrb",
     "phoneNumber": "(453) 3103883",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$796.06" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 30},
+    "checkUpPrice": "$796.06",
     "active": true,
     "rating": 0.4,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -819,9 +778,8 @@
     "email": "goenf@google.co.jp",
     "password": "WF1MO9Pj",
     "phoneNumber": "(584) 2747232",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 20, "checkUpPrice": "$126.65" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 20},
+    "checkUpPrice": "$126.65",
     "active": false,
     "rating": 2.9,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -837,9 +795,8 @@
     "email": "acomstyg@dedecms.com",
     "password": "JIZN7NpYlh4",
     "phoneNumber": "(194) 2231892",
-    "schedule": [
-      { "hour": "10:00 - 16:00", "space": 30, "checkUpPrice": "$302.14" }
-    ],
+    "schedule": { "hour": "10:00 - 16:00", "space": 30},
+    "checkUpPrice": "$302.14",
     "active": false,
     "rating": 2.2,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -859,9 +816,8 @@
     "email": "mszepeh@wired.com",
     "password": "DsW95dB",
     "phoneNumber": "(364) 9489672",
-    "schedule": [
-      { "hour": "10:00 - 16:00", "space": 30, "checkUpPrice": "$731.40" }
-    ],
+    "schedule": { "hour": "10:00 - 16:00", "space": 30},
+    "checkUpPrice": "$731.40",
     "active": false,
     "rating": 0.3,
     "image": "https://www.arenismedico.com/assets/images/staff.jpg"
@@ -880,9 +836,8 @@
     "email": "esandersoni@chron.com",
     "password": "LF4ymh4Z",
     "phoneNumber": "(793) 3340194",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$619.56" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 30},
+    "checkUpPrice": "$619.56",
     "active": true,
     "rating": 0.5,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -902,9 +857,8 @@
     "email": "rwyonj@parallels.com",
     "password": "fmLS1rY9",
     "phoneNumber": "(269) 3794292",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 20, "checkUpPrice": "$190.76" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 20 },
+    "checkUpPrice": "$190.76",
     "active": false,
     "rating": 1.6,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -924,9 +878,8 @@
     "email": "tsamsink@state.tx.us",
     "password": "syIbAAhg",
     "phoneNumber": "(865) 8194709",
-    "schedule": [
-      { "hour": "09:00 - 19:00", "space": 30, "checkUpPrice": "$356.24" }
-    ],
+    "schedule": { "hour": "09:00 - 19:00", "space": 30},
+    "checkUpPrice": "$356.24",
     "active": false,
     "rating": 0.7,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -942,9 +895,8 @@
     "email": "anoweakl@wired.com",
     "password": "3JpBqP0Q09oU",
     "phoneNumber": "(731) 5588320",
-    "schedule": [
-      { "hour": "8:00 - 17:00", "space": 30, "checkUpPrice": "$162.78" }
-    ],
+    "schedule": { "hour": "8:00 - 17:00", "space": 30},
+    "checkUpPrice": "$162.78",
     "active": true,
     "rating": 2.3,
     "image": "https://media.istockphoto.com/photos/portrait-of-smiling-female-doctor-wearing-uniform-standing-picture-id1346711310?b=1&k=20&m=1346711310&s=170667a&w=0&h=cMFFAeZUGt-z2GKU84EES1pOznUiYORcSpal62wUAGQ="
@@ -960,9 +912,8 @@
     "email": "kmacgillivriem@prnewswire.com",
     "password": "kCZmew",
     "phoneNumber": "(951) 4113956",
-    "schedule": [
-      { "hour": "8:00 - 15:00", "space": 30, "checkUpPrice": "$909.41" }
-    ],
+    "schedule": { "hour": "8:00 - 15:00", "space": 30},
+    "checkUpPrice": "$909.41",
     "active": false,
     "rating": 2.9,
     "image": "https://thumbs.dreamstime.com/b/fondo-blanco-aislado-hombre-afroamericano-del-m%C3%A9dico-80764241.jpg"
@@ -982,9 +933,8 @@
     "email": "yvernn@bbb.org",
     "password": "TxHANTUFT",
     "phoneNumber": "(483) 8413108",
-    "schedule": [
-      { "hour": "10:00 - 16:00", "space": 20, "checkUpPrice": "$464.73" }
-    ],
+    "schedule": { "hour": "10:00 - 16:00", "space": 20},
+    "checkUpPrice": "$464.73",
     "active": true,
     "rating": 1.2,
     "image": "https://thumbs.dreamstime.com/b/arab-saudi-doctor-man-posing-happy-isolated-white-background-36815702.jpg"
@@ -1000,9 +950,8 @@
     "email": "kkarlssono@issuu.com",
     "password": "4z0RRtt4Q",
     "phoneNumber": "(277) 3192665",
-    "schedule": [
-      { "hour": "10:00 - 18:00", "space": 20, "checkUpPrice": "$157.98" }
-    ],
+    "schedule": { "hour": "10:00 - 18:00", "space": 20},
+    "checkUpPrice": "$464.73",
     "active": false,
     "rating": 3.4,
     "image": "https://www.woninstitute.edu/wp-content/uploads/2021/01/360_F_317854905_2idSdvi2ds3yejmk8mhvxYr1OpdVTrSM.jpg"
