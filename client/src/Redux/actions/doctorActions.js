@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getDoctorById, getAllDocs,getDoctorsSpecialities, getDoctorsCities } from '../Slicer/slicer'
+import { getDoctorById, getAllDocs,getDoctorsBySpecialities, getDoctorsByCities, getDoctorsFiltered} from '../Slicer/slicer'
 
 export const getDocbyId = () => (dispatch) =>{
     axios.get('http://localhost:3004/dummy/doctors/630fffC19A88C8')
@@ -19,7 +19,23 @@ export const getDocs = () => (dispatch)=>{
 
 export const getDocsBySpecialities = (type) => (dispatch) =>{
     try{
-        dispatch(getDoctorsSpecialities(type))
+        dispatch(getDoctorsBySpecialities(type))
+    }catch(e){
+        
+    }
+}
+
+export const getDocsByCities = (type) => (dispatch) =>{
+    try{
+        dispatch(getDoctorsByCities(type))
+    }catch(e){
+        
+    }
+}
+
+export const getDocsFiltered = (type) => (dispatch) =>{
+    try{
+        dispatch(getDoctorsFiltered(type))
     }catch(e){
         
     }
