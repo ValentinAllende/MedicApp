@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
 import { getDocbyId } from '../../../../Redux/actions/doctorActions';
-import StarDetail from "./StarDetail";
+//import StarDetail from "./StarDetail";
 import { HiLocationMarker } from "react-icons/hi";
 import { HiOutlinePhone } from "react-icons/hi";
 

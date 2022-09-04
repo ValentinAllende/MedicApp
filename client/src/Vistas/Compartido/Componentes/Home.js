@@ -5,6 +5,7 @@ import Banner from './Main/Banner'
 export default function Home (){
     return(
         <div className= " h-screen bg-[#E7EFFD] w-screen ">
+            
             <NavBar/>
             <SearchBar/>
             <Banner/>

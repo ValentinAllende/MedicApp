@@ -13,7 +13,6 @@ export const getDocbyId = (id) => (dispatch) => {
     .get(`http://localhost:3004/dummy/doctors/${id}`)
     .then((res) => dispatch(getDoctorById(res.data)))
     .catch((e) => console.log(e));
-  console.log("holas");
 };
 
 export const getDocs = () => (dispatch) => {
