@@ -8,9 +8,9 @@ import {
   getDoctorsFiltered,
 } from "../Slicer/slicer";
 
-export const getDocbyId = () => (dispatch) => {
+export const getDocbyId = (id) => (dispatch) => {
   axios
-    .get("http://localhost:3004/dummy/doctors/630fffC19A88C8")
+    .get(`http://localhost:3004/dummy/doctors/${id}`)
     .then((res) => dispatch(getDoctorById(res.data)))
     .catch((e) => console.log(e));
   console.log("holas");
