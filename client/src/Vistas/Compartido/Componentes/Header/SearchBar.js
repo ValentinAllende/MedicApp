@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
 import {
   getDocsBySpecialities,
   getDocs,
@@ -10,6 +13,7 @@ import { useHistory } from "react-router-dom";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [specialities, setSpecialities] = useState("");
   const [cities, setCities] = useState("");
   const doctors = useSelector((state) => state.doctores);
@@ -32,6 +36,7 @@ export default function SearchBar() {
   console.log(city, "cities");
   console.log(doctors, "Doctores");
   console.log(ciudadesFiltradas, "ciudad Filtrados");
+  console.log(resultadoP, "Resultados finales");
 
   const citySelected = (e) => {
     setCities(e.target.value);
@@ -52,6 +57,7 @@ export default function SearchBar() {
     dispatch(getDocsByCities(cities));
     setAnswer(specialities);
     setError("No se ha encontrado un medico especialista en esa ciudad");
+    // history.push("/dummy/doctors");
   };
 
   return (
@@ -176,15 +182,17 @@ export default function SearchBar() {
             </div>
           </form>
         </div>
-
+        {/* <Link to={"/dummy/doctors"}> */}
         <button
           class="text-sm font-medium text-white bg-blue-900 rounded-r-lg border border-blue-900 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-000"
           onClick={() => {
             handlerSearchButton();
+            setTimeout(navigate("/dummy/doctors", 1000));
           }}
         >
           Buscar
         </button>
+        {/* </Link> */}
       </div>
       Especialidad: {answer}
       {resultadoP.length < 1 ? (
