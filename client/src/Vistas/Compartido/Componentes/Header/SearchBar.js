@@ -61,9 +61,10 @@ export default function SearchBar() {
   };
 
   return (
-    <div className=" flex-col border-width: 2px text-center items-center bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 flex flex-wrap w-1/2">
+  <div className=" items-stretch justify-center  ">
+    <div className=" grid flex-col border-width: 2px justify-items-center text-center items-center  bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 h-96">
       <label
-        className="text-2xl;
+        className="text-2xl font-poppins;
       line-height: 1.75rem; rounded  m-4 pl-2 pr-2    bg-blue-100 text-blue-800 "
       >
         <a className="text-blue-900">ENCUENTRA </a>
@@ -205,6 +206,7 @@ export default function SearchBar() {
           </p>
         ))
       )}
+    </div>
     </div>
   );
 }
