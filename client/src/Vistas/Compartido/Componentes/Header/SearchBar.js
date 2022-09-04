@@ -6,12 +6,14 @@ import {
   getDocsByCities,
   getDocsFiltered,
 } from "../../../../Redux/actions/doctorActions";
+import { useHistory } from "react-router-dom";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
   const [specialities, setSpecialities] = useState("");
   const [cities, setCities] = useState("");
   const doctors = useSelector((state) => state.doctores);
+
   const doctoresFiltrados = useSelector(
     (state) => state.doctores.filteredDoctors
   );
@@ -53,24 +55,31 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="border-width: 2px;">
-      <label className="rounded  m-4 pl-2 pr-2 text-sm font-medium text-gray-900   bg-blue-100">
-        Encontrá tu especialista y pedí un turno
+    <div className=" flex-col border-width: 2px text-center items-center bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 flex flex-wrap w-1/2">
+      <label
+        className="text-2xl;
+      line-height: 1.75rem; rounded  m-4 pl-2 pr-2    bg-blue-100 text-blue-800 "
+      >
+        <a className="text-blue-900">ENCUENTRA </a>
+        <a a className="text-blue-400"> 
+   
+          a tu especialista y
+        </a>
+        <a className="text-blue-900"> AGENDA</a>
+        <a className="text-blue-400"> una cita</a>
       </label>
       <div className="flex flex-row">
-        <div>
+        <div className="self-stretch ">
           <form>
             <div className="flex">
               <label
                 for="search-dropdown"
                 className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
-              >
-                Your Email
-              </label>
+              ></label>
               <button
                 id="dropdown-button"
                 data-dropdown-toggle="dropdown"
-                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-blue-900 dark:hover:bg-blue-500 dark:focus:ring-gray-700 dark:text-gray dark:border-gray-600"
+                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-tl-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-blue-900 dark:hover:bg-blue-500 dark:focus:ring-gray-700 dark:text-gray dark:border-gray-600"
                 type="button"
               >
                 <select
@@ -123,7 +132,7 @@ export default function SearchBar() {
               <button
                 id="dropdown-button"
                 data-dropdown-toggle="dropdown"
-                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-blue-900 dark:hover:bg-blue-500 dark:focus:ring-gray-700 dark:text-gray dark:border-gray-600"
+                className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-bl-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-blue-900 dark:hover:bg-blue-500 dark:focus:ring-gray-700 dark:text-gray dark:border-gray-600"
                 type="button"
               >
                 {" "}
@@ -177,7 +186,6 @@ export default function SearchBar() {
           Buscar
         </button>
       </div>
-      <br />
       Especialidad: {answer}
       {resultadoP.length < 1 ? (
         <p>{error}</p>
