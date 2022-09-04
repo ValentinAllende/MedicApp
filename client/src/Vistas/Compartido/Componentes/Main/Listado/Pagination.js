@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 
-export default function Pagination({ badgesPerPage, allBadges, pages, currentPage }) {
+export default function Pagination({
+  badgesPerPage,
+  allBadges,
+  pages,
+  currentPage,
+}) {
   // const [currentPage, setCurrentPage] = useState(1);
 
   const pageNumbers = [];

@@ -8,7 +8,7 @@ export const doctoresSlice = createSlice({
     detail: {},
     cities: [],
     filteredByCities: [],
-    newFilter: [],
+    newFilter: [], //doctores filtrados
     specialities: [],
   },
   reducers: {
