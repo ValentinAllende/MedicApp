@@ -1,3 +1,4 @@
+
 import axios from "axios";
 import {
   getDoctorById,
@@ -39,3 +40,4 @@ export const getDocsFiltered = (type) => (dispatch) => {
     dispatch(getDoctorsFiltered(type));
   } catch (e) {}
 };
+
