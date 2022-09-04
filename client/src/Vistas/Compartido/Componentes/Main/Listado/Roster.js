@@ -8,7 +8,7 @@ import Pagination from "./Pagination";
 
 export default function DoctorsRoster() {
   const dispatch = useDispatch();
-  const allBadges = useSelector((state) => state.doctors.newFilter);
+  const allBadges = useSelector((state) => state.doctores.newFilter);
   const [badgesPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -36,7 +36,7 @@ export default function DoctorsRoster() {
               <DoctorBadge
                 key={e.id}
                 name={e.name}
-                specialties={e.specialties.join(", ")}
+                specialties={e.specialities.join(", ")}
               />
             </Link>
           );

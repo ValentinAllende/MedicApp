@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DoctorBadge(id, name, specialties, address, phoneNumber) {
+export default function DoctorBadge({id, name, specialties, address, phoneNumber}) {
   return (
     <div className="doctor-list-badge" key={id}>
       <h3>{name}</h3>
