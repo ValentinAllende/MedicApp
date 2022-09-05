@@ -5,8 +5,10 @@ import DoctorsRoster from "./Vistas/Compartido/Componentes/Main/Listado/Roster";
 import DetalleDoctor from "./Vistas/Compartido/Componentes/Main/DetalleDoctor";
 import Registro from "./Vistas/Doctor/Componentes/Form";
 
+
 function App() {
   return (
+ 
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
