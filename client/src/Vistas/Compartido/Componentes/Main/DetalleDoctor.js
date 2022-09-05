@@ -1,29 +1,31 @@
-//import {useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect} from 'react';
 import { getDocbyId } from '../../../../Redux/actions/doctorActions';
 //import StarDetail from "./StarDetail";
 import { HiLocationMarker } from "react-icons/hi";
 import { HiOutlinePhone } from "react-icons/hi";
+import NavBar from '../Header/NavBar';
 
 
 function DetalleDoctor (){
-//const { id } = useParams();
+const { idDoctor } = useParams();
+  console.log(useParams());
   const dispatch = useDispatch()
   let doctor = useSelector((state)=> state.doctores.detail.data)
-  let rating = parseInt(doctor?.rating)
+  //let rating = parseInt(doctor?.rating)
 
- 
   useEffect(() => {
-    dispatch(getDocbyId('63114ae4fc13ae2bd6000008'))
-  },[dispatch]);
+    dispatch(getDocbyId(idDoctor))
+  },[dispatch, idDoctor]);
 
-  console.log(doctor, 'el doctor del componente');
+/*   console.log(doctor, 'el doctor del componente');
   console.log( rating, 'el rating');
-  console.log(4, 'el numero 4');
+  console.log(4, 'el numero 4'); */
 
   return(
       <>
+      <NavBar/>
       <div className='flex flex-row w-screen justify-evenly flex-wrap h-screen bg-[#E7EFFD] '>
 
         <div>
