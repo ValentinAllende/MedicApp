@@ -1,8 +1,10 @@
 import {useState, React} from 'react';
 import {useDispatch} from 'react-redux'
 import { postDoctor } from '../../../../Redux/actions/doctorActions';
+import {useNavigate} from 'react-router-dom'
 
 export default function Registro(){
+const history = useNavigate()
 const dispatch = useDispatch()
 const [input,setInput] = useState({
     name:'',lastName:'', adress:'',phoneNumber:'',license:'',specialities:[] , schedule:{},email:'' , password:'', rpassword:'', 
@@ -36,25 +38,25 @@ function handleChange(e){
       ...input,
       [e.target.name] : e.target.value
   })) }
-// functiona handleSubmit(e){
-//   e.preventDefault();
-//   dispatch(postDoctor({
-//       name: input.name,
-//       address: input.adress,
-//       phoneNumber: input.phoneNumber,
-//       license: input.license,
-//       specialities: input.specialities,
-//       schedule:{},
-//       email:input.email,
-//       password: input.password,
-//       active: true
-//   }))
-//   alert('creado con exito')
-//   setInput({
-//     name:'',lastName:'', adress:'',phoneNumber:'',license:'',specialities:[] , schedule:[],email:'' , password:'', rpassword:''
-//   })
-//   //history.push('/home')
-// }
+function handleSubmit(e){
+  e.preventDefault();
+  /* dispatch(postDoctor({
+      name: input.name,
+      address: input.adress,
+      phoneNumber: input.phoneNumber,
+      license: input.license,
+      specialities: input.specialities,
+      schedule:{},
+      email:input.email,
+      password: input.password,
+      active: true
+  })) */
+  alert('creado con exito')
+  setInput({
+    name:'',lastName:'', adress:'',phoneNumber:'',license:'',specialities:[] , schedule:[],email:'' , password:'', rpassword:''
+  })
+  history('/')
+}
 function handleSelect(e){
   setInput({
     ...input,
@@ -63,7 +65,7 @@ function handleSelect(e){
 }
 
 return(
- <form className='bg-gray-800'>{/*onSubmit={(e) => handleSubmit(e)} */}
+ <form className='bg-[#1479FF]' onSubmit={(e) => handleSubmit(e)}> 
   <div className="mb-6">
     <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombre</label>
     <input type="text" name="name" value={input.name} onChange={(e) => handleChange(e)} className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required=""/>

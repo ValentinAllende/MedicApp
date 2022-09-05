@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import NavBar from "../../Header/NavBar";
 import { getDocsFiltered } from "../../../../../Redux/actions/doctorActions";
 import DoctorBadge from "./Badge";
 import Pagination from "./Pagination";
@@ -9,7 +9,7 @@ import Pagination from "./Pagination";
 export default function DoctorsRoster() {
   const dispatch = useDispatch();
   const allBadges = useSelector((state) => state.doctores.newFilter);
-  const [badgesPerPage] = useState(20);
+  const [badgesPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastBadge = currentPage * badgesPerPage;
@@ -26,10 +26,12 @@ export default function DoctorsRoster() {
   console.log(allBadges);
   console.log(displayedBadges);
 
+  
+
   return (
-    <main>
+    <main className=' h-screen w-screen bg-[#E7EFFD]'>
+      <NavBar/>
       <article>
-        console.log(displayedBadges)
         {displayedBadges.map((e) => {
           return (
             <Link to={`/dummy/doctors/${e.id}`}>
@@ -37,6 +39,7 @@ export default function DoctorsRoster() {
                 key={e.id}
                 name={e.name}
                 specialties={e.specialities.join(", ")}
+                image= {e.image}
               />
             </Link>
           );

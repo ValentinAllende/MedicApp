@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Vistas/Compartido/Componentes/Home";
 import DoctorsRoster from "./Vistas/Compartido/Componentes/Main/Listado/Roster";
 import DetalleDoctor from "./Vistas/Compartido/Componentes/Main/DetalleDoctor";
+import Registro from "./Vistas/Doctor/Componentes/Form";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           path="/dummy/doctors/:idDoctor"
           element={<DetalleDoctor />}
         />
+        <Route exact path="/Form" element={<Registro />} />
       </Routes>
     </BrowserRouter>
   );
