@@ -27,7 +27,7 @@ export default function DoctorsRoster() {
   
 
   return (
-    <main className=' h-screen w-screen bg-[#E7EFFD]'>
+    <main className=' min-h-screen bg-[#E7EFFD] bg-repeat'>
       <NavBar/>
       <article>
         {displayedBadges.map((e) => {

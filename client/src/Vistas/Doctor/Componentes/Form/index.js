@@ -2,6 +2,7 @@ import {useState, React} from 'react';
 import {useDispatch} from 'react-redux'
 import { postDoctor } from '../../../../Redux/actions/doctorActions';
 import {useNavigate} from 'react-router-dom'
+import NavBar from '../../../Compartido/Componentes/Header/NavBar';
 
 export default function Registro(){
 const history = useNavigate()
@@ -65,6 +66,8 @@ function handleSelect(e){
 }
 
 return(
+  <>
+  <NavBar/>
  <form className='bg-[#1479FF]' onSubmit={(e) => handleSubmit(e)}> 
   <div className="mb-6">
     <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombre</label>
@@ -124,5 +127,6 @@ return(
   </div>
   <button type="submit"  disabled={Object.keys(errors).length === 0 ? false : true} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new account</button>
 </form>
+</>
    )
 }

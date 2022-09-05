@@ -64,16 +64,11 @@ export default function SearchBar() {
   <div className=" items-stretch justify-center  ">
     <div className=" grid flex-col border-width: 2px justify-items-center text-center items-center  bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 h-96">
       <label
-        className="text-2xl font-poppins;
-      line-height: 1.75rem; rounded  m-4 pl-2 pr-2    bg-blue-100 text-blue-800 "
-      >
-        <a className="text-blue-900">ENCUENTRA </a>
-        <a a className="text-blue-400"> 
-   
-          a tu especialista y
-        </a>
-        <a className="text-blue-900"> AGENDA</a>
-        <a className="text-blue-400"> una cita</a>
+        className="text-2xl font-poppins line-height: 1.75rem; rounded  m-4 pl-2 pr-2    bg-blue-100 text-blue-800 ">
+        <span className=" font-poppins text-blue-900">ENCUENTRA </span>
+        <span a className=" font-poppins text-blue-400">a tu especialista y</span>
+        <span className=" font-poppins text-blue-900"> AGENDA</span>
+        <span className=" font-poppins text-blue-400"> una cita</span>
       </label>
       <div className="flex flex-row">
         <div className="self-stretch ">
@@ -99,7 +94,6 @@ export default function SearchBar() {
                     return <option>{c}</option>;
                   })}
                 </select>
-
                 <path
                   fill-rule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
@@ -195,7 +189,7 @@ export default function SearchBar() {
         </button>
         {/* </Link> */}
       </div>
-      Especialidad: {answer}
+     {/*  Especialidad: {answer}
       {resultadoP.length < 1 ? (
         <p>{error}</p>
       ) : (
@@ -205,7 +199,7 @@ export default function SearchBar() {
             {m.name ? m.name : error}
           </p>
         ))
-      )}
+      )} */}
     </div>
     </div>
   );
