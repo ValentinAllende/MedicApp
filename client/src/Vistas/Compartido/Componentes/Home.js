@@ -1,4 +1,3 @@
-import Registro from '../../Doctor/Componentes/Form'
 import NavBar from './Header/NavBar'
 import SearchBar from './Header/SearchBar'
 import Banner from './Main/Banner'
