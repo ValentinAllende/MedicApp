@@ -45,7 +45,7 @@ export default function DoctorsRoster() {
           );
         })}
       </article>
-      <section>
+      <section className="flex flex-col items-center">
         <Pagination
           badgesPerPage={badgesPerPage}
           allBadges={allBadges.length}
