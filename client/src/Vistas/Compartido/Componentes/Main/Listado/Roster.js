@@ -31,7 +31,7 @@ export default function DoctorsRoster() {
   return (
     <main className=' min-h-screen bg-[#E7EFFD] bg-repeat'>
       <NavBar/>
-      <article>
+      <article className="flex flex-col gap-6 p-6 items-center">
         {displayedBadges.length < 1 ? <p>{error}</p>  : displayedBadges.map((e) => {
           return (
             <Link to={`/dummy/doctors/${e.id}`}>
