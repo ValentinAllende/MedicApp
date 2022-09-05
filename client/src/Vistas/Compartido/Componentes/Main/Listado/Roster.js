@@ -9,7 +9,7 @@ import Pagination from "./Pagination";
 export default function DoctorsRoster() {
   const dispatch = useDispatch();
   const allBadges = useSelector((state) => state.doctores.newFilter);
-  const [badgesPerPage] = useState(3);
+  const [badgesPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastBadge = currentPage * badgesPerPage;
@@ -23,8 +23,6 @@ export default function DoctorsRoster() {
   useEffect(() => {
     dispatch(getDocsFiltered());
   }, []);
-  console.log(allBadges);
-  console.log(displayedBadges);
 
   
 
@@ -50,7 +48,6 @@ export default function DoctorsRoster() {
           badgesPerPage={badgesPerPage}
           allBadges={allBadges.length}
           pages={pages}
-          currentPage={currentPage}
         />
       </section>
     </main>
