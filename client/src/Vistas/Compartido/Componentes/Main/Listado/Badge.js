@@ -3,7 +3,7 @@ import React from "react";
 export default function DoctorBadge({id, name, image, specialties, address, phoneNumber}) {
   return (
     <div className="">
-    <div className="bg-white m-5 w-[500px] h-fit p-2 rounded flex flex-row " key={id}>
+    <div className="bg-white w-[500px] h-fit p-2 rounded flex flex-row " key={id}>
       <div>
       <img src ={image} alt ='doctor' className="w-40 h-40 rounded-full object-cover border-solid border-2 border-[#1479FF] m-2 "></img>
       </div>
