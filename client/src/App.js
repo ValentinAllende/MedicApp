@@ -4,7 +4,8 @@ import Home from "./Vistas/Compartido/Componentes/Home";
 import DoctorsRoster from "./Vistas/Compartido/Componentes/Main/Listado/Roster";
 import DetalleDoctor from "./Vistas/Compartido/Componentes/Main/DetalleDoctor";
 import Registro from "./Vistas/Doctor/Componentes/Form";
-import CreatePatient from "./Vistas/Paciente/Componentes/Form/index";
+import Login from "./Vistas/Compartido/Componentes/Login/Login";
+import Register from "./Vistas/Compartido/Componentes/Register/Register";
 
 
 function App() {
@@ -20,7 +21,10 @@ function App() {
           element={<DetalleDoctor />}
         />
         <Route exact path="/Form" element={<Registro />} />
-        <Route exact path="/registroPaciente" element={<CreatePatient/>} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+
+
       </Routes>
     </BrowserRouter>
   );
