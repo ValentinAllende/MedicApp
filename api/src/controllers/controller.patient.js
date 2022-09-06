@@ -72,6 +72,24 @@ const controllerPatients = {
       return res.status(error.code || 500).send({ errors: error.message });
     }
   },
+  addTrustDoctor: async (req, res, next) => {
+    const { idPatient } = req.params;
+    const { idDoctor } = req.body;
+    try {
+      const patient = await Patient.findById(idPatient);
+      if (!patient) {
+        throwError(1302);
+      }
+      patient.trustedDoctors.push(idDoctor);
+      await patient.save();
+      res.status(200).send({ msg: "Doctor Save in Favorites" });
+    } catch (error) {
+      if (error.kind === "ObjectId") {
+        return res.status(403).send({ errors: "Formato de ID incorrecto" });
+      }
+      return res.status(error.code || 500).send({ errors: error.message });
+    }
+  },
   deletePatient: async (req, res, next) => {
     const { idPatient } = req.params;
     try {

@@ -12,7 +12,7 @@ const controllerAppointments = {
       .populate({
         path: 'doctor',
         model: 'Doctor',
-        select: ['name', 'email', 'specialities', 'address', 'city', 'schedule']
+        select: ['name', 'email', 'specialities', 'address', 'city', 'schedule', 'checkUpPrice']
       });
       if (!appointments) {
         throwError(1401);
@@ -23,9 +23,9 @@ const controllerAppointments = {
     }
   }, 
   createAppointment: async (req, res, next) => {
-    const { date, hour, additionalComment, doctor, patient } = req.body;
+    const { date, hour, paymentProcessed, doctor, patient } = req.body;
     try {
-      const newAppointment = new Appointment({ doctor, patient, date, hour, additionalComment });
+      const newAppointment = new Appointment({ doctor, patient, date, hour, paymentProcessed });
       await newAppointment.save();
       return res.status(201).send({ newAppointment: newAppointment });
     } catch (error) {
@@ -44,7 +44,7 @@ const controllerAppointments = {
       .populate({
         path: 'doctor',
         model: 'Doctor',
-        select: ['name', 'email', 'specialities', 'address', 'city', 'schedule']
+        select: ['name', 'email', 'specialities', 'address', 'city', 'schedule', 'checkUpPrice']
       });
       if (!appointmentById) {
         throwError(1402);
@@ -83,6 +83,25 @@ const controllerAppointments = {
         throwError(1402);
       }
       appointment.active = !appointment.active;
+      await appointment.save();
+      res.status(200).send({ data: appointment });
+    } catch (error) {
+      if (error.kind === "ObjectId") {
+        return res.status(403).send({ errors: "Formato de ID incorrecto" });
+      }
+      return res.status(error.code || 500).send({ errors: error.message });
+    }
+  },
+  addRating: async (req, res, next) => {
+    const { idAppointment } = req.params;
+    const { score, comment } = req.body;
+    try {
+      const appointment = await Appointment.findById(idAppointment);
+      if (!appointment) {
+        throwError(1402);
+      }
+      appointment.score = score;
+      appointment.comment = comment;
       await appointment.save();
       res.status(200).send({ data: appointment });
     } catch (error) {

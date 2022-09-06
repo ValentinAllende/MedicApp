@@ -12,13 +12,19 @@ const appointmentSchema = new Schema({
     trim: true,
     required: true,
   },
-  additionalComment:{
-    type: String,
-    required: false,
-  },
   active:{
     type: Boolean,
     default: true,
+  },
+  paymentProcessed:{
+    type: Boolean,
+  },
+  score:{
+    type: Number,
+  },
+  comment:{
+    type: String,
+    required: false,
   },
   patient:{
     ref: "Patient",

@@ -1,15 +1,5 @@
-const { validationResult, body, param } = require("express-validator");
-
-const validationAppointment = (req, res, next) => { 
-  const errorFormatter = ({ msg, param }) => {
-    return {[param]: msg};
-  };
-  const errors = validationResult(req).formatWith(errorFormatter);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
-  next();
-};
+const { body, param } = require("express-validator");
+const validationFormat = require("./validatorFormat");
 
 /* Appointment Routes Validations */
 const paramIdAppointmentValidator = [
@@ -17,15 +7,16 @@ const paramIdAppointmentValidator = [
     .trim()
     .notEmpty()
     .escape(),
-  validationAppointment
+  validationFormat
 ];
+
 const bodyAppointmentValidatorPOST = [
   body("doctor")
-  .trim()
-  .notEmpty().withMessage("El campo Doctor está vacio"),
+    .trim()
+    .notEmpty().withMessage("El campo Doctor está vacio"),
   body("patient")
-  .trim()
-  .notEmpty().withMessage("El campo Paciente está vacio"),
+    .trim()
+    .notEmpty().withMessage("El campo Paciente está vacio"),
   body("date")
     .trim()
     .notEmpty().withMessage("El campo fecha de cita está vacio")
@@ -39,8 +30,9 @@ const bodyAppointmentValidatorPOST = [
     .notEmpty().withMessage("El campo comentario adicional está vacio")
     .isLength({min: 50}).withMessage("Comentario: Se requieren al menos 50 caracteres.")
     .optional({nullable: true, checkFalsy: true}),
-  validationAppointment
+  validationFormat
 ];
+
 const bodyAppointmentValidatorPATCH = [
   body("date")
     .trim()
@@ -57,7 +49,7 @@ const bodyAppointmentValidatorPATCH = [
     .notEmpty().withMessage("El campo comentario adicional está vacio")
     .isLength({min: 50}).withMessage("Comentario: Se requieren al menos 50 caracteres.")
     .optional({nullable: true, checkFalsy: true}),
-  validationAppointment
+  validationFormat
 ];
 
 module.exports = {
