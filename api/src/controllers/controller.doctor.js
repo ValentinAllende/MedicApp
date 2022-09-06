@@ -5,7 +5,7 @@ const controllerDoctors = {
     try {
       const doctors = await Doctor.find();
       if (!doctors) {
-        throwError(1301);
+        throwError(1201);
       }
       return res.status(200).send({ data: doctors });
     } catch (error) {
@@ -14,24 +14,25 @@ const controllerDoctors = {
   },
   createDoctor: async (req, res, next) => {
     const {
-      name, specialities, license, address, email, password, phoneNumber, hour, space, checkUpPrice,
+      name, specialities, license, address, country, city, image, email, password, phoneNumber, hour, space, checkUpPrice,
     } = req.body;
     try {
       const newDoctor = new Doctor({
         name,
         specialities,
         license,
+        country,
+        city,
+        image,
         address,
         email,
         password,
         phoneNumber,
-        schedule: [
-          {
-            hour,
-            space,
-            checkUpPrice,
-          },
-        ],
+        schedule:{
+          hour,
+          space
+        },
+        checkUpPrice,
         active: true,
       });
       await newDoctor.save();
@@ -45,7 +46,7 @@ const controllerDoctors = {
     try {
       const doctorById = await Doctor.findById(idDoctor);
       if (!doctorById) {
-        throwError(1302);
+        throwError(1202);
       }
       return res.status(200).send({ data: doctorById });
     } catch (error) {
@@ -61,7 +62,7 @@ const controllerDoctors = {
     try {
       const doctorForUpdate = await Doctor.findById(idDoctor);
       if (!doctorForUpdate) {
-        throwError(1302);
+        throwError(1202);
       }
       Object.assign(doctorForUpdate, requestChanges);
       await doctorForUpdate.save();
@@ -78,7 +79,7 @@ const controllerDoctors = {
     try {
       const doctor = await Doctor.findById(idDoctor);
       if (!doctor) {
-        throwError(1302);
+        throwError(1202);
       }
       doctor.active = !doctor.active;
       await doctor.save();
@@ -95,7 +96,7 @@ const controllerDoctors = {
     try {
       const doctorForDelete = await Doctor.findById(idDoctor);
       if (!doctorForDelete) {
-        throwError(1302);
+        throwError(1202);
       }
       await doctorForDelete.remove();
       return res.status(200).send({ deleted: doctorForDelete });
@@ -109,12 +110,12 @@ const controllerDoctors = {
 };
 
 const throwError = (errorType) => {
-  if (errorType === 1301) {
+  if (errorType === 1201) {
     const error = new Error("No se encontro ningun doctor");
     error.code = 404;
     throw error;
   }
-  if (errorType === 1302) {
+  if (errorType === 1202) {
     const error = new Error("El Doctor no existe");
     error.code = 404;
     throw error;
