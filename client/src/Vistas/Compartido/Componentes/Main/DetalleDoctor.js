@@ -5,8 +5,9 @@ import { getDocbyId } from '../../../../Redux/actions/doctorActions';
 //import StarDetail from "./StarDetail";
 import { HiLocationMarker } from "react-icons/hi";
 import { HiOutlinePhone } from "react-icons/hi";
+import Stripe from '../../../Paciente/StripeCheckOut'
 import NavBar from '../Header/NavBar';
-
+import {Link} from 'react-router-dom'
 
 function DetalleDoctor (){
 const { idDoctor } = useParams();
@@ -18,10 +19,14 @@ const { idDoctor } = useParams();
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
-
+ console.log(doctor,"Doctor")
 /*   console.log(doctor, 'el doctor del componente');
   console.log( rating, 'el rating');
   console.log(4, 'el numero 4'); */
+
+
+
+
 
   return(
       <>
@@ -41,6 +46,13 @@ const { idDoctor } = useParams();
               })}
             <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 flex flex-row '> <span className='mr-2'><HiLocationMarker/></span>  {doctor?.city}, <span className='ml-2'>{doctor?.country}</span></p>
             <p className='font-raleway text-[#292f536f] mt-2 mb-2 '> Precio consulta: {doctor?.checkUpPrice}</p>
+            
+              <Link to={ "/dummy/doctors/" + idDoctor + "/stripe"}>
+       
+              Pagar consulta.
+           
+            </Link>
+            
             <span className='font-raleway w-fit text-[#1479FF] align-middle rounded flex flex-row '> <span className='mt-1'><HiOutlinePhone/></span>: <span className='text-[#1479FF] tracking-[.10em]'>{doctor?.phoneNumber}</span> </span>
             
             {/* <div className='text-[#1479FF] mt-4 mb-2 '> 

@@ -33,10 +33,7 @@ export default function SearchBar() {
   useEffect(() => {
     dispatch(getDocs());
   }, []);
-  console.log(city, "cities");
-  console.log(doctors, "Doctores");
-  console.log(ciudadesFiltradas, "ciudad Filtrados");
-  console.log(resultadoP, "Resultados finales");
+
 
   const citySelected = (e) => {
     setCities(e.target.value);
