@@ -1,15 +1,5 @@
-const { validationResult, body, param } = require("express-validator");
-
-const validationPatient = (req, res, next) => { 
-  const errorFormatter = ({ msg, param }) => {
-    return {[param]: msg};
-  };
-  const errors = validationResult(req).formatWith(errorFormatter);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
-  next();
-};
+const { body, param } = require("express-validator");
+const validationFormat = require("./validatorFormat");
 
 /* Patient Routes Validations */
 const paramIdPatientValidator = [
@@ -17,8 +7,9 @@ const paramIdPatientValidator = [
     .trim()
     .notEmpty()
     .escape(),
-    validationPatient
+    validationFormat
 ];
+
 const bodyPatientValidatorPOST = [
   body("name")
     .trim()
@@ -26,8 +17,7 @@ const bodyPatientValidatorPOST = [
   body("email")
     .trim()
     .notEmpty().withMessage("El campo email está vacio")
-    .isEmail().withMessage("Formato de email incorrecto")
-    .normalizeEmail(),
+    .isEmail().withMessage("Formato de email incorrecto"),
   body("password")
     .trim()
     .notEmpty().withMessage("El campo password está vacio")
@@ -36,8 +26,14 @@ const bodyPatientValidatorPOST = [
     .trim()
     .notEmpty().withMessage("El campo teléfono está vacio")
     .isMobilePhone().withMessage("Formato teléfono incorrecto"),
-  validationPatient
+  body("image")
+    .trim()
+    .notEmpty().withMessage("El campo imagen está vacio")
+    .isURL().withMessage("El campo imagen debe contener una URL Válida")
+    .optional({ nullable: true, checkFalsy: true }),
+  validationFormat
 ];
+
 const bodyPatientValidatorPATCH = [
   body("name")
     .trim()
@@ -47,7 +43,6 @@ const bodyPatientValidatorPATCH = [
     .trim()
     .notEmpty().withMessage("El campo email está vacio")
     .isEmail().withMessage("Formato de email incorrecto")
-    .normalizeEmail()
     .optional({nullable: true, checkFalsy: true}),
   body("password")
     .trim()
@@ -59,11 +54,25 @@ const bodyPatientValidatorPATCH = [
     .notEmpty().withMessage("El campo teléfono está vacio")
     .isMobilePhone().withMessage("Formato teléfono incorrecto")
     .optional({nullable: true, checkFalsy: true}),
-  validationPatient
+  body("image")
+    .trim()
+    .notEmpty().withMessage("El campo imagen está vacio")
+    .isURL().withMessage("El campo imagen debe contener una URL Válida")
+    .optional({ nullable: true, checkFalsy: true }),
+  validationFormat
+];
+
+const bodyPatientValidatorFAVORITES = [
+  body("idDoctor", "Formato de ID Doctor incorrecto")
+    .trim()
+    .isMongoId()
+    .escape(),
+  validationFormat
 ];
 
 module.exports = {
   paramIdPatientValidator,
   bodyPatientValidatorPOST,
-  bodyPatientValidatorPATCH
+  bodyPatientValidatorPATCH,
+  bodyPatientValidatorFAVORITES
 }

@@ -9,8 +9,7 @@ const patientSchema = new Schema({
   },
   image: {
     type: String,
-    // required: true
-},
+  },
   email:{
     type: String,
     required: true,
@@ -29,6 +28,10 @@ const patientSchema = new Schema({
     type: Boolean,
     default: true,
   },
+  trustedDoctors:{
+    type: [String],
+    default: []
+  }
 },{
   timestamps: true,
   versionKey: false

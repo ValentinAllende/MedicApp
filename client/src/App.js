@@ -5,6 +5,9 @@ import DoctorsRoster from "./Vistas/Compartido/Componentes/Main/Listado/Roster";
 import DetalleDoctor from "./Vistas/Compartido/Componentes/Main/DetalleDoctor";
 import Registro from "./Vistas/Doctor/Componentes/Form";
 import Stripe from "./Vistas/Paciente/StripeCheckOut"
+import Login from "./Vistas/Compartido/Componentes/Login/Login";
+import Register from "./Vistas/Compartido/Componentes/Register/Register";
+
 
 
 function App() {
@@ -21,6 +24,10 @@ function App() {
           element={<DetalleDoctor />}
         />
         <Route exact path="/Form" element={<Registro />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+
+
       </Routes>
     </BrowserRouter>
   );

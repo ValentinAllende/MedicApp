@@ -1,17 +1,20 @@
 import Logo from "../../imagenes compartidas/Logo Nav.png"
 import { Link } from 'react-router-dom';
-export default function NavBar (){
+export default function NavBar ({avaliable}){
     const imagen = Logo
     return (
         <div className=''>
-            <div className="flex flex-row  bg-[#E7EFFD] justify-around">
+            <div className="flex flex-row  bg-[#E7EFFD] px-10 justify-between">
             <Link to ='/'>
-            <img className="object-contain h-18 w-16 mt-3 mb-3 ml-3 " src={imagen} alt='logo'/>
+            <img className="object-contain w-16 my-3" src={imagen} alt='logo'/>
             </Link>
             <div className="flex items-center">
-            <Link to ='/form'>
-                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Registrate</p>
-            </Link>
+            {avaliable === 'not' ? (
+                ''
+            ) : <Link to ='/login'>
+                    <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Ingresar</p>
+                </Link>}
+            
             </div>
             </div>
            <hr className='border-solid border-1 border-gray-400'></hr>
