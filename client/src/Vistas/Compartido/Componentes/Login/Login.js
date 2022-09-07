@@ -74,8 +74,13 @@ export default function Login() {
                                     <button className="uppercase block w-full p-4 text-lg rounded-full bg-blue-500 hover:bg-blue-600 focus:outline-none ">Entrar</button>
                                 </div>
                                 <div className="px-4 pb-2 pt-4">
-                                    <Link to='/register'>
-                                        <button className="uppercase block w-full p-4 text-lg rounded-full bg-lime-500 hover:bg-lime-600 focus:outline-none">Registrate</button>
+                                    <Link to='/registerPatient'>
+                                        <button className="uppercase block w-full p-4 text-lg rounded-full bg-lime-500 hover:bg-lime-600 focus:outline-none">Registrate como Paciente</button>
+                                    </Link>
+                                </div>
+                                <div className="px-4 pb-2 pt-4">
+                                    <Link to='/registerDoctor'>
+                                        <button className="uppercase block w-full p-4 text-lg rounded-full bg-lime-500 hover:bg-lime-600 focus:outline-none">Registrate como Doctor</button>
                                     </Link>
                                 </div>
                             </form>
