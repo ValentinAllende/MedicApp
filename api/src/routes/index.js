@@ -6,6 +6,7 @@ const routesDoctor = require('./doctor')
 const routesPatient = require('./patient');
 const routesAdmin = require('./admin');
 const routesAppoinment = require('./appointment');
+const routesStripe = require('./stripe');
 
 /* GET home page. */
 router.use('/users',routesUser );
@@ -24,5 +25,7 @@ router.use('/admins', routesAdmin);
 
 /* Appointment routes */
 router.use('/appointments', routesAppoinment);
+
+router.use('/stripe', routesStripe);
 
 module.exports = router;
