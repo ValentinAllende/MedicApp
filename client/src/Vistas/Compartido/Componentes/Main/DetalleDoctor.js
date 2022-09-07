@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect} from 'react';
+import { useEffect/* , useState */} from 'react';
 import { getDocbyId } from '../../../../Redux/actions/doctorActions';
 //import StarDetail from "./StarDetail";
 import { HiLocationMarker } from "react-icons/hi";
@@ -9,24 +9,38 @@ import NavBar from '../Header/NavBar';
 
 
 function DetalleDoctor (){
-const { idDoctor } = useParams();
-  console.log(useParams());
-  const dispatch = useDispatch()
+
+  const { idDoctor } = useParams();
+  const dispatch = useDispatch();
   let doctor = useSelector((state)=> state.doctores.detail.data)
-  //let rating = parseInt(doctor?.rating)
+  //const [selectedDate, setSelectedDate] = useState('-')
+  let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
+
+  let hours = schedule?.hour
+  
+  let separateHours = hours?.split('-')
+  let separateHours1 = doctor && separateHours[0]?.trim()
+  let separateHours2 = doctor && separateHours[1]?.trim()
+
+
+  console.log(separateHours1, 'lo que me trae hours');
+  console.log(separateHours2, 'lo que me trae hours2');
+
+  // function handleClick(e){
+  //   setSelectedDate(e.target.value)
+  // }  
+  // function handleDelete(){
+  //   window.location.reload(false);
+  // }  
 
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
 
-/*   console.log(doctor, 'el doctor del componente');
-  console.log( rating, 'el rating');
-  console.log(4, 'el numero 4'); */
-
   return(
       <>
       <NavBar/>
-      <div className='flex flex-row w-screen justify-evenly flex-wrap h-screen bg-[#E7EFFD] '>
+      <div className='flex flex-row w-screen justify-evenly flex-wrap min-h-screen bg-[#E7EFFD] '>
 
         <div>
           <section className='bg-white w-[550px] h-fit mt-10 flex flex-row p-3 rounded items-center' >
@@ -58,14 +72,25 @@ const { idDoctor } = useParams();
           </section> */}
         </div>
 
-        {/* <div>
+        <div>
         <section className='bg-white w-[550px] h-fit mt-10 rounded-t' >
+
           <p className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Agenda tu cita</p> 
+
           <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 ml-2'> Direccion: {doctor && doctor.address}</p>
-          <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 ml-2'>aca va el calendario para agendamiento de citas</p>
-        
+
+          <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu fecha:</p>
+
+          <input type="date" id="start" name="trip-start" min="2022-09-05" max="2022-09-09" className="font-raleway ml-2"/>
+          <br></br>
+
+          <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu Hora:</p>
+          <input type="time" id="appt" name="appt"min={separateHours1} max={separateHours2} step='3600' required className=" ml-2  text-raleway rounded out-of-range:bg-red-500 "/>
+          <p className='font-raleway text-[#1479FF] text-[10px] -mt-[1px] mb-2 ml-2'>Selecciona la hora completa ej: 8:00 - 12:00 - 13:00 para asi tener la hora de consulta completa</p>
+          <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 ml-2'>Recuerda que mi Horario de atencion es de {separateHours1} a {separateHours2}</p>
+         
         </section>
-        </div> */}
+        </div>
        
       </div>
       </>
