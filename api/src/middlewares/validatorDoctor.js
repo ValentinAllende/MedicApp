@@ -35,10 +35,10 @@ const bodyDoctorValidatorPOST = [
   body("checkUpPrice")
     .trim()
     .notEmpty().withMessage("El campo costo de cita está vacio"),
-  body("rating")
-    .trim()
-    .notEmpty().withMessage("El campo rating está vacio")
-    .isFloat({ min: 0, max: 5 }).withMessage("El campo rating debe ser un número decimal entre 0 - 5"),
+  // body("rating")
+  //   .trim()
+  //   .notEmpty().withMessage("El campo rating está vacio")
+  //   .isFloat({ min: 0, max: 5 }).withMessage("El campo rating debe ser un número decimal entre 0 - 5"),
   body("specialities")
     .trim()
     .notEmpty().withMessage("La lista de especialidades está vacia"),
