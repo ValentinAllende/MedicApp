@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import imgLogin from '../../imagenes compartidas/login.jpeg'
 import NavBar from '../Header/NavBar';
 import axios from 'axios';
@@ -15,6 +15,8 @@ const Validate = (input) => {
 
 
 export default function Login() {
+
+    const navigate = useNavigate()
     const [input, setInput] = useState({
         email: '',
         password: ''
@@ -37,6 +39,7 @@ export default function Login() {
     }
 
     const handleSubmit = async(e) =>{
+
         e.preventDefault()
         try {
 
@@ -46,27 +49,19 @@ export default function Login() {
                 data: input
 
             })
-            // dipatch(getRole(response.data))¡
+
             localStorage.setItem('auth-token', JSON.stringify( response.data));
-            // localStorage.setItem('role', response.data.rol)
-            // Swal.fire({
-            //     position: 'center',
-            //     icon: 'success',
-            //     title: `${input.email} logeado correctamente`,
-            //     showConfirmButton: false,
-            //     timer: 1500
-            // })
             setInput({
                 email: '',
                 password: ''
             })
-            // if (response.data.rol === 'ARTIST') {
-            //     navigate('/createartist')
-            // } else if (response.data.rol === 'ADMIN') {
-            //     navigate('/AdminPanel')
-            // } else if (response.data.rol === 'CONTRACTOR') {
-            //     navigate('/shows')
-            // }
+            if (response.data.data.rol === 'ADMIN') {
+                navigate('/')
+            } else if (response.data.data.rol === 'DOCTOR') {
+                navigate('/')
+            } else if (response.data.data.rol === 'PATIENT') {
+                navigate('/')
+            }
         } catch (error) {
             // Swal.fire(error.response.data.error)
             console.log(error);

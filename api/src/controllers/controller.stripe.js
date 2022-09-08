@@ -1,5 +1,5 @@
 const Stripe = require('stripe');
-const mailer = require("../config/sendMails/mailer");
+// const mailer = require("../config/sendMails/mailer");
 
 
 const stripe = new Stripe(process.env.SK_STRIPE)
@@ -17,7 +17,7 @@ const controllerUsers = {
 			confirm: true
 		});
 		console.log("payment", payment)
-    mailer.sendMailAppointment(newAppointment);
+    // mailer.sendMailAppointment(newAppointment);
 		res.json({ msg: "Successful payment" })
 
     } catch (error) {
