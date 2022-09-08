@@ -1,5 +1,6 @@
 const Admin = require("../models/Admin");
 const mailer = require("../config/sendMails/mailer");
+const bcrypt = require('bcryptjs');
 
 const controllerAdmins = {
     getAll: async (req, res, next) => {
@@ -18,11 +19,12 @@ const controllerAdmins = {
                 email
             })
             if(adminBd) return res.status(400).json({ succes: false, message: " email ya registrado " })
+            const hashedPassword = bcrypt.hashSync(password, 10)
             const newAdmin = await Admin.create({
                 name,
                 image,
                 email,
-                password,
+                password:hashedPassword,
             });
             mailer.sendMailRegister(newAdmin, "Admin"); //Enviamos el mail de Confirmación de Registro
             res.status(200).json({succes: true, data: newAdmin})
