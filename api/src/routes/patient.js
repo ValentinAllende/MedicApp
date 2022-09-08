@@ -1,7 +1,7 @@
 const express = require('express');
 const patientRouter = express.Router();
 const controllerPatients = require("../controllers/controller.patient");
-const { paramIdPatientValidator, bodyPatientValidatorPOST, bodyPatientValidatorPATCH } = require("../middlewares/validatorPatient.js");
+const { paramIdPatientValidator, bodyPatientValidatorPOST, bodyPatientValidatorPATCH, bodyPatientValidatorFAVORITES } = require("../middlewares/validatorPatient.js");
 
 /* PATIENTS */
 /* Get All Patients */
@@ -14,6 +14,8 @@ patientRouter.get("/:idPatient", paramIdPatientValidator, controllerPatients.get
 patientRouter.patch("/:idPatient", paramIdPatientValidator, bodyPatientValidatorPATCH, controllerPatients.updatePatient);
 /* Change Status(Active) Patient*/
 patientRouter.patch("/status/:idPatient", paramIdPatientValidator, controllerPatients.changeStatus);
+/* Add Trust Doctor - Patient*/
+patientRouter.patch("/saveDoctor/:idPatient", paramIdPatientValidator, bodyPatientValidatorFAVORITES, controllerPatients.addTrustDoctor);
 /* Delete Patient */
 patientRouter.delete("/:idPatient", paramIdPatientValidator, controllerPatients.deletePatient);
 

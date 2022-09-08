@@ -1,4 +1,5 @@
 const Patient = require("../models/Patient");
+const mailer = require("../config/sendMails/mailer");
 
 const controllerPatients = {
   getAll: async (req, res, next) => {
@@ -17,6 +18,7 @@ const controllerPatients = {
     try {
       const newPatient = new Patient({ name, email, password, phoneNumber });
       await newPatient.save();
+      mailer.sendMailRegister(newPatient, "Patient"); //Enviamos el mail de Confirmación de Registro
       return res.status(201).send({ newPatient: newPatient });
     } catch (error) {
       return res.status(error.code || 500).send({ errors: error.message });
@@ -65,6 +67,24 @@ const controllerPatients = {
       patient.active = !patient.active;
       await patient.save();
       res.status(200).send({ data: patient });
+    } catch (error) {
+      if (error.kind === "ObjectId") {
+        return res.status(403).send({ errors: "Formato de ID incorrecto" });
+      }
+      return res.status(error.code || 500).send({ errors: error.message });
+    }
+  },
+  addTrustDoctor: async (req, res, next) => {
+    const { idPatient } = req.params;
+    const { idDoctor } = req.body;
+    try {
+      const patient = await Patient.findById(idPatient);
+      if (!patient) {
+        throwError(1302);
+      }
+      patient.trustedDoctors.push(idDoctor);
+      await patient.save();
+      res.status(200).send({ msg: "Doctor Save in Favorites" });
     } catch (error) {
       if (error.kind === "ObjectId") {
         return res.status(403).send({ errors: "Formato de ID incorrecto" });

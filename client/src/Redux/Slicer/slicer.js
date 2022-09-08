@@ -8,7 +8,7 @@ export const doctoresSlice = createSlice({
     detail: {},
     cities: [],
     filteredByCities: [],
-    newFilter: [], //doctores filtrados
+    newFilter: [], 
     specialities: [],
   },
   reducers: {
@@ -21,7 +21,7 @@ export const doctoresSlice = createSlice({
           return ciudades.push(d.city);
         }
       });
-      console.log("Ciudades", ciudades);
+
       state.cities = ciudades;
 
       let especialidad = [];

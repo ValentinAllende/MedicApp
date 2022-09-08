@@ -11,6 +11,7 @@ export default function DoctorsRoster() {
   const allBadges = useSelector((state) => state.doctores.newFilter);
   const [badgesPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
+  const [error, setError] = useState("")
 
   const indexOfLastBadge = currentPage * badgesPerPage;
   const indexOfFirstBadge = indexOfLastBadge - badgesPerPage;
@@ -22,6 +23,7 @@ export default function DoctorsRoster() {
 
   useEffect(() => {
     dispatch(getDocsFiltered());
+    setError("No se encontraron resultados para su busqueda")
   }, []);
 
   
@@ -29,8 +31,10 @@ export default function DoctorsRoster() {
   return (
     <main className=' min-h-screen bg-[#E7EFFD] bg-repeat'>
       <NavBar/>
-      <article>
-        {displayedBadges.map((e) => {
+
+      <article className="flex flex-col gap-6 p-6 items-center">
+        {displayedBadges.length < 1 ? <p>{error}</p>  : displayedBadges.map((e) => {
+
           return (
             <Link to={`/dummy/doctors/${e.id}`}>
               <DoctorBadge
@@ -43,7 +47,7 @@ export default function DoctorsRoster() {
           );
         })}
       </article>
-      <section>
+      <section className="flex flex-col items-center">
         <Pagination
           badgesPerPage={badgesPerPage}
           allBadges={allBadges.length}
