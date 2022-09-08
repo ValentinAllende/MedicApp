@@ -2,12 +2,13 @@ import { useState, React } from "react";
 import { useDispatch } from "react-redux";
 import { postDoctor } from "../../../../Redux/actions/doctorActions";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios'
+import axios from "axios";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 
 export default function Registro() {
   const history = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
     country: "",
@@ -104,12 +105,11 @@ export default function Registro() {
       });
       if (res.status === 201) {
         alert("Usted se a registrado");
-        // navigate("/");
+        navigate("/");
       }
     } catch (e) {
       console.log(e.toJSON());
     }
-
   }
 
   function handleSelect(e) {
@@ -154,7 +154,6 @@ export default function Registro() {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 required=""
               />
-              {errors.lastName ? <p>{errors.lastName}</p> : null}
             </div>
             <div>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -238,7 +237,7 @@ export default function Registro() {
                 type="text"
                 name="hour"
                 value={input.hour}
-                placeholder='Ej: 8:00 - 16:00'
+                placeholder="Ej: 8:00 - 16:00"
                 onChange={(e) => handleChange(e)}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 required=""

@@ -59,6 +59,7 @@ const doctorSchema = new Schema(
     },
     active: {
       type: Boolean,
+      default: true
     },
     rating: {
       type: Number,
