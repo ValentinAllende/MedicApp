@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect/* , useState */} from 'react';
+import { useEffect, useState} from 'react';
 import { getDocbyId } from '../../../../Redux/actions/doctorActions';
 //import StarDetail from "./StarDetail";
 import { HiLocationMarker } from "react-icons/hi";
@@ -14,7 +14,8 @@ function DetalleDoctor (){
   const { idDoctor } = useParams();
   const dispatch = useDispatch();
   let doctor = useSelector((state)=> state.doctores.detail.data)
-  //const [selectedDate, setSelectedDate] = useState('-')
+  const [selectedDate, setSelectedDate] = useState('')
+  const [selectedHour, setSelectedHour] = useState('')
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
   let hours = schedule?.hour
@@ -26,15 +27,19 @@ function DetalleDoctor (){
   let separateHours1A = separateHours1?.replace(':00','')
   let separateHours2A = separateHours2?.replace(':00','')
 
+  // console.log(separateHours1A, 'lo que me trae hours');
+  // console.log(separateHours2A, 'lo que me trae hours2');
 
+  function handleClickDate(e){
+    setSelectedDate(e.target.value)
+    console.log('me clikeaste');
+  }  
 
-  console.log(separateHours1A, 'lo que me trae hours');
-  console.log(separateHours2A, 'lo que me trae hours2');
-
-
-  // function handleClick(e){
-  //   setSelectedDate(e.target.value)
-  // }  
+  function handleClickHour(e){
+    setSelectedHour(e.target.value)
+    console.log('me clikeaste');
+  }  
+  
   // function handleDelete(){
   //   window.location.reload(false);
   // }  
@@ -43,6 +48,9 @@ function DetalleDoctor (){
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
 
+
+  console.log(selectedDate);
+  console.log(selectedHour);
   
 
 
@@ -92,7 +100,7 @@ function DetalleDoctor (){
         </div>
 
         <div>
-        <section className='bg-white w-[550px] h-fit mt-10 rounded-t' >
+        <section className='bg-white w-[550px] h-fit mt-10 rounded mb-2' >
 
           <p className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Agenda tu cita</p> 
 
@@ -100,30 +108,35 @@ function DetalleDoctor (){
 
           <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu fecha:</p>
 
-          <input type="date" id="start" name="trip-start" min="2022-09-05" max="2022-09-09" className="font-raleway ml-2"/>
+          <input type="date" id="start" name="trip-start" min="2022-09-05" max="2022-09-09" className="font-raleway ml-2" onClick={e => handleClickDate(e)}/>
           <br></br>
 
         
 
           <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu Hora:</p>
-
           <div>
           {(() => {
             let td = [];
             for (let i = separateHours1A; i <= separateHours2A; i++) {
-              td.push(<button className='font-raleway text-white mt-1 mb-2 focus:bg-[#292F53] rounded bg-[#1479FF] w-28 h-6 m-3' key={i}>{i + ':00'}</button>);
+              td.push(<button className='font-raleway text-white mt-1 mb-2 focus:bg-[#292F53] rounded bg-[#1479FF] w-28 h-6 m-3' key={i} value={i + ':00'} onClick={e => handleClickHour(e)}>{i + ':00'}</button>);
             }
             return td;
           })()}
           </div>
-
-          <input type="time" id="appt" name="appt"min={separateHours1} max={separateHours2} step='3600' required className=" ml-2  text-raleway rounded out-of-range:bg-red-500 "/>
-          <p className='font-raleway text-[#1479FF] text-[10px] -mt-[1px] mb-2 ml-2'>Selecciona la hora completa ej: 8:00 - 12:00 - 13:00 para asi tener la hora de consulta completa</p>
-          <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 ml-2'>Recuerda que mi Horario de atencion es de {separateHours1} a {separateHours2}</p>
-         
+          {selectedDate.length >1? (
+           <p className='font-raleway text-[#292f53b8] text-sm mt-9 mb-2 ml-2'>Tu cita esta agendada para el  <span className='font-poppins tracking-wide mt-1 mb-2  text-center text-[#1479FF] ml-2' >{selectedDate} </span> a las <span className='font-poppins tracking-wide mt-1 mb-2 ml-2 text-[#1479FF]'>{selectedHour} </span></p>
+            ):(
+              <span></span>
+              )}
+          {selectedDate.length >1 && selectedHour.length>1 ? (
+            <div className=" flex justify-center  ">
+              <button className='font-poppins text-lg text-white  focus:bg-[#292F53] rounded bg-[#1479FF] w-40 h-10 m-3 mt-9 mb-8' >Reserva tu cita </button>
+              </div> 
+            ):(
+            <span></span>
+            )}
         </section>
         </div>
-       
       </div>
       </>
   )
