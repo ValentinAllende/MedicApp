@@ -1,5 +1,7 @@
 const Doctor = require("../models/Doctor");
 const mailer = require("../config/sendMails/mailer");
+const bcrypt = require('bcryptjs');
+
 
 const controllerDoctors = {
   getAll: async (req, res, next) => {
@@ -18,6 +20,8 @@ const controllerDoctors = {
       name, specialities, license, address, country, city, image, email, password, phoneNumber, hour, space, checkUpPrice,
     } = req.body;
     try {
+    const hashedPassword = bcrypt.hashSync(password, 10)
+
       const newDoctor = new Doctor({
         name,
         specialities,
@@ -27,7 +31,7 @@ const controllerDoctors = {
         image,
         address,
         email,
-        password,
+        password:hashedPassword,
         phoneNumber,
         schedule:{
           hour,

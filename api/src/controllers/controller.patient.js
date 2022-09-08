@@ -1,5 +1,6 @@
 const Patient = require("../models/Patient");
 const mailer = require("../config/sendMails/mailer");
+const bcrypt = require('bcryptjs');
 
 const controllerPatients = {
   getAll: async (req, res, next) => {
@@ -14,9 +15,10 @@ const controllerPatients = {
     }
   },
   createPatient: async (req, res, next) => {
-    const { name, email, password, phoneNumber } = req.body;
+    const { name, email, password, phoneNumber, image} = req.body;
+    const hashedPassword = bcrypt.hashSync(password, 10)
     try {
-      const newPatient = new Patient({ name, email, password, phoneNumber });
+      const newPatient = new Patient({ name, email, password:hashedPassword, phoneNumber, image });
       await newPatient.save();
       mailer.sendMailRegister(newPatient, "Patient"); //Enviamos el mail de Confirmación de Registro
       return res.status(201).send({ newPatient: newPatient });

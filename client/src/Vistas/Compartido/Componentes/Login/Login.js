@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import imgLogin from '../../imagenes compartidas/login.jpeg'
 import NavBar from '../Header/NavBar';
+import axios from 'axios';
 
 const Validate = (input) => {
     let errors = {};
@@ -9,8 +10,6 @@ const Validate = (input) => {
     if (/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(input.email) ===false)
         errors.email = "email debe ser de la forma: example@gmail.com";
     if (!input.password) errors.password = "debe ingresar una contraseña";
-    if(/^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/.test(input.password) === false)
-        errors.password = 'contraseña minimo de 8 caracteres, max 15 debe contener numeros, al menos una letra mayuscula, un caracter especial '
     return errors
 }
 
@@ -37,8 +36,41 @@ export default function Login() {
         setErrors(errorsResult)
     }
 
-    const handleSubmit =(e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault()
+        try {
+
+            const response = await axios({
+                url: 'http://localhost:3004/auth/signin',
+                method: 'POST',
+                data: input
+
+            })
+            // dipatch(getRole(response.data))¡
+            localStorage.setItem('auth-token', JSON.stringify( response.data));
+            // localStorage.setItem('role', response.data.rol)
+            // Swal.fire({
+            //     position: 'center',
+            //     icon: 'success',
+            //     title: `${input.email} logeado correctamente`,
+            //     showConfirmButton: false,
+            //     timer: 1500
+            // })
+            setInput({
+                email: '',
+                password: ''
+            })
+            // if (response.data.rol === 'ARTIST') {
+            //     navigate('/createartist')
+            // } else if (response.data.rol === 'ADMIN') {
+            //     navigate('/AdminPanel')
+            // } else if (response.data.rol === 'CONTRACTOR') {
+            //     navigate('/shows')
+            // }
+        } catch (error) {
+            // Swal.fire(error.response.data.error)
+            console.log(error);
+        }
         
         
     }
