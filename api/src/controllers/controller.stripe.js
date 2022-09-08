@@ -1,5 +1,5 @@
 const Stripe = require('stripe');
-const mailer = require("../config/sendMails/mailer");
+// const mailer = require("../config/sendMails/mailer");
 
 
 const stripe = new Stripe(process.env.SK_STRIPE)
