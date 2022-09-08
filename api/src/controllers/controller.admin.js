@@ -12,7 +12,7 @@ const controllerAdmins = {
         }
     },
     createAdmin: async (req, res, next) => {
-        const { name, email, password } = req.body;
+        const { name, email, password, image } = req.body;
         try {
             const adminBd= await Admin.exists({
                 email
@@ -20,6 +20,7 @@ const controllerAdmins = {
             if(adminBd) return res.status(400).json({ succes: false, message: " email ya registrado " })
             const newAdmin = await Admin.create({
                 name,
+                image,
                 email,
                 password,
             });
