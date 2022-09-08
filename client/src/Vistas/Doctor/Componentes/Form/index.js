@@ -142,7 +142,7 @@ export default function Registro() {
             {errors.name ? <p>{errors.name}</p> : null}
           </div>
           <div className="mb-6 flex gap-5">
-            <div>
+          <div className="w-1/2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Pais
               </label>
@@ -155,7 +155,7 @@ export default function Registro() {
                 required=""
               />
             </div>
-            <div>
+            <div className="w-1/2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Ciudad
               </label>
@@ -229,7 +229,7 @@ export default function Registro() {
           <br />
 
           <div className="mb-6 flex gap-5">
-            <div>
+            <div className="w-1/2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Horario
               </label>
@@ -243,7 +243,7 @@ export default function Registro() {
                 required=""
               />
             </div>
-            <div>
+            <div className="w-1/2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Valor de la Cita
               </label>
