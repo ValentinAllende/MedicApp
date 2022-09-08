@@ -1,7 +1,18 @@
 import Logo from "../../imagenes compartidas/Logo Nav.png"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+
 export default function NavBar ({avaliable}){
     const imagen = Logo
+    const navigate = useNavigate()
+    const token = window.localStorage.getItem('auth-token')
+
+    const logOut = ()=>{
+        localStorage.clear()
+        navigate('/login')
+
+    }
+
     return (
         <div className=''>
             <div className="flex flex-row  bg-[#E7EFFD] px-10 justify-between">
