@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 
+
 export default function CreatePatient() {
   const navigate = useNavigate();
   const [inputErrors, setInputErrors] = useState({});
@@ -52,16 +53,18 @@ export default function CreatePatient() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    
     try {
-      const res = await axios.post("http://localhost:3004/patients/", {
+      const res = await axios.post("http://localhost:3004/patients", {
         name: input.name,
         phoneNumber: input.phoneNumber,
         email: input.email,
         password: input.password,
       });
+      console.log(res);
       if (res.status === 201) {
         alert("Usted se a registrado");
-        navigate("/");
+        // navigate("/");
       }
     } catch (e) {
       console.log(e.toJSON());
