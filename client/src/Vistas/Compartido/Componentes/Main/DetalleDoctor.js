@@ -22,9 +22,14 @@ function DetalleDoctor (){
   let separateHours1 = doctor && separateHours[0]?.trim()
   let separateHours2 = doctor && separateHours[1]?.trim()
 
+  let separateHours1A = separateHours1?.replace(':00','')
+  let separateHours2A = separateHours2?.replace(':00','')
 
-  console.log(separateHours1, 'lo que me trae hours');
-  console.log(separateHours2, 'lo que me trae hours2');
+
+
+  console.log(separateHours1A, 'lo que me trae hours');
+  console.log(separateHours2A, 'lo que me trae hours2');
+
 
   // function handleClick(e){
   //   setSelectedDate(e.target.value)
@@ -36,6 +41,8 @@ function DetalleDoctor (){
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
+
+  
 
   return(
       <>
@@ -84,7 +91,20 @@ function DetalleDoctor (){
           <input type="date" id="start" name="trip-start" min="2022-09-05" max="2022-09-09" className="font-raleway ml-2"/>
           <br></br>
 
+        
+
           <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu Hora:</p>
+
+          <div>
+          {(() => {
+            let td = [];
+            for (let i = separateHours1A; i <= separateHours2A; i++) {
+              td.push(<button className='font-raleway text-white mt-1 mb-2 focus:bg-[#292F53] rounded bg-[#1479FF] w-28 h-6 m-3' key={i}>{i + ':00'}</button>);
+            }
+            return td;
+          })()}
+          </div>
+
           <input type="time" id="appt" name="appt"min={separateHours1} max={separateHours2} step='3600' required className=" ml-2  text-raleway rounded out-of-range:bg-red-500 "/>
           <p className='font-raleway text-[#1479FF] text-[10px] -mt-[1px] mb-2 ml-2'>Selecciona la hora completa ej: 8:00 - 12:00 - 13:00 para asi tener la hora de consulta completa</p>
           <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 ml-2'>Recuerda que mi Horario de atencion es de {separateHours1} a {separateHours2}</p>
