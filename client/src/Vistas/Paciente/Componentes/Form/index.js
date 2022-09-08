@@ -64,7 +64,7 @@ export default function CreatePatient() {
       console.log(res);
       if (res.status === 201) {
         alert("Usted se a registrado");
-        // navigate("/");
+        navigate("/");
       }
     } catch (e) {
       console.log(e.toJSON());

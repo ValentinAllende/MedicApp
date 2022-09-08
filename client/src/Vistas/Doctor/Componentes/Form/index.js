@@ -2,23 +2,29 @@ import { useState, React } from "react";
 import { useDispatch } from "react-redux";
 import { postDoctor } from "../../../../Redux/actions/doctorActions";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 
 export default function Registro() {
   const history = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
-    lastName: "",
-    adress: "",
-    phoneNumber: "",
-    license: "",
+    country: "",
+    city: "",
     specialities: [],
-    schedule: {},
+    license: "",
+    address: "",
     email: "",
     password: "",
     rpassword: "",
+    phoneNumber: "",
+    hour: "",
+    space: 0,
+    checkUpPrice: "",
   });
+
   const especialidades = [
     "Oncológica",
     "Alergología",
@@ -34,9 +40,11 @@ export default function Registro() {
     "Mastología",
     "Gastroenterología",
   ];
+
   const [errors, setErrors] = useState({
     name: "",
   });
+
   function validar(input) {
     let errors = {};
     if (!input.name) errors.name = "se requiere un nombre";
@@ -63,6 +71,7 @@ export default function Registro() {
 
     return errors;
   }
+
   function handleChange(e) {
     setInput({
       ...input,
@@ -75,38 +84,38 @@ export default function Registro() {
       })
     );
   }
-  function handleSubmit(e) {
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    /* dispatch(postDoctor({
-      name: input.name,
-      address: input.adress,
-      phoneNumber: input.phoneNumber,
-      license: input.license,
-      specialities: input.specialities,
-      schedule:{},
-      email:input.email,
-      password: input.password,
-      active: true
-  })) */
-    alert("creado con exito");
-    setInput({
-      name: "",
-      lastName: "",
-      adress: "",
-      phoneNumber: "",
-      license: "",
-      specialities: [],
-      schedule: [],
-      email: "",
-      password: "",
-      rpassword: "",
-    });
-    history("/");
+
+    try {
+      const res = await axios.post("http://localhost:3004/doctors", {
+        name: input.name,
+        country: input.country,
+        city: input.city,
+        specialities: input.specialities,
+        license: input.license,
+        address: input.address,
+        email: input.email,
+        password: input.password,
+        phoneNumber: input.phoneNumber,
+        hour: input.hour,
+        space: input.space,
+        checkUpPrice: input.checkUpPrice,
+      });
+      if (res.status === 201) {
+        alert("Usted se a registrado");
+        navigate("/");
+      }
+    } catch (e) {
+      console.log(e.toJSON());
+    }
   }
+
   function handleSelect(e) {
     setInput({
       ...input,
-      specialities: [...input.specialities, e.target.value],
+      specialities: [e.target.value],
     });
   }
 
@@ -132,19 +141,33 @@ export default function Registro() {
             />
             {errors.name ? <p>{errors.name}</p> : null}
           </div>
-          <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-              Apellido
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              value={input.lastName}
-              onChange={(e) => handleChange(e)}
-              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-              required=""
-            />
-            {errors.lastName ? <p>{errors.lastName}</p> : null}
+          <div className="mb-6 flex gap-5">
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Pais
+              </label>
+              <input
+                type="text"
+                name="country"
+                value={input.country}
+                onChange={(e) => handleChange(e)}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                required=""
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Ciudad
+              </label>
+              <input
+                type="text"
+                name="city"
+                value={input.city}
+                onChange={(e) => handleChange(e)}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                required=""
+              />
+            </div>
           </div>
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -152,27 +175,13 @@ export default function Registro() {
             </label>
             <input
               type="text"
-              name="adress"
-              value={input.adress}
+              name="address"
+              value={input.address}
               onChange={(e) => handleChange(e)}
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
               required=""
             />
-            {errors.adress ? <p>{errors.adress}</p> : null}
-          </div>
-          <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-              Numero de Telefono
-            </label>
-            <input
-              type="text"
-              name="phoneNumber"
-              value={input.phoneNumber}
-              onChange={(e) => handleChange(e)}
-              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-              required=""
-            />
-            {errors.phoneNumber ? <p>{errors.phoneNumber}</p> : null}
+            {errors.address ? <p>{errors.address}</p> : null}
           </div>
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -188,8 +197,22 @@ export default function Registro() {
             />
             {errors.license ? <p>{errors.license}</p> : null}
           </div>
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              Numero de Telefono
+            </label>
+            <input
+              type="text"
+              name="phoneNumber"
+              value={input.phoneNumber}
+              onChange={(e) => handleChange(e)}
+              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+              required=""
+            />
+            {errors.phoneNumber ? <p>{errors.phoneNumber}</p> : null}
+          </div>
           <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-            Seleccione una Opcion
+            Especialidad
           </label>
           <select
             onChange={(e) => {
@@ -197,7 +220,7 @@ export default function Registro() {
             }}
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option selected>Eliga su Especialidad</option>
+            <option selected>Seleccione una Opcion</option>
             {especialidades.map((t) => (
               <option value={t}>{t}</option>
             ))}
@@ -205,6 +228,35 @@ export default function Registro() {
           {errors.specialities ? <p>{errors.specialities}</p> : null}
           <br />
 
+          <div className="mb-6 flex gap-5">
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Horario
+              </label>
+              <input
+                type="text"
+                name="hour"
+                value={input.hour}
+                placeholder="Ej: 8:00 - 16:00"
+                onChange={(e) => handleChange(e)}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                required=""
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                Valor de la Cita
+              </label>
+              <input
+                type="text"
+                name="checkUpPrice"
+                value={input.checkUpPrice}
+                onChange={(e) => handleChange(e)}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                required=""
+              />
+            </div>
+          </div>
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
               Correo Electronico
@@ -215,7 +267,6 @@ export default function Registro() {
               value={input.email}
               onChange={(e) => handleChange(e)}
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-              placeholder="name@flowbite.com"
               required=""
             />
             {errors.email ? <p>{errors.email}</p> : null}
@@ -270,7 +321,7 @@ export default function Registro() {
           </div>
           <button
             type="submit"
-            disabled={Object.keys(errors).length === 0 ? false : true}
+            // disabled={Object.keys(errors).length === 0 ? false : true}
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Registar nueva cuenta
