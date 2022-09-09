@@ -1,0 +1,38 @@
+.ContainerBanner{
+  width: 100%;
+
+  border-radius: 15px;
+}
+
+.ContainerBanner h2{
+  color: #F1F2F6;
+  padding: 10px 10px;
+  font-size: .9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.Dashboard{
+  background-color: rgb(41, 47, 83);
+  opacity: .85;
+}
+
+.Pacientes{
+  background-color: #1479FF;
+  opacity: .85;
+}
+
+.Doctores{
+  background-color: #44BA54;
+  opacity: .85;
+}
+
+.Citas{
+  background-color: #5C4FB7;
+  opacity: .85;
+}
+
+.Comentarios{
+  background-color: #5C4FB7;
+  opacity: .85;
+}
