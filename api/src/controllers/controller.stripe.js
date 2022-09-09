@@ -1,13 +1,19 @@
 const Stripe = require('stripe');
-// const mailer = require("../config/sendMails/mailer");
+const   Jwt  = require('jsonwebtoken');
+
 
 
 const stripe = new Stripe(process.env.SK_STRIPE)
 
 const controllerUsers = {
   checkout: async (req, res, next) => {
-    const { id, amount } = req.body;
-    console.log("Recibido",req.body)
+    const { id, amount} = req.body;
+    const user_id = req.user_id
+    console.log("idUser",user_id);
+    
+
+
+   
     try {
         const payment = await stripe.paymentIntents.create({
 			currency: "USD",
@@ -16,8 +22,8 @@ const controllerUsers = {
 			payment_method: id,
 			confirm: true
 		});
-		console.log("payment", payment)
-    // mailer.sendMailAppointment(newAppointment);
+		// console.log("payment", payment)
+
 		res.json({ msg: "Successful payment" })
 
     } catch (error) {
