@@ -17,7 +17,7 @@ const controllerDoctors = {
   },
   createDoctor: async (req, res, next) => {
     const {
-      name, specialities, license, address, country, city, image, email, password, phoneNumber, hour, space, checkUpPrice,
+      name, specialities, license, address, country, city, image, email, password, phoneNumber, hour, checkUpPrice,
     } = req.body;
     try {
     const hashedPassword = bcrypt.hashSync(password, 10)
@@ -34,8 +34,7 @@ const controllerDoctors = {
         password:hashedPassword,
         phoneNumber,
         schedule:{
-          hour,
-          space
+          hour
         },
         checkUpPrice,
         active: true,

@@ -17,28 +17,20 @@ const bodyDoctorValidatorPOST = [
   body("country")
     .trim()
     .notEmpty().withMessage("El campo país está vacio")
-    .matches(/^[A-Z a-z]{5,30}$/).withMessage("El campo país debe contener solo letras."),
+    .matches(/^[A-Z a-z]{4,30}$/).withMessage("El campo país debe contener solo letras."),
   body("city")
     .trim()
     .notEmpty().withMessage("El campo ciudad está vacio")
-    .matches(/^[A-Z a-z]{5,50}$/).withMessage("El campo ciudad debe contener solo letras."),
+    .matches(/^[A-Z a-z]{4,50}$/).withMessage("El campo ciudad debe contener solo letras."),
   body("address")
     .trim()
     .notEmpty().withMessage("El campo dirección está vacio"),
   body("hour")
     .trim()
     .notEmpty().withMessage("El campo horario de atención está vacio"),
-  body("space")
-    .trim()
-    .notEmpty().withMessage("El campo espacio entre citas está vacio")
-    .isNumeric().withMessage("El campo espacio entre citas debe contener solo números."),
   body("checkUpPrice")
     .trim()
     .notEmpty().withMessage("El campo costo de cita está vacio"),
-  // body("rating")
-  //   .trim()
-  //   .notEmpty().withMessage("El campo rating está vacio")
-  //   .isFloat({ min: 0, max: 5 }).withMessage("El campo rating debe ser un número decimal entre 0 - 5"),
   body("specialities")
     .trim()
     .notEmpty().withMessage("La lista de especialidades está vacia"),
@@ -65,7 +57,8 @@ const bodyDoctorValidatorPOST = [
 const bodyDoctorValidatorPATCH = [
   body("name")
     .trim()
-    .notEmpty().withMessage("El campo nombre está vacio"),
+    .notEmpty().withMessage("El campo nombre está vacio")
+    .optional({ nullable: true, checkFalsy: true }),
   body("license")
     .trim()
     .notEmpty().withMessage("El campo licencia médica está vacio")
@@ -88,19 +81,9 @@ const bodyDoctorValidatorPATCH = [
     .trim()
     .notEmpty().withMessage("El campo horario de atención está vacio")
     .optional({ nullable: true, checkFalsy: true }),
-  body("space")
-    .trim()
-    .notEmpty().withMessage("El campo espacio entre citas está vacio")
-    .isNumeric().withMessage("El campo espacio entre citas debe contener solo números.")
-    .optional({ nullable: true, checkFalsy: true }),
   body("checkUpPrice")
     .trim()
     .notEmpty().withMessage("El campo costo de cita está vacio")
-    .optional({ nullable: true, checkFalsy: true }),
-  body("rating")
-    .trim()
-    .notEmpty().withMessage("El campo rating está vacio")
-    .isFloat({ min: 0, max: 5 }).withMessage("El campo rating debe ser un número decimal entre 0 - 5")
     .optional({ nullable: true, checkFalsy: true }),
   body("specialities")
     .trim()
