@@ -25,7 +25,7 @@ export default function CheckOutForm(props) {
   const elements = useElements();
   
   //---------------------------------------------------------------------------
-  
+  console.log(idDoctor,' id')
   
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
@@ -58,14 +58,18 @@ export default function CheckOutForm(props) {
       const dec2 = dec1.slice(1)
       const monto = parseFloat(dec2)
       const token = window.localStorage.getItem("auth-token")
+      const hour = window.localStorage.getItem("hour")
+      const date = window.localStorage.getItem("date")
       const parsed = JSON.parse(token)
-      
-      console.log(parsed,"pago")
+      const paymentProcessed = true;
+      // const hourParsed = JSON.parse(hour)
+      // const dateParsed = JSON.parse(date)
+      console.log(parsed,"pago",  date, 'date', hour,'hour')
       try {
         const { data } = await axios ('http://localhost:3004/stripe/checkout ', {
         
           headers: { 'Authorization': `Bearer ${parsed.token}`},
-          data:{ amount:monto * 1000, id: id},
+          data:{ amount:monto * 1000, id: id, date: date, hour: hour, idDoctor: idDoctor, paymentProcessed: paymentProcessed},
           method: 'POST',
           
 

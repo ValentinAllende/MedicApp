@@ -56,10 +56,10 @@ function DetalleDoctor (){
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
 
-
+ localStorage.setItem('hour',selectedHour)
+ localStorage.setItem('date',selectedDate)
   console.log(selectedDate ,'selected date');
   console.log(selectedHour, 'selectred hour');
-
 
   return(
       <>
@@ -134,7 +134,7 @@ function DetalleDoctor (){
               )}
           {selectedDate.length >1 && selectedHour.length>1 ? (
             <div className=" flex justify-center  ">
-              <button className='font-poppins text-lg text-white  focus:bg-[#292F53] rounded bg-[#1479FF] w-40 h-10 m-3 mt-9 mb-8' >Reserva tu cita </button>
+              <button className='font-poppins text-lg text-white  focus:bg-[#292F53] rounded bg-[#1479FF] w-40 h-10 m-3 mt-9 mb-8'>Reserva tu cita </button>
               </div> 
             ):(
             <span></span>
