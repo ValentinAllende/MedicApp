@@ -1,8 +1,15 @@
 import NavBar from "../../Compartido/Componentes/Header/NavBar";
-//import jwt_decode from "jwt-decode";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect} from 'react';
+import { getProfileDoc } from "../../../Redux/actions/doctorActions";
 
 export default function PanelDoctor (){
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProfileDoc())
+  }, [dispatch]);
+  
     // let id = '6310362ffc13ae315700004c'
   /*   const tokenDoc = localStorage.getItem('auth-token')
     const jwtDoctor = jwt_decode(tokenDoc)

@@ -10,6 +10,7 @@ export const doctoresSlice = createSlice({
     filteredByCities: [],
     newFilter: [], 
     specialities: [],
+    profile: []
   },
   reducers: {
     getAllDocs: (state, action) => {
@@ -39,8 +40,12 @@ export const doctoresSlice = createSlice({
     getDoctorById: (state, action) => {
       state.detail = action.payload;
     },
-   
 
+    getProfileDoctor: (state, action) => {
+      state.profile = action.payload
+      console.log('el del slicer');
+    },
+   
     getDoctorsFiltered: (state, action) => {
       const specialities = action.payload.specialities;
       const cities = action.payload.cities;
@@ -93,6 +98,7 @@ export const {
   getDoctorsBySpecialities,
   getDoctorsByCities,
   getDoctorsFiltered,
+  getProfileDoctor
 } = doctoresSlice.actions;
 
 export default doctoresSlice.reducer;
