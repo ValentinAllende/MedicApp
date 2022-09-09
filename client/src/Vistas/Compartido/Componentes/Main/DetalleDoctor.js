@@ -14,7 +14,7 @@ function DetalleDoctor (){
   const { idDoctor } = useParams();
   const dispatch = useDispatch();
   let doctor = useSelector((state)=> state.doctores.detail.data)
-  const [selectedDate, setSelectedDate] = useState('')
+  const [selectedDate, setSelectedDate] = useState({})
   const [selectedHour, setSelectedHour] = useState('')
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
@@ -31,13 +31,13 @@ function DetalleDoctor (){
   // console.log(separateHours2A, 'lo que me trae hours2');
 
   function handleClickDate(e){
-    setSelectedDate(e.target.value)
-    console.log('me clikeaste');
+    setSelectedDate({
+      date: e.target.value})
   }  
 
   function handleClickHour(e){
-    setSelectedHour(e.target.value)
-    console.log('me clikeaste');
+    setSelectedHour({
+      hour: e.target.value})
   }  
   
   // function handleDelete(){
@@ -49,8 +49,8 @@ function DetalleDoctor (){
   },[dispatch, idDoctor]);
 
 
-  console.log(selectedDate);
-  console.log(selectedHour);
+  console.log(selectedDate ,'selected date');
+  console.log(selectedHour, 'selectred hour');
   
 
 
