@@ -9,42 +9,56 @@ import Modal from "../Modal/Modal";
 import Toggle from "../Dashboard/Toggle/Toggle";
 import EditDoctor from "./EditDoctor/EditDoctor";
 import CreateDoctor from "./CreateDoctor/CreateDoctor";
-import { changeStatusDoctor, getDoctor, getDoctors } from "../../../../Redux/actions/generalActionsDoctors";
+import DetailDoctor from "./DetailDoctor/DetailDoctor";
+
+import { changeStatusDoctor, getDoctor, getDoctors} from "../../../../Redux/actions/generalActionsDoctors";
 
 const Doctores = () => {
   const dispatch = useDispatch();
   const { doctors, detailDoctor } = useSelector((state) => state.generalDoctors);
   const [form, setForm] = useState({
     edit: false,
-    create: false
+    create: false,
+    detail: false
   });
   /**
    *  @changeStatus = Método para (dispatch) que cambia el estado del paciente (Activo o Inactivo)
    *  @param => el id del Paciente
    *  @return => no retorna nada
    * */ 
-  const changeStatus = (idPatient) => {
-    console.log(idPatient);
-    dispatch(changeStatusDoctor(idPatient));
+  const changeStatus = (idDoctor) => {
+    console.log(idDoctor);
+    dispatch(changeStatusDoctor(idDoctor));
   };
 
   /**
-   *  @patientToEdit = Método para (dispatch) que edita al paciente
-   *  @param => el id del Paciente
+   *  @doctorToEdit = Método para (dispatch) que edita al doctor
+   *  @param => el id del Doctor
    *  @return => no retorna nada
    * */ 
-  const patientToEdit = (idPatient) => {
-    dispatch(getDoctor(idPatient));
+  const doctorToEdit = (idDoctor) => {
+    dispatch(getDoctor(idDoctor));
     setForm({...form, edit:true});
+  };
+
+  /**
+   *  @doctorDetail = Método para (dispatch) que edita al doctor
+   *  @param => el id del Doctor
+   *  @return => no retorna nada
+   * */ 
+   const doctorDetail = (idDoctor) => {
+    dispatch(getDoctor(idDoctor));
+    setForm({...form, detail:true});
   };
 
 
   /**
    *  @return => re-render de todos los pacientes y cambia el state edit
    * */
-  const reRenderPatients = ()=> {
+  const reRenderDoctors = ()=> {
     dispatch(getDoctors());
-    setForm({create:false, edit:false});
+    dispatch(getDoctor());
+    setForm({create:false, edit:false, detail: false});
   }
  
   /**
@@ -83,7 +97,7 @@ const Doctores = () => {
         {form.edit &&
         <Modal>
           <EditDoctor id={detailDoctor._id} 
-                      onClick={reRenderPatients}
+                      onClick={reRenderDoctors}
                       name={detailDoctor.name}
                       email={detailDoctor.email}
                       phoneNumber={detailDoctor.phoneNumber}
@@ -92,28 +106,37 @@ const Doctores = () => {
         </Modal>
         }
 
-        {/** @create => state: habilita el modal para la creación de un paciente */}
-        {form.create &&
+        {/** @detail => state: habilita el modal para ver detalle de paciente */}
+        {form.detail &&
         <Modal>
-          <CreateDoctor onClick={reRenderPatients} />
+          <DetailDoctor doctor={detailDoctor} 
+                      onClick={reRenderDoctors}
+                      />
         </Modal>
         }
 
-        {/** @return => mapea todos los pacientes en el state patients */}
-        { doctors && doctors.map((patient) => {
+        {/** @create => state: habilita el modal para la creación de un doctor */}
+        {form.create &&
+        <Modal>
+          <CreateDoctor onClick={reRenderDoctors} />
+        </Modal>
+        }
+
+        {/** @return => mapea todos los doctores en el state doctors */}
+        { doctors && doctors.map((doctor) => {
           return (
-            <article className={styles.CardPatientDashboard} key={patient._id}>
+            <article className={styles.CardPatientDashboard} key={doctor._id}>
               <div className={styles.Avatar}>
-                <img src={patient.image || avatarDefault} alt="avatar-img" />
+                <img src={doctor.image || avatarDefault} alt="avatar-img" />
               </div>
-              <h5>{patient.name}</h5>
-              <span className={styles.Email}>{patient.email}</span>
-              <span className={styles.PhoneNumber}>{patient.city}</span>
+              <h5 onClick={() => doctorDetail(doctor._id)}>{doctor.name}</h5>
+              <span className={styles.Email}>{doctor.email}</span>
+              <span className={styles.PhoneNumber}>{doctor.city}</span>
               <div className={styles.isToggle}>
-                <Toggle isToggle={patient.active ? true : false} onToggle={() => changeStatus(patient._id)}/>
+                <Toggle isToggle={doctor.active ? true : false} onToggle={() => changeStatus(doctor._id)}/>
               </div>
               <div className={styles.Actions}>
-                <button className={styles.ButtonEdit} onClick={()=>patientToEdit(patient._id)}>Editar</button>
+                <button className={styles.ButtonEdit} onClick={()=>doctorToEdit(doctor._id)}>Editar</button>
               </div>
             </article>
           );
