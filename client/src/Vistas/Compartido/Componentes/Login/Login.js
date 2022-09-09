@@ -50,7 +50,9 @@ export default function Login() {
 
             })
 
-            localStorage.setItem('auth-token', JSON.stringify( response.data));
+            localStorage.setItem('auth-token', JSON.stringify( response.data.token));
+            localStorage.setItem('User', JSON.stringify( response.data.data));
+
             setInput({
                 email: '',
                 password: ''
@@ -101,12 +103,14 @@ export default function Login() {
                                     <button className="uppercase block w-full p-4 text-lg rounded-full bg-blue-500 hover:bg-blue-600 focus:outline-none ">Entrar</button>
                                 </div>
                                 <div className="px-4 pb-2 pt-4">
-                                    <Link to='/registerPatient'>
+                                    {/* <Link to='/registerPatient'> */}
+                                    <Link to='/admin'>
                                         <button className="uppercase block w-full p-4 text-lg rounded-full bg-lime-500 hover:bg-lime-600 focus:outline-none">Registrate como Paciente</button>
                                     </Link>
                                 </div>
                                 <div className="px-4 pb-2 pt-4">
-                                    <Link to='/registerDoctor'>
+                                    {/* <Link to='/registerDoctor'> */}
+                                    <Link to='/doctor'>
                                         <button className="uppercase block w-full p-4 text-lg rounded-full bg-lime-500 hover:bg-lime-600 focus:outline-none">Registrate como Doctor</button>
                                     </Link>
                                 </div>

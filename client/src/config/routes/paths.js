@@ -1,5 +1,6 @@
 export const HOME = '/'
 export const LOGIN = '/login'
-export const PRIVATEA = '/register'
-export const PRIVATEB = "/register/doctor"
-export const LOGOUT = '/private/logout'
+export const PRIVATE_ADM = '/admin'
+export const PROFILE_ADM = '/admin/dashboard'
+export const PRIVATE_DOC = "/doctor"
+export const PROFILE_DOC = '/doctor/panelDoc'
