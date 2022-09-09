@@ -38,7 +38,7 @@ const controllerAuth = {
                 if (!comparePassword) {
                     return res.status(404).json({succes: false,error: "Email ó Password Incorrecto!!"});
                 }
-                const tokenDoctor = Jwt.sign({ user_id: doctor.id },"doctortoken"); // process.env.TOKEN_SECRET_ADMIN )
+                const tokenDoctor = Jwt.sign({user_id: doctor.id },"doctortoken"); // process.env.TOKEN_SECRET_ADMIN )
                 const data = {
                     name:doctor.name,
                     email:doctor.email,

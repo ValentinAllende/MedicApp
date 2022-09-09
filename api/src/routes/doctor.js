@@ -7,8 +7,9 @@ const { paramIdDoctorValidator, bodyDoctorValidatorPOST, bodyDoctorValidatorPATC
 /* DOCTORS */
 /* Get All Doctors */
 
-// UNA RUTA SOLO DOCTORES: doctorRouter.get("/",[ValidateToken.Doctor], controllerDoctors.getAll);
-doctorRouter.get("/", controllerDoctors.getAll);
+// UNA RUTA SOLO DOCTORES: 
+doctorRouter.get("/",[ValidateToken.Doctor], controllerDoctors.getAll);
+// doctorRouter.get("/", controllerDoctors.getAll);
 /* Post Doctor */
 doctorRouter.post("/", bodyDoctorValidatorPOST, controllerDoctors.createDoctor);
 /* Get Doctor by Id */

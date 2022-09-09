@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 
 const controllerAdmins = {
     getAll: async (req, res, next) => {
+        const id = req.user_id
+        console.log(id);
         try {
             const admins = await Admin.find();
             if (!admins.length) return res.status(400).json({ succes: false, message: "error 404" });
