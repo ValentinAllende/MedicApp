@@ -115,3 +115,76 @@
   transform: scale(1.02);
   transition: .2s linear;
 }
+
+
+
+
+
+/*Detail*/
+
+.TopSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: #152c54;
+  margin-bottom: 20px;
+  padding: 15px 0px;
+  border-top: 1px solid rgba(21, 44, 84,.1);
+}
+
+.Image{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #152c54;
+}
+
+.Labels{
+  color: #1479FF;
+  font-size: .8rem;
+  font-weight: 700;
+  opacity: .7;
+}
+
+.Name{
+  font-size: 1.1rem;
+}
+
+.containerData{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerData img{
+  width: 35px;
+  background-color: #1479FF;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.Speciality::after{
+  content: " | ";
+  opacity: .2;
+}
+
+.imgBottom{
+  position: absolute;
+  width: 100px;
+  opacity: .4;
+  bottom: -10px;
+  right: -10px;
+}
+
+.InfoContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-basis: 100%;
+  justify-content: center;
+}
+
