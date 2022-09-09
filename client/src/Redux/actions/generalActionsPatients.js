@@ -8,6 +8,9 @@ import {
 
 export const getPatient = (idPatient) => async (dispatch) => {
   try {
+    if(!idPatient){
+      return dispatch(getPatientById({}));
+    }
     const patientById = await axios.get(`http://localhost:3004/patients/${idPatient}`);
     return dispatch(getPatientById(patientById.data.data));
   } catch (error) {

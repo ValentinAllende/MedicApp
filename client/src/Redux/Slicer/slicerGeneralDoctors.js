@@ -5,6 +5,7 @@ export const generalDoctorSlice = createSlice({
   initialState: {
     doctors: [],
     detailDoctor: {},
+    specialities: []
   },
   reducers: {
     getAllDoctors: (state, action) => {

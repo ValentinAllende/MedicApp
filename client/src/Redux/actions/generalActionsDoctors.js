@@ -6,9 +6,12 @@ import {
   changeStatus
 } from "../Slicer/slicerGeneralDoctors";
 
-export const getDoctor = (idPatient) => async (dispatch) => {
+export const getDoctor = (idDoctor) => async (dispatch) => {
   try {
-    const patientById = await axios.get(`http://localhost:3004/doctors/${idPatient}`);
+    if(!idDoctor){
+      return dispatch(getDoctorById({}));
+    }
+    const patientById = await axios.get(`http://localhost:3004/doctors/${idDoctor}`);
     return dispatch(getDoctorById(patientById.data.data));
   } catch (error) {
     console.log(error);
@@ -24,18 +27,18 @@ export const getDoctors = () => async (dispatch) => {
   }
 };
 
-export const changeStatusDoctor = (idPatient) => async (dispatch) => {
+export const changeStatusDoctor = (idDoctor) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:3004/doctors/status/${idPatient}`);
+    await axios.patch(`http://localhost:3004/doctors/status/${idDoctor}`);
     return dispatch(changeStatus());
   } catch (error) {
     console.log(error);
   }
 };
 
-export const editDoctor = (idPatient, data) => async (dispatch) => {
+export const editDoctor = (idDoctor, data) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:3004/doctors/${idPatient}`, data);
+    await axios.patch(`http://localhost:3004/doctors/${idDoctor}`, data);
     return;
   } catch (error) {
     console.log(error);
