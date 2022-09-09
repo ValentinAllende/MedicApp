@@ -31,7 +31,7 @@ const ValidateToken = {
             const token = headerToken?.replace("Bearer ", "");
             try {
                 const decoded = Jwt.verify(token,"doctortoken" )// process.env.TOKEN_SECRET_ARTIST )
-                req.user_id =  decoded.id
+                req.user_id =  decoded.user_id
                 return next() 
             } catch (error) {
                 return res.status(400).send(error)
@@ -51,7 +51,7 @@ const ValidateToken = {
             const token = headerToken?.replace("Bearer ", "");
             try {
                 const decoded = Jwt.verify(token,"pacientetoken" )// process.env.TOKEN_SECRET_ARTIST )
-                req.user_id =  decoded.id
+                req.user_id =  decoded.user_id
                 return next() 
             } catch (error) {
                 return res.status(400).send(error)
