@@ -22,7 +22,7 @@ const controllerUsers = {
 			confirm: true
 		});
 		// console.log("payment", payment)
-    const newAppointment = new Appointment({ patient:user_id, doctor:'631a560f9f80920040bd696c', hour,date, paymentProcessed});
+    const newAppointment = new Appointment({ patient:user_id, doctor: idDoctor, hour,date, paymentProcessed});
     await newAppointment.save();
     mailer.sendMailAppointment(newAppointment); //envio email
     console.log(newAppointment, 'cita :D')
