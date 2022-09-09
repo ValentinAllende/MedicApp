@@ -2,6 +2,7 @@ import Logo from "../../imagenes compartidas/Logo Nav.png"
 import { Link, useNavigate } from 'react-router-dom';
 
 
+
 export default function NavBar ({avaliable}){
     const imagen = Logo
     const navigate = useNavigate()
