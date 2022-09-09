@@ -14,7 +14,7 @@ function DetalleDoctor (){
   const { idDoctor } = useParams();
   const dispatch = useDispatch();
   let doctor = useSelector((state)=> state.doctores.detail.data)
-  const [selectedDate, setSelectedDate] = useState({})
+  const [selectedDate, setSelectedDate] = useState('')
   const [selectedHour, setSelectedHour] = useState('')
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
@@ -29,7 +29,7 @@ function DetalleDoctor (){
 
   // console.log(separateHours1A, 'lo que me trae hours');
   // console.log(separateHours2A, 'lo que me trae hours2');
-
+/* 
   function handleClickDate(e){
     setSelectedDate({
       date: e.target.value})
@@ -38,6 +38,14 @@ function DetalleDoctor (){
   function handleClickHour(e){
     setSelectedHour({
       hour: e.target.value})
+  }   */
+
+  function handleClickDate(e){
+    setSelectedDate(e.target.value)
+  }  
+
+  function handleClickHour(e){
+    setSelectedHour(e.target.value)
   }  
   
   // function handleDelete(){
@@ -51,10 +59,6 @@ function DetalleDoctor (){
 
   console.log(selectedDate ,'selected date');
   console.log(selectedHour, 'selectred hour');
-  
-
-
-
 
 
   return(
@@ -123,7 +127,7 @@ function DetalleDoctor (){
             return td;
           })()}
           </div>
-          {selectedDate.length >1? (
+          { selectedDate.length > 1  ? (
            <p className='font-raleway text-[#292f53b8] text-sm mt-9 mb-2 ml-2'>Tu cita esta agendada para el  <span className='font-poppins tracking-wide mt-1 mb-2  text-center text-[#1479FF] ml-2' >{selectedDate} </span> a las <span className='font-poppins tracking-wide mt-1 mb-2 ml-2 text-[#1479FF]'>{selectedHour} </span></p>
             ):(
               <span></span>
