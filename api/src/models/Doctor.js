@@ -47,11 +47,7 @@ const doctorSchema = new Schema(
       hour: {
         type: String,
         required: true,
-      },
-      space: {
-        type: Number,
-        required: true,
-      },
+      }
     },
     checkUpPrice: {
       type: Number,

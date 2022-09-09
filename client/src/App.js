@@ -9,7 +9,7 @@ import RegisterDoctor from "./Vistas/Doctor/Componentes/Form";
 import RegisterPatient from "./Vistas/Paciente/Componentes/Form/index";
 import Login from "./Vistas/Compartido/Componentes/Login/Login";
 import PanelDoctor from "./Vistas/Doctor/Componentes";
-
+import Dashboard from "./Vistas/Admin/componentes/Dashboard/Dashboard";
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/panelDoc" element={<PanelDoctor />} />
 
+        <Route path="/admin/dashboard" element={<Dashboard />} />
 
       </Routes>
     </BrowserRouter>
