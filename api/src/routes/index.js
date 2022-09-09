@@ -6,6 +6,7 @@ const routesDoctor = require('./doctor')
 const routesPatient = require('./patient');
 const routesAdmin = require('./admin');
 const routesAuth = require('./auth');
+const routesProfile = require('./profile');
 const routesAppoinment = require('./appointment');
 const routesStripe = require('./stripe');
 
@@ -14,6 +15,9 @@ router.use('/users',routesUser );
 
 /* GET dummy routes. */
 router.use('/dummy',dummyRoutes );
+
+/* Profiles routes */
+router.use('/profile', routesProfile);
 
 /* Doctor routes */
 router.use('/auth', routesAuth);

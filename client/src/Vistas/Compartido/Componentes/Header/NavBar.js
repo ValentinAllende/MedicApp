@@ -6,7 +6,7 @@ export default function NavBar ({avaliable}){
     const imagen = Logo
     const navigate = useNavigate()
     const token = window.localStorage.getItem('auth-token')
-
+console.log(token);
     const logOut = ()=>{
         localStorage.clear()
         navigate('/login')
@@ -20,15 +20,36 @@ export default function NavBar ({avaliable}){
             <img className="object-contain w-16 my-3" src={imagen} alt='logo'/>
             </Link>
             <div className="flex items-center">
-            {avaliable === 'not' ? (
-                ''
+            {/* {
+                JSON.parse(token) === 'ADMIN' ? 
+                <Link to='/'>
+                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
+                </Link>
+                :
+                JSON.parse(token) === 'DOCTOR' ? 
+                <Link to='/'>
+                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
+                </Link> 
+                :
+                JSON.parse(token) === 'PATIENT' ? 
+                <Link to='/'>
+                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
+                </Link> 
+                : null
+            } */}
+
+            {JSON.parse(token)? (
+                
+                <button type="button" onClick={logOut} className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log Out</button>
+                
             ) : <Link to ='/login'>
                     <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Ingresar</p>
-                </Link>}
+                </Link>
+            }
             
             </div>
             </div>
-           <hr className='border-solid border-1 border-gray-400'></hr>
+            <hr className='border-solid border-1 border-gray-400'></hr>
             
             
             {/* <div className="flex items-center space-x-10 ">
