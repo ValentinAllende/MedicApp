@@ -4,8 +4,9 @@ const controllerAdmins = require("../controllers/controller.admin");
 const ValidateToken = require('../middlewares/Authorization');
 
 /* Admins */
-// UNA RUTA SOLO ADMINS:router.get("/",[ValidateToken.Admin], controllerAdmins.getAll);
-router.get("/", controllerAdmins.getAll);
+// UNA RUTA SOLO ADMINS:
+router.get("/",[ValidateToken.Admin], controllerAdmins.getAll);
+// router.get("/", controllerAdmins.getAll);
 router.post("/",  controllerAdmins.createAdmin);
 router.get("/:id", controllerAdmins.getAdmin);
 router.patch("/:id", controllerAdmins.pathAdmin);
