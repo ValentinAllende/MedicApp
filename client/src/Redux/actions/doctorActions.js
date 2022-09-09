@@ -40,17 +40,7 @@ export const getDocsFiltered = (type) => (dispatch) => {
   } catch (e) {}
 };
 
-// export const getTokensBySpeciality = async () => (dispatch) =>{
+// const { data } = await axios.put(`${RUTA_APP}users/logout`, {}, {
+//   headers: { Authorization: `Bearer ${localStorage.getItem('auth-token')}` }
+// });
 
-
-
-//   try{
-//     const{data} = await axios.get("")
-//   }
-//   catch{
-
-//   }
-  
-
- 
-// }
