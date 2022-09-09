@@ -8,6 +8,7 @@ import Stripe from "./Vistas/Paciente/StripeCheckOut"
 import RegisterDoctor from "./Vistas/Doctor/Componentes/Form";
 import RegisterPatient from "./Vistas/Paciente/Componentes/Form/index";
 import Login from "./Vistas/Compartido/Componentes/Login/Login";
+import PanelDoctor from "./Vistas/Doctor/Componentes";
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/registerDoctor" element={<RegisterDoctor />} />
         <Route exact path="/registerPatient" element={<RegisterPatient />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/panelDoc" element={<PanelDoctor />} />
 
 
       </Routes>
