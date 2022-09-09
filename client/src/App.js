@@ -10,16 +10,20 @@ import RegisterPatient from "./Vistas/Paciente/Componentes/Form/index";
 import Login from "./Vistas/Compartido/Componentes/Login/Login";
 import PanelDoctor from "./Vistas/Doctor/Componentes";
 import Dashboard from "./Vistas/Admin/componentes/Dashboard/Dashboard";
+import { HOME, LOGIN, PRIVATE_ADM, PRIVATE_DOC, PROFILE_ADM, PROFILE_DOC } from "./config/routes/paths";
 
 
 function App() {
   return (
- 
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />} /> 
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/dummy/doctors" element={<DoctorsRoster />} />
-        <Route exact path="dummy/doctors/:idDoctor/stripe" element={<Stripe />}/>
+        <Route
+          exact
+          path="dummy/doctors/:idDoctor/stripe"
+          element={<Stripe />}
+        />
         <Route
           exact
           path="/dummy/doctors/:idDoctor"
@@ -31,8 +35,21 @@ function App() {
         <Route exact path="/panelDoc" element={<PanelDoctor />} />
 
         <Route path="/admin/dashboard" element={<Dashboard />} />
-
       </Routes>
+      {/* Proteccion de Rutas */}
+      {/* <Routes>
+        <Route exact path={HOME} element={<Home />} />
+        <Route exact path={LOGIN} element={<Login />} />
+        
+        <Route exact path={PRIVATE_ADM}element={<RegisterPatient />} />
+        <Route path={PROFILE_ADM} element={<Dashboard />} />
+
+
+        <Route exact path={PRIVATE_DOC} element={<RegisterDoctor />} />
+        <Route exact path={PROFILE_DOC} element={<PanelDoctor />} />
+
+
+      </Routes> */}
     </BrowserRouter>
   );
 }
