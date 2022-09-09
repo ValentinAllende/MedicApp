@@ -23,7 +23,7 @@ const Doctors = ({ iconTitle, iconActive, iconInactive }) => {
         <button onClick={()=>changeSection("Doctores")}>Ver Todos</button>
       </div>
       {doctors &&
-        doctors.slice(doctors.length - 6, doctors.length - 1).map((doctor) => {
+        doctors.slice(doctors.length - 8, doctors.length - 1).map((doctor) => {
           return (
             <article className={styles.CardDoctorDashboard} key={doctor._id}>
               <div className={styles.Avatar}>

@@ -1,7 +1,6 @@
 .ContainerBanner{
   width: 100%;
 
-  border-radius: 15px;
 }
 
 .ContainerBanner h2{
@@ -14,25 +13,25 @@
 
 .Dashboard{
   background-color: rgb(41, 47, 83);
-  opacity: .85;
+  opacity: 1;
 }
 
 .Pacientes{
-  background-color: #1479FF;
-  opacity: .85;
+  background-color: rgb(41, 47, 83);
+  opacity: 1;
 }
 
 .Doctores{
-  background-color: #44BA54;
-  opacity: .85;
+  background-color: rgb(41, 47, 83);
+  opacity: 1;
 }
 
 .Citas{
-  background-color: #5C4FB7;
-  opacity: .85;
+  background-color: rgb(41, 47, 83);
+  opacity: 1;
 }
 
 .Comentarios{
-  background-color: #5C4FB7;
-  opacity: .85;
+  background-color: rgb(41, 47, 83);;
+  opacity: 1;
 }
