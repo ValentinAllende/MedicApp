@@ -54,9 +54,7 @@ export default function CheckOutForm(props) {
 
 
       const { id } = paymentMethod;
-      const dec1 = doctor?.checkUpPrice
-      const dec2 = dec1.slice(1)
-      const monto = parseFloat(dec2)
+      const monto = parseFloat(doctor?.checkUpPrice)
       const token = window.localStorage.getItem("auth-token")
       const hour = window.localStorage.getItem("hour")
       const date = window.localStorage.getItem("date")
@@ -128,7 +126,7 @@ export default function CheckOutForm(props) {
           </div>
         </div>
 
-        <h4 >Total del pago: ${ doctor?.checkUpPrice ? doctor?.checkUpPrice.split("$") : "error"}</h4>
+        <h4 >Total del pago: ${ doctor?.checkUpPrice ? doctor?.checkUpPrice : "error"}</h4>
         <img src=""/>
         <CardElement  />
         <button disabled={!stripe} className="text-gray-900 bg-gradient-to-r from-green-200 via-green-300 to-blue-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-pink-800 border-2 ">
