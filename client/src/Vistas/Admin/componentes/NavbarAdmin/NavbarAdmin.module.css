@@ -1,0 +1,70 @@
+.HeaderContainer, .MenuTopContainer, .LogoContainer, .ListContainer, .ListItem{
+  display: flex;
+}
+.HeaderContainer, .MenuTopContainer, .LogoContainer, .ListContainer{
+  flex-direction: column;
+}
+.HeaderContainer, .LogoContainer, .ListItem{
+  align-items: center;
+}
+
+.HeaderContainer{
+  justify-content: space-between;
+  background-color: rgb(41, 47, 83);
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  padding: 20px 10px;
+  box-shadow: 7px 8px 5px 0px rgba(41,47,83,0.25);
+} 
+
+.MenuTopContainer{
+  gap: 50px;
+  padding: 0 10px;
+}
+
+.LogoContainer{
+  gap: 10px;
+  color: #F1F2F6;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #F1F2F6;
+}
+
+.LogoContainer h4{
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.LogoContainer h4 b{
+  color: #1479FF;
+}
+
+.Logo{
+  width: 50px;
+}
+
+.ListContainer{
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 60px;
+  color: #F1F2F6;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.ListItem{
+  justify-content: center;
+  gap: 8px;
+}
+
+.ListItem img{
+  width: 22px;
+  opacity: .75;
+}
+
+.FooterText{
+  color: #F1F2F6;
+  font-weight: 500;
+  font-size: .8rem;
+  justify-self: flex-end;
+}
