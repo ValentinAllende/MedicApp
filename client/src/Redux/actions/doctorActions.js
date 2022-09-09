@@ -40,3 +40,17 @@ export const getDocsFiltered = (type) => (dispatch) => {
   } catch (e) {}
 };
 
+// export const getTokensBySpeciality = async () => (dispatch) =>{
+
+
+
+//   try{
+//     const{data} = await axios.get("")
+//   }
+//   catch{
+
+//   }
+  
+
+ 
+// }
