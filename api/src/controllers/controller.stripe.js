@@ -1,12 +1,16 @@
 const Stripe = require('stripe');
-// const mailer = require("../config/sendMails/mailer");
+
 
 
 const stripe = new Stripe(process.env.SK_STRIPE)
 
 const controllerUsers = {
   checkout: async (req, res, next) => {
-    const { id, amount } = req.body;
+    const { id, amount} = req.body.data;
+    const token = req.get('Authorization');
+    console.log(req.get,"req.get")
+
+
     console.log("Recibido",req.body)
     try {
         const payment = await stripe.paymentIntents.create({
@@ -17,7 +21,7 @@ const controllerUsers = {
 			confirm: true
 		});
 		console.log("payment", payment)
-    // mailer.sendMailAppointment(newAppointment);
+
 		res.json({ msg: "Successful payment" })
 
     } catch (error) {
