@@ -19,7 +19,7 @@ function DetalleDoctor (){
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
   let hours = schedule?.hour
-  
+
   let separateHours = hours?.split('-')
   let separateHours1 = doctor && separateHours[0]?.trim()
   let separateHours2 = doctor && separateHours[1]?.trim()
@@ -29,11 +29,11 @@ function DetalleDoctor (){
 
   // console.log(separateHours1A, 'lo que me trae hours');
   // console.log(separateHours2A, 'lo que me trae hours2');
-/* 
+/*
   function handleClickDate(e){
     setSelectedDate({
       date: e.target.value})
-  }  
+  }
 
   function handleClickHour(e){
     setSelectedHour({
@@ -42,24 +42,24 @@ function DetalleDoctor (){
 
   function handleClickDate(e){
     setSelectedDate(e.target.value)
-  }  
+  }
 
   function handleClickHour(e){
     setSelectedHour(e.target.value)
-  }  
-  
+  }
+
   // function handleDelete(){
   //   window.location.reload(false);
-  // }  
+  // }
 
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
 
-
+ localStorage.setItem('hour',selectedHour)
+ localStorage.setItem('date',selectedDate)
   console.log(selectedDate ,'selected date');
   console.log(selectedHour, 'selectred hour');
-
 
   return(
       <>
@@ -79,25 +79,25 @@ function DetalleDoctor (){
               })}
             <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 flex flex-row '> <span className='mr-2'><HiLocationMarker/></span>  {doctor?.city}, <span className='ml-2'>{doctor?.country}</span></p>
             <p className='font-raleway text-[#292f536f] mt-2 mb-2 '> Precio consulta: {doctor?.checkUpPrice}</p>
-            
+
               <Link to={ "/dummy/doctors/" + idDoctor + "/stripe"}>
-       
+
               Pagar consulta.
-           
+
             </Link>
-            
+
             <span className='font-raleway w-fit text-[#1479FF] align-middle rounded flex flex-row '> <span className='mt-1'><HiOutlinePhone/></span>: <span className='text-[#1479FF] tracking-[.10em]'>{doctor?.phoneNumber}</span> </span>
-            
-            {/* <div className='text-[#1479FF] mt-4 mb-2 '> 
+
+            {/* <div className='text-[#1479FF] mt-4 mb-2 '>
               {<StarDetail
-              stars={doctor && rating}/>} 
+              stars={doctor && rating}/>}
             </div>
             */}
             </div>
-            
+
           </section>
           {/* <section className='bg-white w-[550px] h-fit mt-10 rounded-t' >
-          <h1 className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Reseñas</h1> 
+          <h1 className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Reseñas</h1>
             <p className='font-raleway text-[#292f53b8] text-sm mt-4 mb-2 text-center' >{doctor?.name} Aun no tiene reseñas</p>
             <br></br>
           </section> */}
@@ -106,7 +106,7 @@ function DetalleDoctor (){
         <div>
         <section className='bg-white w-[550px] h-fit mt-10 rounded mb-2' >
 
-          <p className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Agenda tu cita</p> 
+          <p className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Agenda tu cita</p>
 
           <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 ml-2'> Direccion: {doctor && doctor.address}</p>
 
@@ -115,7 +115,7 @@ function DetalleDoctor (){
           <input type="date" id="start" name="trip-start" min="2022-09-05" max="2022-09-09" className="font-raleway ml-2" onClick={e => handleClickDate(e)}/>
           <br></br>
 
-        
+
 
           <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu Hora:</p>
           <div>
@@ -134,8 +134,8 @@ function DetalleDoctor (){
               )}
           {selectedDate.length >1 && selectedHour.length>1 ? (
             <div className=" flex justify-center  ">
-              <button className='font-poppins text-lg text-white  focus:bg-[#292F53] rounded bg-[#1479FF] w-40 h-10 m-3 mt-9 mb-8' >Reserva tu cita </button>
-              </div> 
+              <button className='font-poppins text-lg text-white  focus:bg-[#292F53] rounded bg-[#1479FF] w-40 h-10 m-3 mt-9 mb-8'>Reserva tu cita </button>
+              </div>
             ):(
             <span></span>
             )}

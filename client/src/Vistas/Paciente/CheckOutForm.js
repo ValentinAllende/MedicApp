@@ -14,7 +14,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function CheckOutForm(props) {
   //----------------------------------------------------
-  
+
   const dispatch = useDispatch();
   const [loading,setLoading] = useState(false)
   const navigate = useNavigate()
@@ -23,51 +23,55 @@ export default function CheckOutForm(props) {
   const [edit, setEdit]= useState()
   const stripe = useStripe();
   const elements = useElements();
-  
+
   //---------------------------------------------------------------------------
-  
-  
+  console.log(idDoctor,' id')
+
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   }, []);
-  
-  
+
+
   //-----------------------------------------------------
-  
-  
-  
-  
-  
+
+
+
+
+
 
   const handleSubmit = async (e) => {
-    
+
     e.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement)
-      
+
     });
     setLoading(true);
-    
-    
+
+
     if (!error) {
-  
+
 
       const { id } = paymentMethod;
       const dec1 = doctor?.checkUpPrice
       const dec2 = dec1.slice(1)
       const monto = parseFloat(dec2)
       const token = window.localStorage.getItem("auth-token")
-      const parsed = JSON.parse(token)
-      
-      console.log(parsed,"pago")
+      const hour = window.localStorage.getItem("hour")
+      const date = window.localStorage.getItem("date")
+      //const parsed = JSON.parse(token)
+      const paymentProcessed = true;
+      // const hourParsed = JSON.parse(hour)
+      // const dateParsed = JSON.parse(date)
+      console.log(token,"pago",  date, 'date', hour,'hour')
       try {
         const { data } = await axios ('http://localhost:3004/stripe/checkout ', {
-        
-          headers: { 'Authorization': `Bearer ${parsed.token}`},
-          data:{ amount:monto * 1000, id: id},
+
+          headers: { 'Authorization': `Bearer ${JSON.parse(token)}`},
+          data:{ amount:monto * 1000, id: id, date: date, hour: hour, idDoctor: idDoctor, paymentProcessed: paymentProcessed},
           method: 'POST',
-          
+
 
         },
         );
@@ -98,11 +102,11 @@ export default function CheckOutForm(props) {
     });
   }
   console.log('edit',edit)
-  
+
 
   return (
     <div className="bg-gradient-to-r from-cyan-400 to-blue-800">
-    
+
       <Link to="/" className="flex flex-wrap bg-gradient-to-r from-cyan-800 to-blue-300 text-[40px]  text-purple-50 font-medium "> ← Volver al home</Link>
     <form onSubmit={(e) => handleSubmit(e)} className='card flex flex-wrap justify-center  h-[1000px] '>
       <div className='bg-blue-300 h-[500px] mt-[100px] w-[50%]  text-[40px] text-center p-4 rounded-xl  border-gray-800 border-2 '>
@@ -110,13 +114,13 @@ export default function CheckOutForm(props) {
         <div >
           <div>
             <label > Usted esta por realizar un pago de la consulta con el Dr/a {doctor?.name}. </label>
-           
+
           </div>
          <label> Precio de la consulta{ doctor?.checkUpPrice}</label>
           <div>
             <label >Address: </label>
             <input
-           
+
               type="text"
               name="address"
               onChange={(e) => handleChange(e)}
