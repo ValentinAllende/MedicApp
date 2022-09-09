@@ -10,13 +10,15 @@ import Modal from "../Modal/Modal";
 import Toggle from "../Dashboard/Toggle/Toggle";
 import EditPatient from "./EditPatient/EditPatient";
 import CreatePatient from "./CreatePatient/CreatePatient";
+import DetailPatient from "./DetailPatient/DetailPatient";
 
 const Patients = () => {
   const dispatch = useDispatch();
   const { patients, detailPatient } = useSelector((state) => state.generalPatients);
   const [form, setForm] = useState({
     edit: false,
-    create: false
+    create: false,
+    detail: false
   });
   /**
    *  @changeStatus = Método para (dispatch) que cambia el estado del paciente (Activo o Inactivo)
@@ -38,13 +40,23 @@ const Patients = () => {
     setForm({...form, edit:true});
   };
 
+   /**
+   *  @patientDetail = Método para (dispatch) que ver el detalle del paciente
+   *  @param => el id del Doctor
+   *  @return => no retorna nada
+   * */ 
+    const patientDetail = (idDoctor) => {
+      dispatch(getPatient(idDoctor));
+      setForm({...form, detail:true});
+    };
 
   /**
    *  @return => re-render de todos los pacientes y cambia el state edit
    * */
   const reRenderPatients = ()=> {
     dispatch(getPatients());
-    setForm({create:false, edit:false});
+    dispatch(getPatient());
+    setForm({create:false, edit:false, detail: false});
   }
  
   /**
@@ -86,6 +98,15 @@ const Patients = () => {
         </Modal>
         }
 
+        {/** @detail => state: habilita el modal para ver detalle de paciente */}
+        {form.detail &&
+        <Modal>
+          <DetailPatient patient={detailPatient} 
+                      onClick={reRenderPatients}
+                      />
+        </Modal>
+        }
+
         {/** @create => state: habilita el modal para la creación de un paciente */}
         {form.create &&
         <Modal>
@@ -100,7 +121,7 @@ const Patients = () => {
               <div className={styles.Avatar}>
                 <img src={patient.image || avatarDefault} alt="avatar-img" />
               </div>
-              <h5>{patient.name}</h5>
+              <h5 onClick={() => patientDetail(patient._id)}>{patient.name}</h5>
               <span className={styles.Email}>{patient.email}</span>
               <span className={styles.PhoneNumber}>{patient.phoneNumber}</span>
               <div className={styles.isToggle}>

@@ -124,6 +124,12 @@
   border-right: 1px solid rgba(41, 47, 83,.2);
 }
 
+.CardPatientDashboard h5:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: .3s;
+}
+
 .Email, .PhoneNumber{
   opacity: .85;
   border-right: 1px solid rgba(41, 47, 83,.2);
@@ -148,6 +154,7 @@
 
 .Avatar img{
   height: 100%;
+  object-fit: cover;
 }
 
 .isToggle{
