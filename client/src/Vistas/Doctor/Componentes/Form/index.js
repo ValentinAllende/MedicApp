@@ -20,7 +20,7 @@ export default function Registro() {
     password: "",
     rpassword: "",
     phoneNumber: "",
-    hour: "",
+    hour: [],
     space: 0,
     checkUpPrice: "",
   });
@@ -99,7 +99,7 @@ export default function Registro() {
         email: input.email,
         password: input.password,
         phoneNumber: input.phoneNumber,
-        hour: input.hour,
+        hour: input.hour.join(" - "),
         space: input.space,
         checkUpPrice: input.checkUpPrice,
       });
@@ -117,6 +117,13 @@ export default function Registro() {
       ...input,
       specialities: [e.target.value],
     });
+  }
+
+  function handleHour(e) {
+    let hour = [...input.hour];
+    if (e.target.id === "first") hour[0] = e.target.value;
+    if (e.target.id === "second") hour[1] = e.target.value;
+    setInput({ ...input, hour });
   }
 
   return (
@@ -142,7 +149,7 @@ export default function Registro() {
             {errors.name ? <p>{errors.name}</p> : null}
           </div>
           <div className="mb-6 flex gap-5">
-          <div className="w-1/2">
+            <div className="w-1/2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Pais
               </label>
@@ -211,18 +218,22 @@ export default function Registro() {
             />
             {errors.phoneNumber ? <p>{errors.phoneNumber}</p> : null}
           </div>
-          <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
+          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
             Especialidad
           </label>
           <select
             onChange={(e) => {
               handleSelect(e);
             }}
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option selected>Seleccione una Opcion</option>
+            <option value={""} selected>
+              Seleccione una Opcion
+            </option>
             {especialidades.map((t) => (
-              <option value={t}>{t}</option>
+              <option value={t} key={t}>
+                {t}
+              </option>
             ))}
           </select>
           {errors.specialities ? <p>{errors.specialities}</p> : null}
@@ -233,15 +244,42 @@ export default function Registro() {
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                 Horario
               </label>
-              <input
-                type="text"
-                name="hour"
-                value={input.hour}
-                placeholder="Ej: 8:00 - 16:00"
-                onChange={(e) => handleChange(e)}
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                required=""
-              />
+              <div className="flex justify-evenly">
+                <select id="first" onChange={(e) => handleHour(e)}>
+                  <option value="07:00" selected>
+                    7 AM
+                  </option>
+                  <option value="08:00">8 AM</option>
+                  <option value="09:00">9 AM</option>
+                  <option value="10:00">10 AM</option>
+                  <option value="11:00">11 AM</option>
+                  <option value="12:00">12 AM</option>
+                  <option value="13:00">1 PM</option>
+                  <option value="14:00">2 PM</option>
+                  <option value="15:00">3 PM</option>
+                  <option value="16:00">4 PM</option>
+                  <option value="17:00">5 PM</option>
+                  <option value="18:00">6 PM</option>
+                  <option value="19:00">7 PM</option>
+                </select>
+                -
+                <select id="second" onChange={(e) => handleHour(e)}>
+                  <option value="08:00" selected>
+                    8 AM
+                  </option>
+                  <option value="09:00">9 AM</option>
+                  <option value="10:00">10 AM</option>
+                  <option value="11:00">11 AM</option>
+                  <option value="12:00">12 AM</option>
+                  <option value="13:00">1 PM</option>
+                  <option value="14:00">2 PM</option>
+                  <option value="15:00">3 PM</option>
+                  <option value="16:00">4 PM</option>
+                  <option value="17:00">5 PM</option>
+                  <option value="18:00">6 PM</option>
+                  <option value="19:00">7 PM</option>
+                </select>
+              </div>
             </div>
             <div className="w-1/2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -250,6 +288,7 @@ export default function Registro() {
               <input
                 type="text"
                 name="checkUpPrice"
+                placeholder="$"
                 value={input.checkUpPrice}
                 onChange={(e) => handleChange(e)}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
