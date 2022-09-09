@@ -1,10 +1,12 @@
 const express = require('express');
 const patientRouter = express.Router();
 const controllerPatients = require("../controllers/controller.patient");
+const ValidateToken = require('../middlewares/Authorization');
 const { paramIdPatientValidator, bodyPatientValidatorPOST, bodyPatientValidatorPATCH, bodyPatientValidatorFAVORITES } = require("../middlewares/validatorPatient.js");
 
 /* PATIENTS */
-/* Get All Patients */
+/* Get All Patients  */
+// UNA RUTA SOLO PACIENTES:  patientRouter.get("/",[ValidateToken.Patient], controllerPatients.getAll);
 patientRouter.get("/", controllerPatients.getAll);
 /* Post Patient */
 patientRouter.post("/", bodyPatientValidatorPOST , controllerPatients.createPatient);

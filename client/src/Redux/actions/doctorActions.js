@@ -40,3 +40,6 @@ export const getDocsFiltered = (type) => (dispatch) => {
   } catch (e) {}
 };
 
+// const { data } = await axios.put(`${RUTA_APP}users/logout`, {}, {
+//   headers: { Authorization: `Bearer ${localStorage.getItem('auth-token')}` }
+// });
