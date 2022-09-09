@@ -5,9 +5,9 @@ const ValidateToken = require('../middlewares/Authorization');
 const { paramIdPatientValidator, bodyPatientValidatorPOST, bodyPatientValidatorPATCH, bodyPatientValidatorFAVORITES } = require("../middlewares/validatorPatient.js");
 
 /* PATIENTS */
-/* Get All Patients  */
+/* Get All Patients  */ 
 // UNA RUTA SOLO PACIENTES:  patientRouter.get("/",[ValidateToken.Patient], controllerPatients.getAll);
-patientRouter.get("/", controllerPatients.getAll);
+patientRouter.get("/", [ValidateToken.Patient], controllerPatients.getAll);
 /* Post Patient */
 patientRouter.post("/", bodyPatientValidatorPOST , controllerPatients.createPatient);
 /* Get Patient by Id */

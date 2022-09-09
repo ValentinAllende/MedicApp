@@ -58,13 +58,15 @@ export default function CheckOutForm(props) {
       const dec2 = dec1.slice(1)
       const monto = parseFloat(dec2)
       const token = window.localStorage.getItem("auth-token")
+      const parsed = JSON.parse(token)
       
-      console.log(monto,"pago")
+      console.log(parsed,"pago")
       try {
-        const { data } = await axios.post('http://localhost:3004/stripe/checkout', {
+        const { data } = await axios ('http://localhost:3004/stripe/checkout ', {
         
-          headers: { 'Authorization': `Bearer ${token}`},
-          data:{ amount:monto * 1000, id: id}
+          headers: { 'Authorization': `Bearer ${parsed.token}`},
+          data:{ amount:monto * 1000, id: id},
+          method: 'POST',
           
 
         },
