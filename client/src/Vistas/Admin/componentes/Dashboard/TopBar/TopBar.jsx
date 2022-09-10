@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./TopBar.module.css";
-import avatar from "../../assets/dashboard/avatar-test.jpeg";
-import menu from "../../assets/dashboard/menu-icon.svg";
-import Banner from "../Dashboard/Banner/Banner";
+import avatar from "../../../assets/dashboard/avatar-test.jpeg";
+import menu from "../../../assets/dashboard/menu-icon.svg";
+import Banner from "../../Dashboard/Banner/Banner";
 
 const TopBar = () => {
   return (

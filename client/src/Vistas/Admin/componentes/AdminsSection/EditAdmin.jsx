@@ -1,17 +1,17 @@
 import React, {useState} from "react";
-import styles from "./EditPatient.module.css";
-import iconClose from "../../../assets/dashboard/close-icon.svg";
-import iconInput from "../../../assets/dashboard/input-icon.svg";
+import styles from "./SectionsAdmins.module.css";
+import iconClose from "../../assets/dashboard/close-icon.svg";
+import iconInput from "../../assets/dashboard/input-icon.svg";
 import { useDispatch } from "react-redux";
-import { editPatient } from "../../../../../Redux/actions/generalActionsPatients";
+/* import { editAdmin } from "../../../../../Redux/actions/generalActionsAdmins"; */
+import { validateInput } from "../../helpers/regexValidationsInputs";
 
-const EditPatient = ({id, onClick, name, email, phoneNumber}) => {
+const EditAdmin = ({id, onClick, name, email}) => {
   const dispatch = useDispatch();
 
   const initialInputs = {
     name: "",
     email: "",
-    phoneNumber: ""
   };
 
   const [input, setInput] = useState(initialInputs);
@@ -31,57 +31,25 @@ const EditPatient = ({id, onClick, name, email, phoneNumber}) => {
     console.log(input);
   };
 
-
-    /** Basic Regex for Validate Inputs */
-    const noEmpty = /\S+/;
-    const validateText = /^(?=.*?[A-Za-z])[A-Za-z+\s]+$/;
-  /*   const validateWords = /^.{15,50}$/; */
-    const validateEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  
-    const validateInput = (input) => {
-      let errors = {};
-      if (
-        !noEmpty.test(input.name) ||
-        !validateText.test(input.name) ||
-        input.name.length < 4
-      ) {
-        errors.name = "Solo se permiten letras.";
-      }
-      if (
-        !noEmpty.test(input.email) ||
-        !validateEmail.test(input.email)
-      ) {
-        errors.email = "Formato de email incorrecto";
-      }
-      if (
-        !noEmpty.test(input.phoneNumber)
-      ) {
-        errors.phoneNumber = "Formato de teléfono incorrecto";
-      }
-      return errors;
-    };
-
   const handleSubmit = async (e) => {
     console.log(id);
     e.preventDefault();
     if (
       !inputErrors.name &&
-      !inputErrors.email &&
-      !inputErrors.phoneNumber 
+      !inputErrors.email
     ) {
-      dispatch(editPatient(id,input));
+/*       dispatch(editAdmin(id,input)); */
       setInput(initialInputs);
       onClick();
     } else {
       console.log("error");
     }
   };
-
   
   return (
     <form className={styles.Form} onSubmit={(e) => {handleSubmit(e);}}>
           <img src={iconClose} alt="alt-close-icon" className={styles.ButtonClose} onClick={onClick}/>
-          <h2 className={styles.TitleModal}>Editar Paciente</h2>
+          <h2 className={styles.TitleModal}>Editar Admin</h2>
           <div className={styles.InputContainer}>
             <span
               className={inputErrors.name ? styles.Errors : styles.NoErrors}
@@ -114,29 +82,13 @@ const EditPatient = ({id, onClick, name, email, phoneNumber}) => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className={styles.InputContainer}>
-            <span
-              className={inputErrors.phoneNumber ? styles.Errors : styles.NoErrors}
-            >
-              {inputErrors.phoneNumber}
-            </span>
-            <label><img src={iconInput} alt="icon-label-input" />Teléfono:</label>
-            <input
-              className={styles.Input}
-              type="text"
-              name="phoneNumber"
-              placeholder={phoneNumber}
-              value={input.phoneNumber}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-
+      
       <button className={styles.ButtonSubmit} type="submit">
-        Editar Paciente
+        Editar Admin
       </button>
 
     </form>
   );
 };
 
-export default EditPatient;
+export default EditAdmin;

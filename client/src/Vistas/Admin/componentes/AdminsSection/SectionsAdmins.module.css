@@ -1,9 +1,21 @@
 .Form,
 .InputContainer,
-.ContainerList,
-.OutputContainer{
+.InputContainer label,
+.TopSection,
+.containerData,
+.InfoContainer {
   display: flex;
+}
+
+.Form,
+.InputContainer,
+.InfoContainer,
+.TopSection{
   flex-direction: column;
+}
+
+.Form,
+.InputContainer{
   justify-content: center;
   align-items: flex-start;
   font-family: "Poppins", sans-serif;
@@ -12,7 +24,6 @@
 .Form {
   position: relative;
   width: 100%;
-  flex-direction: column;
   padding: 40px;
 }
 
@@ -23,18 +34,7 @@
   align-self: center;
 }
 
-.Steps{
-  font-size: .9rem;
-  background-color: #1479FF;
-  padding: 5px 15px;
-  border-radius: 5px;
-  color: #f9f9f9;
-  position: absolute;
-  top: -30px;
-  left: -20px;
-}
-
-.InputContainer, .SelectContainer{
+.InputContainer{
   width: 100%;
   padding: 10px;
   position: relative;
@@ -45,7 +45,6 @@
 }
 
 .InputContainer label{
-  display: flex;
   gap: 5px;
   align-items: center;
   font-size: .8rem;
@@ -71,7 +70,7 @@
 }
 
 .ButtonSubmit {
-  width: 100%;
+  width: 80%;
   background-color: #152c54;
   border: 1px solid #152c54;
   color: #f9f9f9;
@@ -92,7 +91,7 @@
   transition: 0.7s ease-in-out;
 }
 
-.Errors, .Errors2, .NoErrors{
+.Errors, .NoErrors{
   background-color: #E96668;
   padding: 1px 10px;
   color: #f9f9f9;
@@ -104,13 +103,9 @@
   border-radius: 5px;
   z-index: 1;
 }
+
 .NoErrors{
   display: none;
-}
-
-.Errors2{
-  left: 59.8%;
-  z-index: 1;
 }
 
 .ButtonClose{
@@ -129,102 +124,6 @@
   transition: .2s linear;
 }
 
-.SelectCreate {
-  /* Reset */
-  appearance: none;
-  border: 0;
-  outline: 0;
-  font: inherit;
-  /* Personalize */
-  color: rgb(20, 121, 255);
-  width: 100%;
-  height: 2.6rem;
-  padding: 0 4rem 0 1.0rem;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
-      no-repeat right 0.8rem center / 1rem,
-    linear-gradient(
-      to left,
-      rgba(20, 121, 255, 0.9) 2.5rem,
-      rgba(255, 255, 255, 1) 2.5rem
-    );
-  color: var(--dark-color);
-  border: 1px solid rgba(59, 101, 245, 0.8);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  /* <option> colors */
-  font-size: .85rem;
-  /* Remove focus outline */
-}
-
-.SelectCreate option {
-  color: #152c54;
-}
-
-.SelectCreate:focus {
-  outline: none;
-}
-.SelectCreate::-ms-expand {
-  display: none;
-}
-
-.OutputContainer{
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: #F3F3FB;
-  gap: 5px;
-}
-
-.ContainerList{
-  color: #f9f9f9;
-  font-size: .8rem;
-  font-weight: 500;
-  gap: 7px;
-  background-color: rgba(20, 121, 255,.8);
-  border-radius: 3px;
-  width: 100%;
-  padding: 5px;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-}
-
-.OutputLabel{
-  flex-basis: 0 1 80%
-}
-
-.ContainerList button{
-  border-style: none;
-  background-color: #f9f9f9;
-  color: rgba(20, 121, 255,.8);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 3px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-
-.FirstContainer{
-  width: 100%;
-}
-
-.SecondContainer{
-  width: 100%;
-  display: none;
-}
-
-.Active{
-  display: block;
-}
-
-.Inactive{
-  display: none;
-}
 
 
 
@@ -232,7 +131,6 @@
 /*Detail*/
 
 .TopSection{
-  display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -240,7 +138,6 @@
   color: #152c54;
   margin-bottom: 20px;
   padding: 15px 0px;
-  border-bottom: 1px solid rgba(21, 44, 84,.1);
   border-top: 1px solid rgba(21, 44, 84,.1);
 }
 
@@ -264,7 +161,6 @@
 }
 
 .containerData{
-  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -290,16 +186,7 @@
 }
 
 .InfoContainer{
-  display: flex;
-  flex-direction: column;
   gap: 10px;
   flex-basis: 100%;
   justify-content: center;
-}
-
-.BottomSection{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
