@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
-
+import InputImage from "../../../Compartido/Componentes/Register/InputImage";
 
 export default function CreatePatient() {
   const navigate = useNavigate();
@@ -13,6 +13,7 @@ export default function CreatePatient() {
     email: "",
     password: "",
     rpassword: "",
+    image: "https://180dc.org/wp-content/uploads/2016/08/default-profile.png",
   });
 
   function handleChange(e) {
@@ -60,6 +61,7 @@ export default function CreatePatient() {
         phoneNumber: input.phoneNumber,
         email: input.email,
         password: input.password,
+        image: input.image,
       });
       console.log(res);
       if (res.status === 201) {
@@ -69,6 +71,10 @@ export default function CreatePatient() {
     } catch (e) {
       console.log(e.toJSON());
     }
+  }
+
+  function handleImage(imgUrl) {
+    setInput({ ...input, image: imgUrl });
   }
 
   return (
@@ -106,6 +112,16 @@ export default function CreatePatient() {
               required={true}
             />
             {inputErrors.phoneNumber ? <p>{inputErrors.phoneNumber}</p> : null}
+          </div>
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              Imagen o Foto de Perfil
+            </label>
+            <InputImage
+              action={handleImage}
+              imgUrl={input.image}
+              className="flex gap-4 items-center"
+            />
           </div>
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
