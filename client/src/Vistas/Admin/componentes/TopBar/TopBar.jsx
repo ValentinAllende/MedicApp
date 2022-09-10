@@ -17,7 +17,7 @@ const TopBar = () => {
         </div>
         <img src={menu} alt="menu-icon" className={styles.IconMenu} />
       </section>
-      <Banner/>
+     {/*  <Banner/> */}
     </>
   );
 };

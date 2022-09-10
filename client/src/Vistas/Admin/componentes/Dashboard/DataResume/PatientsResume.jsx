@@ -24,7 +24,7 @@ const PatientsResume = ({avatar, iconTitle, iconActive, iconInactive}) => {
         <button  onClick={()=>changeSection("Pacientes")}>Ver Todos</button>
       </div>
       {patients &&
-        patients.slice(patients.length - 8, patients.length - 1).map((patient) => {
+        patients.slice(patients.length - 6, patients.length - 1).map((patient) => {
           return (
             <article className={styles.CardDoctorDashboard} key={patient._id}>
               <div className={styles.Avatar}>
