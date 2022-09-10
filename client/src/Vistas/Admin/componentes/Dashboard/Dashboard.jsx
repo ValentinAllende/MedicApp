@@ -8,9 +8,11 @@ import DataResume from "./DataResume/DataResume";
 import Patients from "../PatientsSection/Patients";
 import Doctores from "../DoctorsSection/Doctores";
 import Admins from "../AdminsSection/Admins";
+import Appointments from "../AppointmentSection/Appointments";
 import { getDoctors } from "../../../../Redux/actions/generalActionsDoctors";
 import { getPatients } from "../../../../Redux/actions/generalActionsPatients";
-
+import { getAppointments } from "../../../../Redux/actions/generalActionsAppointments";
+import { getAdmins } from "../../../../Redux/actions/generalActionsAdmins";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -22,6 +24,8 @@ const Dashboard = () => {
    useEffect(() => {
     dispatch(getDoctors());
     dispatch(getPatients());
+    dispatch(getAdmins());
+    dispatch(getAppointments());
   }, [dispatch]);
 
 
@@ -55,7 +59,7 @@ const Dashboard = () => {
         }
         {changeSection === "Citas" &&
           <>
-            <Patients/>
+            <Appointments />
           </>
         }
         {changeSection === "Comentarios" &&
