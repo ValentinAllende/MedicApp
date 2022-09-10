@@ -37,6 +37,8 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter);
 
-app.get("/testDeploy", res.send("Funcionando"));
+app.get("/testDeploy", function (req, res, next) {
+   res.send("Funcionando");
+ });
 
 module.exports = app;
