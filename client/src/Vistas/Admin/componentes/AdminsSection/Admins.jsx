@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from "react";
+import moment from "moment";
 import styles from "./Admins.module.css";
 import iconTitle from "../../assets/ico-dark.png";
 import avatarDefault from "../../assets/dashboard/default-avatar.jpg";
@@ -82,11 +83,10 @@ const Admins = () => {
           <div className={styles.Avatar}></div>
           <h5>Nombre Completo</h5>
           <span className={styles.Email}>Email</span>
-          <span className={styles.PhoneNumber}>ID</span>
+          <span className={styles.Id}>ID</span>
+          <span className={styles.Actions}>Creacion</span>
           <span className={styles.isToggle}>Estado</span>
-          {/* <div className={styles.Actions}>
-            <span>Acciones</span>
-          </div> */}
+          
         </article>
 
         {/** @edit => state: habilita el modal para editar un admin */}
@@ -121,13 +121,11 @@ const Admins = () => {
               </div>
               <h5 onClick={() => adminDetail(admin._id)}>{admin.name}</h5>
               <span className={styles.Email}>{admin.email}</span>
-              <span className={styles.PhoneNumber}>{admin._id}</span>
+              <span className={styles.Id}>{admin._id}</span>
+              <span className={styles.Actions}>{moment(admin.createdAt).utc().format('MM/DD/YYYY')}</span>
               <div className={styles.isToggle}>
                 <Toggle isToggle={admin.active ? true : false} onToggle={() => changeStatus(admin._id, !admin.active)}/>
               </div>
-            {/*   <div className={styles.Actions}>
-                <button className={styles.ButtonEdit} onClick={()=>adminToEdit(admin._id)}>Editar</button>
-              </div> */}
             </article>
           );
         })}

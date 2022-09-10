@@ -113,14 +113,14 @@
   margin-bottom: 5px;
 }
 
-.CardPatientDashboard h5, .Email, .PhoneNumber {
+.CardPatientDashboard h5, .Email, .Id {
   color: #292F53;
   font-size: .75rem;
   font-weight: 600;
 }
 
 .CardPatientDashboard h5 {
-  flex-basis: 32%;
+  flex-basis: 25%;
   border-right: 1px solid rgba(41, 47, 83,.2);
 }
 
@@ -130,17 +130,17 @@
   transition: .3s;
 }
 
-.Email, .PhoneNumber{
+.Email, .Id{
   opacity: .85;
   border-right: 1px solid rgba(41, 47, 83,.2);
 }
 
 .Email{
-  flex-basis: 32%;
+  flex-basis: 25%;
 }
 
-.PhoneNumber{
-  flex-basis: 20%;
+.Id{
+  flex-basis: 25%;
 }
 
 .Avatar{
@@ -149,6 +149,7 @@
   border-radius: 30%;
   flex-basis: 44px;
   overflow: hidden;
+  font-size: .75rem;
   border: 2px solid #ffffff;
 }
 
@@ -161,13 +162,17 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  flex-basis: 14%;
-  font-size: .8rem;
+  flex-basis: 8%;
+  font-size: .75rem;
   transition: .9s linear;
 }
 
 .Actions{
-  flex-basis: 7%;
+  flex-basis: 17%;
+  font-size: .75rem;
+  color: #292F53;
+  font-weight: 600;
+  opacity: .85;
 }
 
 .ButtonEdit{
