@@ -162,12 +162,16 @@
   align-items: center;
   gap: 5px;
   flex-basis: 14%;
-  font-size: .8rem;
+  font-size: .75rem;
   transition: .9s linear;
 }
 
 .Actions{
   flex-basis: 7%;
+  font-size: .75rem;
+  color: #292F53;
+  font-weight: 600;
+  opacity: .85;
 }
 
 .ButtonEdit{

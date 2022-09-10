@@ -49,10 +49,10 @@ const NavbarAdmin = () => {
               <img src={iconAppointment} alt="img-icon-menu"/>
               <button onClick={() => changeItemMenu("Citas")}>Citas</button>
             </li>
-            <li className={styles.ListItem}>
+            {/* <li className={styles.ListItem}>
               <img src={iconComments} alt="img-icon-menu"/>
               <button onClick={() => changeItemMenu("Comentarios")}>Comentarios</button>
-            </li>
+            </li> */}
           </ul>
         </div>
 
