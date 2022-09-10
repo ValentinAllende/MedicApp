@@ -4,10 +4,11 @@ import logo from "../../assets/ico.png";
 import iconHome from "../../assets/dashboard/home-icon.svg";
 import iconPatient from "../../assets/dashboard/user-icon.svg";
 import iconDoctor from "../../assets/dashboard/doctor-icon.svg";
+import iconAdmin from "../../assets/dashboard/admin-icon.svg";
 import iconAppointment from "../../assets/dashboard/date-icon.svg";
 import iconComments from "../../assets/dashboard/comment-icon.svg";
 import { useDispatch } from "react-redux";
-import { changeSectionDashboard } from "../../../../Redux/actions/adminActions";
+import { changeSectionDashboard } from "../../../../Redux/actions/generalActionsAdmins";
 
 const NavbarAdmin = () => {
 
@@ -39,6 +40,10 @@ const NavbarAdmin = () => {
             <li className={styles.ListItem}>
               <img src={iconDoctor} alt="img-icon-menu"/>
               <button onClick={() => changeItemMenu("Doctores")}>Doctores</button>
+            </li>
+            <li className={styles.ListItem}>
+              <img src={iconAdmin} alt="img-icon-menu"/>
+              <button onClick={() => changeItemMenu("Admins")}>Admins</button>
             </li>
             <li className={styles.ListItem}>
               <img src={iconAppointment} alt="img-icon-menu"/>

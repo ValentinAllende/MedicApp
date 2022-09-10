@@ -7,13 +7,14 @@ import CardResume from "./CardResume/CardResume";
 import DataResume from "./DataResume/DataResume";
 import Patients from "../PatientsSection/Patients";
 import Doctores from "../DoctorsSection/Doctores";
+import Admins from "../AdminsSection/Admins";
 import { getDoctors } from "../../../../Redux/actions/generalActionsDoctors";
 import { getPatients } from "../../../../Redux/actions/generalActionsPatients";
 
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const {changeSection} = useSelector((state) => state.admins);
+  const {changeSection} = useSelector((state) => state.generalAdmins);
 
   /**
    *  @useEffect => todos los pacientes
@@ -45,6 +46,11 @@ const Dashboard = () => {
         {changeSection === "Doctores" &&
           <>
             <Doctores/>
+          </>
+        }
+        {changeSection === "Admins" &&
+          <>
+            <Admins/>
           </>
         }
         {changeSection === "Citas" &&
