@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import styles from "../EditPatient/EditPatient.module.css";
-import iconClose from "../../../assets/dashboard/close-icon.svg";
-import iconInput from "../../../assets/dashboard/input-icon.svg";
+import styles from "./SectionsPatients.module.css";
+import iconClose from "../../assets/dashboard/close-icon.svg";
+import iconInput from "../../assets/dashboard/input-icon.svg";
 import { useDispatch } from "react-redux";
-import { postPatient } from "../../../../../Redux/actions/generalActionsPatients";
+import { postPatient } from "../../../../Redux/actions/generalActionsPatients";
+import { validateInput } from "../../helpers/regexValidationsInputs";
 
 const CreatePatient = ({onClick}) => {
   const dispatch = useDispatch();
@@ -28,45 +29,10 @@ const CreatePatient = ({onClick}) => {
       validateInput({
         ...input,
         [e.target.name]: e.target.value,
-      })
+      }, "create")
     );
     console.log(input);
   };
-
-
-    /** Basic Regex for Validate Inputs */
-    const noEmpty = /\S+/;
-    const validateText = /^(?=.*?[A-Za-z])[A-Za-z+\s]+$/;
-    const validateUrl = /(https?:\/\/.*\.(?:png|jpg|jpeg))/i;
-    const validateEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  
-    const validateInput = (input) => {
-      let errors = {};
-      if (
-        !noEmpty.test(input.name) ||
-        !validateText.test(input.name) ||
-        input.name.length < 4
-      ) {
-        errors.name = "Solo se permiten letras.";
-      }
-      if (
-        !noEmpty.test(input.email) ||
-        !validateEmail.test(input.email)
-      ) {
-        errors.email = "Formato de email incorrecto";
-      }
-      if (
-        !noEmpty.test(input.phoneNumber)
-      ) {
-        errors.phoneNumber = "Formato de teléfono incorrecto";
-      }
-      if (
-        !noEmpty.test(input.image) || !validateUrl.test(input.image)
-      ) {
-        errors.image = "Url de imagen icorrecta";
-      }
-      return errors;
-    };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

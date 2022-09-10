@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./NavbarAdmin.module.css";
-import logo from "../../assets/ico.png";
-import iconHome from "../../assets/dashboard/home-icon.svg";
-import iconPatient from "../../assets/dashboard/user-icon.svg";
-import iconDoctor from "../../assets/dashboard/doctor-icon.svg";
-import iconAdmin from "../../assets/dashboard/admin-icon.svg";
-import iconAppointment from "../../assets/dashboard/date-icon.svg";
-import iconComments from "../../assets/dashboard/comment-icon.svg";
+import logo from "../../../assets/ico.png";
+import iconHome from "../../../assets/dashboard/home-icon.svg";
+import iconPatient from "../../../assets/dashboard/user-icon.svg";
+import iconDoctor from "../../../assets/dashboard/doctor-icon.svg";
+import iconAdmin from "../../../assets/dashboard/admin-icon.svg";
+import iconAppointment from "../../../assets/dashboard/date-icon.svg";
 import { useDispatch } from "react-redux";
-import { changeSectionDashboard } from "../../../../Redux/actions/generalActionsAdmins";
+import { changeSectionDashboard } from "../../../../../Redux/actions/generalActionsAdmins";
 
 const NavbarAdmin = () => {
 
@@ -49,10 +48,6 @@ const NavbarAdmin = () => {
               <img src={iconAppointment} alt="img-icon-menu"/>
               <button onClick={() => changeItemMenu("Citas")}>Citas</button>
             </li>
-            {/* <li className={styles.ListItem}>
-              <img src={iconComments} alt="img-icon-menu"/>
-              <button onClick={() => changeItemMenu("Comentarios")}>Comentarios</button>
-            </li> */}
           </ul>
         </div>
 

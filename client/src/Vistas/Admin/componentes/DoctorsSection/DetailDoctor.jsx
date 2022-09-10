@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "../EditDoctor/EditDoctor.module.css";
-import iconClose from "../../../assets/dashboard/close-icon.svg";
-import iconLicense from "../../../assets/dashboard/icon-license.png";
-import iconEmail from "../../../assets/dashboard/icon-email.png";
-import iconAddress from "../../../assets/dashboard/icon-address.png";
-import iconSpeciality from "../../../assets/dashboard/icon-speciality.png";
-import bottomIcon from "../../../assets/dashboard/back-bottom.svg";
+import styles from "./SectionsDoctors.module.css";
+import iconClose from "../../assets/dashboard/close-icon.svg";
+import iconLicense from "../../assets/dashboard/icon-license.png";
+import iconEmail from "../../assets/dashboard/icon-email.png";
+import iconAddress from "../../assets/dashboard/icon-address.png";
+import iconSpeciality from "../../assets/dashboard/icon-speciality.png";
+import bottomIcon from "../../assets/dashboard/back-bottom.svg";
 
 const DetailDoctor = ({ doctor, onClick }) => {
 

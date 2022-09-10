@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import styles from "../EditDoctor/EditDoctor.module.css";
-import iconClose from "../../../assets/dashboard/close-icon.svg";
-import iconInput from "../../../assets/dashboard/input-icon.svg";
+import styles from "./SectionsDoctors.module.css";
+import iconClose from "../../assets/dashboard/close-icon.svg";
+import iconInput from "../../assets/dashboard/input-icon.svg";
 import { useDispatch } from "react-redux";
-import { postDoctor } from "../../../../../Redux/actions/generalActionsDoctors";
+import { postDoctor } from "../../../../Redux/actions/generalActionsDoctors";
+import { validateInput } from "../../helpers/regexValidationsInputs";
 
 const CreateDoctor = ({ onClick }) => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const CreateDoctor = ({ onClick }) => {
       validateInput({
         ...input,
         [e.target.name]: e.target.value,
-      })
+      }, "create")
     );
     console.log(input);
   };
@@ -99,52 +100,6 @@ const CreateDoctor = ({ onClick }) => {
   }
 
   /** Basic Regex for Validate Inputs */
-  const noEmpty = /\S+/;
-  const validateText = /^(?=.*?[A-Za-z])[A-Za-z+\s]+$/;
-  const validateUrl = /(https?:\/\/.*\.(?:png|jpg|jpeg))/i;
-  const validateEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-
-  const validateInput = (input) => {
-    let errors = {};
-    if (
-      !noEmpty.test(input.name) ||
-      !validateText.test(input.name) ||
-      input.name.length < 4
-    ) {
-      errors.name = "Solo se permiten letras.";
-    }
-    if (!noEmpty.test(input.email) || !validateEmail.test(input.email)) {
-      errors.email = "Formato de email incorrecto";
-    }
-    if (!noEmpty.test(input.phoneNumber)) {
-      errors.phoneNumber = "Formato de teléfono incorrecto";
-    }
-    if (!noEmpty.test(input.image) || !validateUrl.test(input.image)) {
-      errors.image = "Url de imagen icorrecta";
-    }
-    if (!noEmpty.test(input.license)) {
-      errors.license = "Campo Licencia no puede estar vacia";
-    }
-    if (!noEmpty.test(input.address)) {
-      errors.address = "Campo Dirección no puede estar vacio";
-    }
-    if (!noEmpty.test(input.city)) {
-      errors.city = "Campo Ciudad no puede estar vacio";
-    }
-    if (!noEmpty.test(input.country)) {
-      errors.country = "Campo País no puede estar vacio";
-    }
-    if (!noEmpty.test(input.checkUpPrice)) {
-      errors.checkUpPrice = "Campo Precio de consulta no puede estar vacio";
-    }
-    if (!noEmpty.test(input.hour)) {
-      errors.hour = "Campo Horario de Atención no puede estar vacio";
-    }
-    if (input.specialities.length === 0 || input.specialities.length > 3) {
-      errors.specialities = "Máximo 3 especialidades seleccionadas";
-    }
-    return errors;
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

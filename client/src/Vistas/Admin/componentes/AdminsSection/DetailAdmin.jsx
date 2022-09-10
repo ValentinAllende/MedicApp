@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "../EditAdmin/EditAdmin.module.css";
-import iconClose from "../../../assets/dashboard/close-icon.svg";
-import iconLicense from "../../../assets/dashboard/icon-license.png";
-import iconEmail from "../../../assets/dashboard/icon-email.png";
-import bottomIcon from "../../../assets/dashboard/back-bottom.svg";
-import avatarDefault from "../../../assets/dashboard/default-avatar.jpg";
+import styles from "./SectionsAdmins.module.css";
+import iconClose from "../../assets/dashboard/close-icon.svg";
+import iconLicense from "../../assets/dashboard/icon-license.png";
+import iconEmail from "../../assets/dashboard/icon-email.png";
+import bottomIcon from "../../assets/dashboard/back-bottom.svg";
+import avatarDefault from "../../assets/dashboard/default-avatar.jpg";
 
 const DetailAdmin = ({ admin, onClick }) => {
 
