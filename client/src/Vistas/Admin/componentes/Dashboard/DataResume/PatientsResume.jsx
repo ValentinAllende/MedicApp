@@ -3,7 +3,7 @@ import styles from "./DataResume.module.css";
 import { useSelector } from "react-redux";
 import avatarDefault from "../../../assets/dashboard/default-avatar.jpg";
 import { useDispatch } from "react-redux";
-import { changeSectionDashboard } from "../../../../../Redux/actions/adminActions";
+import { changeSectionDashboard } from "../../../../../Redux/actions/generalActionsAdmins";
 
 const PatientsResume = ({avatar, iconTitle, iconActive, iconInactive}) => {
 
