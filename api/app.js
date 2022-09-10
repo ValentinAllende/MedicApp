@@ -13,7 +13,6 @@ mongoose
   .then((res) => console.log("DB is connected"))
   .catch((error) => console.log(error));
 require("./src/models/Admin");
-// var usersRouter = require('./routes/users');
 
 var app = express();
 
