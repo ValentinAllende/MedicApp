@@ -4,6 +4,7 @@ import { postDoctor } from "../../../../Redux/actions/doctorActions";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
+import Image from "./InputImage";
 
 export default function Registro() {
   const history = useNavigate();
@@ -20,9 +21,10 @@ export default function Registro() {
     password: "",
     rpassword: "",
     phoneNumber: "",
-    hour: [],
+    hour: ["07:00", "08:00"],
     space: 0,
     checkUpPrice: "",
+    image: "https://180dc.org/wp-content/uploads/2016/08/default-profile.png",
   });
 
   const especialidades = [
@@ -47,27 +49,27 @@ export default function Registro() {
 
   function validar(input) {
     let errors = {};
-    if (!input.name) errors.name = "se requiere un nombre";
-    if (!input.lastName) errors.lastName = "se requiere un apellido";
-    if (!input.password) errors.password = "debe ingresar una contraseña";
+    if (!input.name) errors.name = "Se requiere un nombre";
+    if (!input.lastName) errors.lastName = "Se requiere un apellido";
+    if (!input.password) errors.password = "Debe ingresar una contraseña";
     if (!input.specialities)
-      errors.specialities = "se debe ingresar al menos 1 especialidad";
-    if (!input.email) errors.email = "el email es obligatorio";
+      errors.specialities = "Se debe ingresar al menos 1 especialidad";
+    if (!input.email) errors.email = "El email es obligatorio";
     if (input.specialities.length > 2)
-      errors.specialities = "el maximo de especialidades es 3";
+      errors.specialities = "El maximo de especialidades es 3";
     if (!/^[0-9]+$/.test(input.license))
-      errors.license = "la licencia debe ser numerica";
+      errors.license = "La licencia debe ser numerica";
     if (!/^[0-9]+$/.test(input.phoneNumber))
-      errors.phoneNumber = "el numero de telefono SOLO puede contener numeros";
+      errors.phoneNumber = "El numero de telefono SOLO puede contener numeros";
     if (/^[^a-zA-Z]/.test(input.name))
-      errors.name = "los caracteres especiales no estan permitidos";
+      errors.name = "Los caracteres especiales no estan permitidos";
     if (
       /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(input.email) ===
       false
     )
-      errors.email = "email debe ser de la forma: doctor_app@gmail.com";
+      errors.email = "Email debe ser de la forma: doctor_app@gmail.com";
     if (input.rpassword !== input.password)
-      errors.rpassword = "las contraseñas no coinciden";
+      errors.rpassword = "Las contraseñas no coinciden";
 
     return errors;
   }
@@ -87,7 +89,6 @@ export default function Registro() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     try {
       const res = await axios.post("http://localhost:3004/doctors", {
         name: input.name,
@@ -102,6 +103,7 @@ export default function Registro() {
         hour: input.hour.join(" - "),
         space: input.space,
         checkUpPrice: input.checkUpPrice,
+        image: input.image,
       });
       if (res.status === 201) {
         alert("Usted se a registrado");
@@ -124,6 +126,10 @@ export default function Registro() {
     if (e.target.id === "first") hour[0] = e.target.value;
     if (e.target.id === "second") hour[1] = e.target.value;
     setInput({ ...input, hour });
+  }
+
+  function handleImage(imgUrl) {
+    setInput({ ...input, image: imgUrl });
   }
 
   return (
@@ -295,6 +301,12 @@ export default function Registro() {
                 required=""
               />
             </div>
+          </div>
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              Imagen o Foto de Perfil
+            </label>
+            <Image setUrl={handleImage} img={input.image} className="" />
           </div>
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
