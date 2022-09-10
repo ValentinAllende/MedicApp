@@ -4,11 +4,9 @@ import { postDoctor } from "../../../../Redux/actions/doctorActions";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
-import Image from "./InputImage";
+import Image from "../../../Compartido/Componentes/Register/InputImage";
 
 export default function Registro() {
-  const history = useNavigate();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
@@ -22,7 +20,6 @@ export default function Registro() {
     rpassword: "",
     phoneNumber: "",
     hour: ["07:00", "08:00"],
-    space: 0,
     checkUpPrice: "",
     image: "https://180dc.org/wp-content/uploads/2016/08/default-profile.png",
   });
@@ -101,7 +98,6 @@ export default function Registro() {
         password: input.password,
         phoneNumber: input.phoneNumber,
         hour: input.hour.join(" - "),
-        space: input.space,
         checkUpPrice: input.checkUpPrice,
         image: input.image,
       });
@@ -306,7 +302,11 @@ export default function Registro() {
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
               Imagen o Foto de Perfil
             </label>
-            <Image setUrl={handleImage} img={input.image} className="" />
+            <Image
+              action={handleImage}
+              imgUrl={input.image}
+              className="flex gap-4 items-center"
+            />
           </div>
           <div className="mb-6">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
