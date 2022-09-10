@@ -4,7 +4,7 @@ import { postDoctor } from "../../../../Redux/actions/doctorActions";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
-import Image from "../../../Compartido/Componentes/Register/InputImage";
+import InputImage from "../../../Compartido/Componentes/Register/InputImage";
 
 export default function Registro() {
   const navigate = useNavigate();
@@ -302,7 +302,7 @@ export default function Registro() {
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
               Imagen o Foto de Perfil
             </label>
-            <Image
+            <InputImage
               action={handleImage}
               imgUrl={input.image}
               className="flex gap-4 items-center"
