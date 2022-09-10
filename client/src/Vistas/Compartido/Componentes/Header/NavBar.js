@@ -7,7 +7,8 @@ export default function NavBar ({avaliable}){
     const imagen = Logo
     const navigate = useNavigate()
     const token = window.localStorage.getItem('auth-token')
-console.log(token);
+    const user = JSON.parse(window.localStorage.getItem('User'))
+    // console.log(user.rol);
     const logOut = ()=>{
         localStorage.clear()
         navigate('/login')
@@ -21,23 +22,23 @@ console.log(token);
             <img className="object-contain w-16 my-3" src={imagen} alt='logo'/>
             </Link>
             <div className="flex items-center">
-            {/* {
-                JSON.parse(token) === 'ADMIN' ? 
-                <Link to='/'>
+            {
+                user?.rol === 'ADMIN' ? 
+                <Link to='/admin/dashboard'>
                 <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
                 </Link>
                 :
-                JSON.parse(token) === 'DOCTOR' ? 
-                <Link to='/'>
+                user?.rol === 'DOCTOR' ? 
+                <Link to='/panelDoc'>
                 <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
                 </Link> 
                 :
-                JSON.parse(token) === 'PATIENT' ? 
+                user?.rol === 'PATIENT' ? 
                 <Link to='/'>
                 <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
                 </Link> 
                 : null
-            } */}
+            }
 
             {JSON.parse(token)? (
                 
