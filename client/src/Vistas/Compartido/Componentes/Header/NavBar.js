@@ -22,21 +22,16 @@ export default function NavBar ({avaliable}){
             <img className="object-contain w-16 my-3" src={imagen} alt='logo'/>
             </Link>
             <div className="flex items-center">
+            
             {
-                user?.rol === 'ADMIN' ? 
-                <Link to='/admin/dashboard'>
-                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
-                </Link>
-                :
-                user?.rol === 'DOCTOR' ? 
-                <Link to='/panelDoc'>
-                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
-                </Link> 
-                :
-                user?.rol === 'PATIENT' ? 
-                <Link to='/'>
-                <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Profile</p>
-                </Link> 
+                user ? 
+                <div className="flex flex-col items-end mx-2">
+                    <p className="text-xs">{user?.email}</p>
+                    <p className="text-xs">Rol: {user?.rol}</p>
+                    <Link to={user?.rol === 'ADMIN' ? '/admin/dashboard' : user?.rol === 'DOCTOR' ? '/panelDoc' : user?.rol === 'PATIENT' ? '/' : null}>
+                    <p className="text-xs text-[#1479FF]">Panel</p>
+                    </Link>
+                </div>
                 : null
             }
 
