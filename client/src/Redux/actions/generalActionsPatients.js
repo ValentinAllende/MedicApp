@@ -11,7 +11,7 @@ export const getPatient = (idPatient) => async (dispatch) => {
     if(!idPatient){
       return dispatch(getPatientById({}));
     }
-    const patientById = await axios.get(`http://localhost:3004/patients/${idPatient}`);
+    const patientById = await axios.get(`/patients/${idPatient}`);
     return dispatch(getPatientById(patientById.data.data));
   } catch (error) {
     console.log(error);
@@ -20,7 +20,7 @@ export const getPatient = (idPatient) => async (dispatch) => {
 
 export const getPatients = () => async (dispatch) => {
   try {
-    const patients = await axios.get("http://localhost:3004/patients");
+    const patients = await axios.get("/patients");
     return dispatch(getAllPatients(patients.data.data));
   } catch (error) {
     console.log(error);
@@ -29,7 +29,7 @@ export const getPatients = () => async (dispatch) => {
 
 export const changeStatusPatient = (idPatient) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:3004/patients/status/${idPatient}`);
+    await axios.patch(`/patients/status/${idPatient}`);
     return dispatch(changeStatus());
   } catch (error) {
     console.log(error);
@@ -39,7 +39,7 @@ export const changeStatusPatient = (idPatient) => async (dispatch) => {
 export const editPatient = (idPatient, data) => async (dispatch) => {
   console.log("faaf", data);
   try {
-    await axios.patch(`http://localhost:3004/patients/${idPatient}`, data);
+    await axios.patch(`/patients/${idPatient}`, data);
     return;
   } catch (error) {
     console.log(error);
@@ -48,7 +48,7 @@ export const editPatient = (idPatient, data) => async (dispatch) => {
 
 export const postPatient = (data) => async (dispatch) => {
   try {
-    await axios.post(`http://localhost:3004/patients/`, data);
+    await axios.post(`/patients/`, data);
     return;
   } catch (error) {
     console.log(error);

@@ -20,7 +20,7 @@ export const getAdmin = (idAdmin) => async (dispatch) => {
     if(!idAdmin){
       return dispatch(getAdminById({}));
     }
-    const adminById = await axios.get(`http://localhost:3004/admins/${idAdmin}`);
+    const adminById = await axios.get(`/admins/${idAdmin}`);
     return dispatch(getAdminById(adminById.data.data));
   } catch (error) {
     console.log(error);
@@ -29,7 +29,7 @@ export const getAdmin = (idAdmin) => async (dispatch) => {
 
 export const getAdmins = () => async (dispatch) => {
   try {
-    const admins = await axios.get("http://localhost:3004/admins");
+    const admins = await axios.get("/admins");
     return dispatch(getAllAdmins(admins.data.data));
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ export const getAdmins = () => async (dispatch) => {
 
 export const changeStatusAdmin = (idAdmin, enable) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:3004/admins/${idAdmin}`, {enable: enable});
+    await axios.patch(`/admins/${idAdmin}`, {enable: enable});
     return dispatch(changeStatus());
   } catch (error) {
     console.log(error);
@@ -47,7 +47,7 @@ export const changeStatusAdmin = (idAdmin, enable) => async (dispatch) => {
 
 /* export const editPatient = (idAdmin, data) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:3004/admins/${idAdmin}`, data);
+    await axios.patch(`/admins/${idAdmin}`, data);
     return;
   } catch (error) {
     console.log(error);
@@ -56,7 +56,7 @@ export const changeStatusAdmin = (idAdmin, enable) => async (dispatch) => {
 
 export const postAdmin = (data) => async (dispatch) => {
   try {
-    await axios.post(`http://localhost:3004/admins/`, data);
+    await axios.post(`/admins/`, data);
     return;
   } catch (error) {
     console.log(error);

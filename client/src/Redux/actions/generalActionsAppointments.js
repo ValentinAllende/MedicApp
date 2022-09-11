@@ -10,7 +10,7 @@ export const getAppointment = (idAppointment) => async (dispatch) => {
     if(!idAppointment){
       return dispatch(getAppointmentById({}));
     }
-    const appointmentById = await axios.get(`http://localhost:3004/appointments/${idAppointment}`);
+    const appointmentById = await axios.get(`/appointments/${idAppointment}`);
     return dispatch(getAppointmentById(appointmentById.data.data));
   } catch (error) {
     console.log(error);
@@ -19,7 +19,7 @@ export const getAppointment = (idAppointment) => async (dispatch) => {
 
 export const getAppointments = () => async (dispatch) => {
   try {
-    const appointments = await axios.get("http://localhost:3004/appointments");
+    const appointments = await axios.get("/appointments");
     return dispatch(getAllAppointments(appointments.data.data));
   } catch (error) {
     console.log(error);
