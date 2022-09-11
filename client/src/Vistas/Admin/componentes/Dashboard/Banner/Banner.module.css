@@ -1,6 +1,5 @@
 .ContainerBanner{
   width: 100%;
-
 }
 
 .ContainerBanner h2{
@@ -27,6 +26,11 @@
 }
 
 .Citas{
+  background-color: rgb(41, 47, 83);
+  opacity: 1;
+}
+
+.Admins{
   background-color: rgb(41, 47, 83);
   opacity: 1;
 }

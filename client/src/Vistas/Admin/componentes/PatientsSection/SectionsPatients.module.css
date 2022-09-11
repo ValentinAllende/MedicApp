@@ -1,7 +1,21 @@
 .Form,
-.InputContainer{
+.InputContainer,
+.InputContainer label,
+.TopSection,
+.containerData,
+.InfoContainer {
   display: flex;
+}
+
+.Form,
+.InputContainer,
+.InfoContainer,
+.TopSection{
   flex-direction: column;
+}
+
+.Form,
+.InputContainer{
   justify-content: center;
   align-items: flex-start;
   font-family: "Poppins", sans-serif;
@@ -10,7 +24,6 @@
 .Form {
   position: relative;
   width: 100%;
-  flex-direction: column;
   padding: 40px;
 }
 
@@ -32,7 +45,6 @@
 }
 
 .InputContainer label{
-  display: flex;
   gap: 5px;
   align-items: center;
   font-size: .8rem;
@@ -71,6 +83,16 @@
   align-self: center;
 }
 
+.ButtonSubmit:disabled {
+  background-color: #d3d3d3;
+  color: #152c54;
+}
+
+.ButtonSubmit:disabled:hover {
+  background-color: #d3d3d3;
+  color: #152c54;
+}
+
 .ButtonSubmit:hover {
   cursor: pointer;
   background-color: #1479FF;
@@ -79,7 +101,7 @@
   transition: 0.7s ease-in-out;
 }
 
-.Errors, .Errors2, .NoErrors{
+.Errors, .NoErrors{
   background-color: #E96668;
   padding: 1px 10px;
   color: #f9f9f9;
@@ -91,13 +113,9 @@
   border-radius: 5px;
   z-index: 1;
 }
+
 .NoErrors{
   display: none;
-}
-
-.Errors2{
-  left: 59.8%;
-  z-index: 1;
 }
 
 .ButtonClose{
@@ -123,8 +141,6 @@
 /*Detail*/
 
 .TopSection{
-  display: flex;
-  flex-direction: column;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -155,7 +171,6 @@
 }
 
 .containerData{
-  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -181,8 +196,6 @@
 }
 
 .InfoContainer{
-  display: flex;
-  flex-direction: column;
   gap: 10px;
   flex-basis: 100%;
   justify-content: center;

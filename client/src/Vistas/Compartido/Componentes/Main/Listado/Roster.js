@@ -36,9 +36,9 @@ export default function DoctorsRoster() {
         {displayedBadges.length < 1 ? <p>{error}</p>  : displayedBadges.map((e) => {
 
           return (
-            <Link to={`/dummy/doctors/${e.id}`}>
+            <Link to={`/dummy/doctors/${e._id}`}>
               <DoctorBadge
-                key={e.id}
+                key={e._id}
                 name={e.name}
                 specialties={e.specialities.join(", ")}
                 image= {e.image}

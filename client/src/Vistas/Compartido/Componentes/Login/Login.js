@@ -3,6 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import imgLogin from '../../imagenes compartidas/login.jpeg'
 import NavBar from '../Header/NavBar';
 import axios from 'axios';
+import Swal from 'sweetalert2'
+
+
+
 
 const Validate = (input) => {
     let errors = {};
@@ -44,7 +48,7 @@ export default function Login() {
         try {
 
             const response = await axios({
-                url: 'http://localhost:3004/auth/signin',
+                url: '/auth/signin',
                 method: 'POST',
                 data: input
 
@@ -65,8 +69,8 @@ export default function Login() {
                 navigate('/')
             }
         } catch (error) {
-            // Swal.fire(error.response.data.error)
-            console.log(error);
+            Swal.fire(error.response.data.error)
+            // console.log(error);
         }
         
         

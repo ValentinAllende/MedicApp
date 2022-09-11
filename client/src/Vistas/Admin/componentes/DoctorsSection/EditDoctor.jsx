@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import styles from "./EditDoctor.module.css";
-import iconClose from "../../../assets/dashboard/close-icon.svg";
-import iconInput from "../../../assets/dashboard/input-icon.svg";
+import styles from "./SectionsDoctors.module.css";
+import iconClose from "../../assets/dashboard/close-icon.svg";
+import iconInput from "../../assets/dashboard/input-icon.svg";
 import { useDispatch } from "react-redux";
-import { editDoctor } from "../../../../../Redux/actions/generalActionsDoctors";
+import { editDoctor } from "../../../../Redux/actions/generalActionsDoctors";
+import { validateInput } from "../../helpers/regexValidationsInputs";
 
 const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) => {
   const dispatch = useDispatch();
@@ -33,48 +34,10 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
     console.log(input);
   };
 
-
-    /** Basic Regex for Validate Inputs */
-    const noEmpty = /\S+/;
-    const validateText = /^(?=.*?[A-Za-z])[A-Za-z+\s]+$/;
-    const validateEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  
-    const validateInput = (input) => {
-      let errors = {};
-      if (
-        !noEmpty.test(input.name) ||
-        !validateText.test(input.name) ||
-        input.name.length < 4
-      ) {
-        errors.name = "Solo se permiten letras.";
-      }
-      if (
-        !noEmpty.test(input.email) ||
-        !validateEmail.test(input.email)
-      ) {
-        errors.email = "Formato de email incorrecto";
-      }
-      if (
-        !noEmpty.test(input.phoneNumber)
-      ) {
-        errors.phoneNumber = "Formato de teléfono incorrecto";
-      }
-      if (
-        !noEmpty.test(input.license)
-      ) {
-        errors.license = "Campo Licencia no puede estar vacia";
-      }
-      if (
-        !noEmpty.test(input.address)
-      ) {
-        errors.license = "Campo Dirección no puede estar vacio";
-      }
-      return errors;
-    };
-
   const handleSubmit = async (e) => {
-    console.log(id);
     e.preventDefault();
+    const values = {};
+    const props = Object.keys(input);
     if (
       !inputErrors.name &&
       !inputErrors.email &&
@@ -82,7 +45,12 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
       !inputErrors.license &&
       !inputErrors.address 
     ) {
-      dispatch(editDoctor(id,input));
+      props.forEach((value) => {
+        if (!input[value] == "") {
+          values[value] = input[value];
+        }
+      });
+      dispatch(editDoctor(id,values));
       setInput(initialInputs);
       onClick();
     } else {
@@ -106,7 +74,7 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
               type="text"
               name="name"
               placeholder={name}
-              value={input.name}
+              value={input.name || name}
               onChange={(e) => handleChange(e)}
             />
           </div>
@@ -122,7 +90,7 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
               type="text"
               name="email"
               placeholder={email}
-              value={input.email}
+              value={input.email || email}
               onChange={(e) => handleChange(e)}
             />
           </div>
@@ -138,7 +106,7 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
               type="text"
               name="phoneNumber"
               placeholder={phoneNumber}
-              value={input.phoneNumber}
+              value={input.phoneNumber || phoneNumber}
               onChange={(e) => handleChange(e)}
             />
           </div>
@@ -154,7 +122,7 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
               type="text"
               name="license"
               placeholder={license}
-              value={input.license}
+              value={input.license || license}
               onChange={(e) => handleChange(e)}
             />
           </div>
@@ -170,7 +138,7 @@ const EditDoctor = ({id, onClick, name, email, phoneNumber, license, address}) =
               type="text"
               name="address"
               placeholder={address}
-              value={input.address}
+              value={input.address || address}
               onChange={(e) => handleChange(e)}
             />
           </div>

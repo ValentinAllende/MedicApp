@@ -11,14 +11,14 @@ import {
 
 export const getDocbyId = (id) => (dispatch) => {
   axios
-    .get(`http://localhost:3004/dummy/doctors/${id}`)
+    .get(`/doctors/${id}`)
     .then((res) => dispatch(getDoctorById(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getDocs = () => (dispatch) => {
   axios
-    .get("http://localhost:3004/dummy/doctors")
+    .get("/doctors")
     .then((res) => dispatch(getAllDocs(res.data)))
     .catch((e) => console.log(e));
 };
