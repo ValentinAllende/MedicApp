@@ -33,12 +33,5 @@ export const validateInput = (input, type) => {
     nextValidations();
   });
 
-
-  
-  
-
- 
-  
-
   return errors;
 };

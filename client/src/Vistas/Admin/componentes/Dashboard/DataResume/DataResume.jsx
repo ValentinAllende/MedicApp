@@ -17,8 +17,8 @@ const DataResume = () => {
       <DoctorsGraphic/>
     </section>
     <section className={styles.ContainerData}>
-      <DoctorsResume avatar={avatar} iconTitle={iconTitle} iconActive={iconActive} iconInactive={iconInactive}/>
       <PatientsResume avatar={avatar} iconTitle={iconTitle} iconActive={iconActive} iconInactive={iconInactive}/>
+      <DoctorsResume avatar={avatar} iconTitle={iconTitle} iconActive={iconActive} iconInactive={iconInactive}/>
     </section>      
   </>
   )
