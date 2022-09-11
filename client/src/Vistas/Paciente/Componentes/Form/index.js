@@ -56,7 +56,7 @@ export default function CreatePatient() {
     e.preventDefault();
     
     try {
-      const res = await axios.post("http://localhost:3004/patients", {
+      const res = await axios.post("/patients", {
         name: input.name,
         phoneNumber: input.phoneNumber,
         email: input.email,

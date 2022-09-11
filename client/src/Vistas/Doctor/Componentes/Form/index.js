@@ -87,7 +87,7 @@ export default function Registro() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3004/doctors", {
+      const res = await axios.post("/doctors", {
         name: input.name,
         country: input.country,
         city: input.city,
