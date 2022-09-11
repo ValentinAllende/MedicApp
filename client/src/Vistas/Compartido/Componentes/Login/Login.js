@@ -64,7 +64,7 @@ export default function Login() {
             if (response.data.data.rol === 'ADMIN') {
                 navigate('/')
             } else if (response.data.data.rol === 'DOCTOR') {
-                navigate('/')
+                navigate('/doctor/dashboard')
             } else if (response.data.data.rol === 'PATIENT') {
                 navigate('/')
             }
