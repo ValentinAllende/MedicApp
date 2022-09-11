@@ -3,7 +3,8 @@ import axios from "axios";
 import {
   getAllPatients,
   getPatientById,
-  changeStatus
+  changeStatus,
+  getPatientsByDates
 } from "../Slicer/slicerGeneralPatients";
 
 export const getPatient = (idPatient) => async (dispatch) => {
@@ -22,6 +23,15 @@ export const getPatients = () => async (dispatch) => {
   try {
     const patients = await axios.get("/patients");
     return dispatch(getAllPatients(patients.data.data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getPatientsBetweenDates = (startDate, finishDate) => async (dispatch) => {
+  try {
+    const patients = await axios.get(`/patients/data/queries/?startDate=${startDate}&finishDate=${finishDate}`);
+    return dispatch(getPatientsByDates(patients.data));
   } catch (error) {
     console.log(error);
   }
