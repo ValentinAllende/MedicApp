@@ -38,8 +38,4 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter);
 
-app.get("/testDeploy", function (req, res, next) {
-  res.send("");
-});
-
 module.exports = app;
