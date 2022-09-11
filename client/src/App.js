@@ -8,7 +8,7 @@ import Stripe from "./Vistas/Paciente/StripeCheckOut"
 import RegisterDoctor from "./Vistas/Doctor/Componentes/Form";
 import RegisterPatient from "./Vistas/Paciente/Componentes/Form/index";
 import Login from "./Vistas/Compartido/Componentes/Login/Login";
-import PanelDoctor from "./Vistas/Doctor/Componentes";
+import PanelDoctor from "./Vistas/Doctor/Componentes/Panel/componentes";
 import Dashboard from "./Vistas/Admin/componentes/Dashboard/Dashboard";
 import { HOME, LOGIN, PRIVATE_ADM, PRIVATE_DOC, PROFILE_ADM, PROFILE_DOC } from "./config/routes/paths";
 

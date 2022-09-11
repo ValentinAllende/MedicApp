@@ -43,7 +43,6 @@ export const doctoresSlice = createSlice({
 
     getProfileDoctor: (state, action) => {
       state.profile = action.payload
-      console.log('el del slicer');
     },
    
     getDoctorsFiltered: (state, action) => {
