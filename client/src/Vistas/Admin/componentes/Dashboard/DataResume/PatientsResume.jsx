@@ -3,7 +3,7 @@ import styles from "./DataResume.module.css";
 import { useSelector } from "react-redux";
 import avatarDefault from "../../../assets/dashboard/default-avatar.jpg";
 import { useDispatch } from "react-redux";
-import { changeSectionDashboard } from "../../../../../Redux/actions/adminActions";
+import { changeSectionDashboard } from "../../../../../Redux/actions/generalActionsAdmins";
 
 const PatientsResume = ({avatar, iconTitle, iconActive, iconInactive}) => {
 
@@ -24,7 +24,7 @@ const PatientsResume = ({avatar, iconTitle, iconActive, iconInactive}) => {
         <button  onClick={()=>changeSection("Pacientes")}>Ver Todos</button>
       </div>
       {patients &&
-        patients.slice(patients.length - 8, patients.length - 1).map((patient) => {
+        patients.slice(patients.length - 6, patients.length - 1).map((patient) => {
           return (
             <article className={styles.CardDoctorDashboard} key={patient._id}>
               <div className={styles.Avatar}>

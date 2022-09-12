@@ -3,7 +3,7 @@ import styles from "./DataResume.module.css";
 import { useSelector } from "react-redux";
 import avatarDefault from "../../../assets/dashboard/default-avatar.jpg";
 import { useDispatch } from "react-redux";
-import { changeSectionDashboard } from "../../../../../Redux/actions/adminActions";
+import { changeSectionDashboard } from "../../../../../Redux/actions/generalActionsAdmins";
 
 const Doctors = ({ iconTitle, iconActive, iconInactive }) => {
   const { doctors } = useSelector((state) => state.generalDoctors);
@@ -18,12 +18,12 @@ const Doctors = ({ iconTitle, iconActive, iconInactive }) => {
       <div className={styles.TitleContainerAlternate}>
         <h4 className={styles.ContainerDoctorTitle}>
           <img src={iconTitle} alt="alt-img-title-icon" />
-          Nuevos Médicos en <b>MedicApp</b>
+          Nuevos Doctores en <b>MedicApp</b>
         </h4>
         <button onClick={()=>changeSection("Doctores")}>Ver Todos</button>
       </div>
       {doctors &&
-        doctors.slice(doctors.length - 8, doctors.length - 1).map((doctor) => {
+        doctors.slice(doctors.length - 6, doctors.length - 1).map((doctor) => {
           return (
             <article className={styles.CardDoctorDashboard} key={doctor._id}>
               <div className={styles.Avatar}>

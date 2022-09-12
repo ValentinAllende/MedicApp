@@ -48,7 +48,7 @@ export default function Login() {
         try {
 
             const response = await axios({
-                url: 'http://localhost:3004/auth/signin',
+                url: '/auth/signin',
                 method: 'POST',
                 data: input
 
@@ -64,7 +64,7 @@ export default function Login() {
             if (response.data.data.rol === 'ADMIN') {
                 navigate('/')
             } else if (response.data.data.rol === 'DOCTOR') {
-                navigate('/')
+                navigate('/doctor/dashboard')
             } else if (response.data.data.rol === 'PATIENT') {
                 navigate('/')
             }

@@ -6,18 +6,19 @@ import {
   getDoctorsBySpecialities,
   getDoctorsByCities,
   getDoctorsFiltered,
+  getProfileDoctor,
 } from "../Slicer/slicer";
 
 export const getDocbyId = (id) => (dispatch) => {
   axios
-    .get(`http://localhost:3004/doctors/${id}`)
+    .get(`/doctors/${id}`)
     .then((res) => dispatch(getDoctorById(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getDocs = () => (dispatch) => {
   axios
-    .get("http://localhost:3004/doctors")
+    .get("/doctors")
     .then((res) => dispatch(getAllDocs(res.data)))
     .catch((e) => console.log(e));
 };
@@ -39,6 +40,22 @@ export const getDocsFiltered = (type) => (dispatch) => {
     dispatch(getDoctorsFiltered(type));
   } catch (e) {}
 };
+
+export const getProfileDoc = () => async (dispatch) => {
+  const token2 = window.localStorage.getItem('auth-token')
+  try {
+    const {data} = await axios.get('http://localhost:3004/profile/doctor', {
+      //headers: { Authorization: `Bearer ${token}`}
+      headers: { Authorization: `Bearer ${JSON.parse(token2)}`}
+    });
+    dispatch(getProfileDoctor(data))
+    console.log('entro a la accion',data);
+  } catch (error) {
+    console.log(error)
+  }
+};
+
+
 
 // const { data } = await axios.put(`${RUTA_APP}users/logout`, {}, {
 //   headers: { Authorization: `Bearer ${localStorage.getItem('auth-token')}` }

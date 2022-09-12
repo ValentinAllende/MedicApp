@@ -3,7 +3,8 @@ import axios from "axios";
 import {
   getAllDoctors,
   getDoctorById,
-  changeStatus
+  changeStatus,
+  getDoctorsByDates
 } from "../Slicer/slicerGeneralDoctors";
 
 export const getDoctor = (idDoctor) => async (dispatch) => {
@@ -11,7 +12,7 @@ export const getDoctor = (idDoctor) => async (dispatch) => {
     if(!idDoctor){
       return dispatch(getDoctorById({}));
     }
-    const patientById = await axios.get(`http://localhost:3004/doctors/${idDoctor}`);
+    const patientById = await axios.get(`/doctors/${idDoctor}`);
     return dispatch(getDoctorById(patientById.data.data));
   } catch (error) {
     console.log(error);
@@ -20,7 +21,7 @@ export const getDoctor = (idDoctor) => async (dispatch) => {
 
 export const getDoctors = () => async (dispatch) => {
   try {
-    const patients = await axios.get("http://localhost:3004/doctors");
+    const patients = await axios.get("/doctors");
     return dispatch(getAllDoctors(patients.data.data));
   } catch (error) {
     console.log(error);
@@ -29,7 +30,7 @@ export const getDoctors = () => async (dispatch) => {
 
 export const changeStatusDoctor = (idDoctor) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:3004/doctors/status/${idDoctor}`);
+    await axios.patch(`/doctors/status/${idDoctor}`);
     return dispatch(changeStatus());
   } catch (error) {
     console.log(error);
@@ -37,9 +38,19 @@ export const changeStatusDoctor = (idDoctor) => async (dispatch) => {
 };
 
 export const editDoctor = (idDoctor, data) => async (dispatch) => {
+  console.log("faaf", data);
   try {
-    await axios.patch(`http://localhost:3004/doctors/${idDoctor}`, data);
+    await axios.patch(`/doctors/${idDoctor}`, data);
     return;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getDoctorsBetweenDates = (startDate, finishDate) => async (dispatch) => {
+  try {
+    const doctors = await axios.get(`/doctors/data/queries/?startDate=${startDate}&finishDate=${finishDate}`);
+    return dispatch(getDoctorsByDates(doctors.data));
   } catch (error) {
     console.log(error);
   }
@@ -47,7 +58,7 @@ export const editDoctor = (idDoctor, data) => async (dispatch) => {
 
 export const postDoctor = (data) => async (dispatch) => {
   try {
-    await axios.post(`http://localhost:3004/doctors/`, data);
+    await axios.post(`/doctors/`, data);
     return;
   } catch (error) {
     console.log(error);

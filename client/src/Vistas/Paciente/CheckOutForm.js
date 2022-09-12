@@ -57,8 +57,9 @@ export default function CheckOutForm(props) {
       const paymentProcessed = true;
    
       try {
-   
-        const { data } = await axios ('http://localhost:3004/stripe/checkout ', {
+
+        const { data } = await axios ('/stripe/checkout ', {
+
 
           headers: { 'Authorization': `Bearer ${JSON.parse(token)}`},
           data:{ amount:monto * 1000, id: id, date: date, hour: hour, idDoctor: idDoctor, paymentProcessed: paymentProcessed},
