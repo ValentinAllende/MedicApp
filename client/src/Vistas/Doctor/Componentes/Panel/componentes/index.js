@@ -37,6 +37,7 @@ export default function PanelDoctor (){
   
     return (
         <>
+        <NavBar/>
         <div className="flex justify-evenly">
 
          <div className="w-[18%] bg-[#292F53] -ml-10 rounded flex h-screen flex-col items-center" id = 'navBar'>

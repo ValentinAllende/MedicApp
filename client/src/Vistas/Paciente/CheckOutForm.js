@@ -22,6 +22,8 @@ export default function CheckOutForm(props) {
   const navigate = useNavigate()
   const doctor = useSelector((state) => state.doctores.detail.data);
   const {idDoctor} = useParams()
+  
+
   const [edit, setEdit]= useState()
   const stripe = useStripe();
   const elements = useElements();
@@ -35,7 +37,6 @@ export default function CheckOutForm(props) {
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   }, []);
-  
   
   //-----------------------------------------------------
 
@@ -69,7 +70,7 @@ export default function CheckOutForm(props) {
       
         elements.getElement(CardElement).clear();
         setSuccess(false)
-        console.log(elements.getElement(CardElement),"que es esto?")
+        // console.log(elements.getElement(CardElement),"que es esto?")
         if (data.msg === 'Successful payment')  {
           let timerInterval
           Swal.fire({
@@ -95,7 +96,8 @@ export default function CheckOutForm(props) {
           })
           setTimeout(() => { swal("Genial!", "Pago realizado!", "success")},4000)
           setSuccess(false)
-          navigate('/')
+          // console.log();
+          navigate('/patient/home')
         }
         
       } catch (error) {
@@ -125,7 +127,7 @@ export default function CheckOutForm(props) {
   return (
     <div className="bg-gradient-to-r from-cyan-100 to-blue-900">
 
-      <Link to="/" className="flex flex-wrap bg-gradient-to-r from-white to-blue-300 text-[30px] border-b-2 border-indigo-400  text-purple-50 font-medium font-poppins "><img className="object-contain w-16 m-3 ml-10" src={logo}/> ← Volver al home </Link>
+      <Link to="/patient/home" className="flex flex-wrap bg-gradient-to-r from-white to-blue-300 text-[30px] border-b-2 border-indigo-400  text-purple-50 font-medium font-poppins "><img className="object-contain w-16 m-3 ml-10" src={logo}/> ← Volver al home </Link>
     <form onSubmit={(e) => handleSubmit(e)} className='card flex flex-wrap justify-center  h-[1000px] '>
       <div className='bg-blue-900 h-[550px] mt-[100px] w-[50%]  text-[25px] text-center  p-10 rounded-xl  border-gray-800 border-2 '>
       <div >
