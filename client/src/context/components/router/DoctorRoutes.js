@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import{ LOGIN  } from '../../config/routes/paths';
-import { useAuthContext } from "../../AuthContext";
+import { useAuthContext } from "../../authContext";
 
 
 export default function DoctorRoute(){

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAuthContext } from "../AuthContext";
+import { useAuthContext } from "../authContext";
 
 
 export default function Logout() {

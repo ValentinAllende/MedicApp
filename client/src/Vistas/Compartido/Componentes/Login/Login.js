@@ -4,7 +4,7 @@ import imgLogin from '../../imagenes compartidas/login.jpeg'
 import NavBar from '../Header/NavBar';
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import { useAuthContext } from '../../../../context/AuthContext';
+import { useAuthContext } from '../../../../context/authContext';
 
 
 

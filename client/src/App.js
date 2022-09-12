@@ -15,7 +15,7 @@ import Logout from "./context/components/Logout";
 import PublicRoute from "./context/components/router/PublicRoutes";
 import AdminRoute from "./context/components/router/AdminRoutes";
 import DoctorRoute from "./context/components/router/DoctorRoutes";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider } from "./context/authContext";
 import Paciente from "./Vistas/Paciente/Componentes/Paciente";
 import PatientRoute from "./context/components/router/PatientRoute";
 

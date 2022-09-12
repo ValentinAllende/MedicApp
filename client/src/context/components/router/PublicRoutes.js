@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import{ PROFILE_ADMIN, PROFILE_DOCTOR, PROFILE_PATIENT } from '../../config/routes/paths';
-import { useAuthContext } from "../../AuthContext";
+import { useAuthContext } from "../../authContext";
 
 
 export default function PublicRoute(){
