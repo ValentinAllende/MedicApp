@@ -193,7 +193,9 @@ export default function SearchBar() {
             class="text-sm font-medium text-white bg-blue-900 rounded-r-lg border border-blue-900 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-000"
             onClick={() => {
               handlerSearchButton();
-              setTimeout(navigate("/dummy/doctors", 1000));
+              // setTimeout(navigate("/dummy/doctors", 1000));
+            setTimeout( rol === 'ADMIN'? navigate("/admin/doctors", 1000) : rol === 'DOCTOR'? navigate("/admin/doctors", 1000) : rol === 'PATIENT'? navigate("/patient/doctors", 1000) :  navigate("/doctors", 1000));
+
             }}
           >
             Buscar
