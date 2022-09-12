@@ -186,8 +186,8 @@ export default function SearchBar() {
                 />
               </div>
 
-            </form>
-          </div>
+            {/* </form>
+          </div> */}
           {/* <Link to={"/dummy/doctors"}> */}
           <button
             class="text-sm font-medium text-white bg-blue-900 rounded-r-lg border border-blue-900 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-000"
@@ -206,7 +206,7 @@ export default function SearchBar() {
 
         </div>
         {/* <Link to={"/dummy/doctors"}> */}
-        <button
+        {/* <button
           class="text-sm font-medium text-white bg-blue-900 rounded-r-lg border border-blue-900 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-000"
           onClick={() => {
             handlerSearchButton();
@@ -214,8 +214,10 @@ export default function SearchBar() {
           }}
         >
           Buscar
-        </button>
+        </button> */}
         {/* </Link> */}
+        </form>
+          </div>
       </div>
      {/*  Especialidad: {answer}
       {resultadoP.length < 1 ? (
