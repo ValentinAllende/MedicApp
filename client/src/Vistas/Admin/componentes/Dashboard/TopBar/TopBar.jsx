@@ -5,6 +5,7 @@ import avatar from "../../../assets/dashboard/avatar-test.jpeg";
 import menu from "../../../assets/dashboard/menu-icon.svg";
 import Banner from "../../Dashboard/Banner/Banner";
 import { useEffect } from "react";
+import { LOGOUT_ADMIN } from "../../../../../context/config/routes/paths";
 
 const TopBar = () => {
 
@@ -39,9 +40,9 @@ const TopBar = () => {
         <div className={styles.Dropdown} >
           <img src={menu} alt="menu-icon" className={styles.IconMenu} onClick={(e) => onClickMenu(e)} />
           <ul className={toggle ?`${styles.Menu} ${styles.MenuOpen}`: styles.Menu}>
-            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/admin/home">Inicio</Link></li>
             <li>Configuración</li>
-            <li onClick={(e)=>logOut(e)}>Cerrar Sesión</li>
+            <Link to={LOGOUT_ADMIN}> cerrar sesion</Link>
           </ul>
         </div>
         

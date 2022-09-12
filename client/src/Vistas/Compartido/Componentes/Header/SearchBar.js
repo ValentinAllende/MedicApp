@@ -58,6 +58,8 @@ export default function SearchBar() {
     // history.push("/dummy/doctors");
   };
 
+  const rol = JSON.parse(sessionStorage.getItem('Rol'))
+
   return (
     <div className="flex items-end justify-center  bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 ">
       <div>
