@@ -1,24 +1,38 @@
 import NavBar from "../../../../Compartido/Componentes/Header/NavBar";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState} from 'react';
 
 import { getProfileDoc } from "../../../../../Redux/actions/doctorActions";
 import IconHome from "./iconHome";
-
-import Agenda from "./Agenda";
+import Agenda from './Agenda'
 import Citas from "./citas";
 import Perfil from "./Perfil";
 import Resenas from "./Resenas";
+import InfoData from "./InfoData";
+import { BsPeopleFill } from "react-icons/bs";
+import { BsFillCalendar2CheckFill } from "react-icons/bs"
+import { BsCurrencyExchange } from "react-icons/bs"
 
-export default function PanelDoctor() {
-  let doctor = useSelector((state) => state.doctores.profile.data);
-  //console.log(doctor,'el doctor');
+
+
+export default function PanelDoctor (){
+
+  let doctor = useSelector((state)=> state.doctores.profile.data)
   const [isVisibleAgenda, setisVisibleAgenda] = useState(false);
   const [isVisiblePerfil, setisVisiblePerfil] = useState(true);
   const [isVisibleCitas, setisVisibleCitas] = useState(false);
   const [isVisibleResenas, setisVisibleResenas] = useState(false);
   const [section, setSection] = useState("perfil");
   const dispatch = useDispatch();
+
+  const citaTotal = doctor?.appointments.length
+  const valorCita = doctor?.doctor.checkUpPrice * citaTotal
+
+  console.log(valorCita);
+
+
+  
+
 
   useEffect(() => {
     dispatch(getProfileDoc());

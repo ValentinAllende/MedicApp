@@ -8,6 +8,8 @@ import iconAdmin from "../../../assets/dashboard/admin-icon.svg";
 import iconAppointment from "../../../assets/dashboard/date-icon.svg";
 import { useDispatch } from "react-redux";
 import { changeSectionDashboard } from "../../../../../Redux/actions/generalActionsAdmins";
+import { Link } from "react-router-dom";
+import { HOME_ADMIN } from "../../../../../context/config/routes/paths";
 
 const NavbarAdmin = () => {
 
@@ -16,13 +18,15 @@ const NavbarAdmin = () => {
   const changeItemMenu = (section) =>{
     dispatch(changeSectionDashboard(section));
   }
-
+  
   return (
     <>
       <nav className={styles.HeaderContainer}>
         <div className={styles.MenuTopContainer}>
           <div className={styles.LogoContainer}>
-            <img src={logo} alt="logo-medicapp" className={styles.Logo} />
+            <Link to={HOME_ADMIN}>
+              <img src={logo} alt="logo-medicapp" className={styles.Logo} />
+            </Link>
             <h4>
               Admin <b>Panel</b>
             </h4>

@@ -21,4 +21,7 @@ doctorRouter.patch("/status/:idDoctor",paramIdDoctorValidator, controllerDoctors
 /* Delete Doctor */
 doctorRouter.delete("/:idDoctor",paramIdDoctorValidator, controllerDoctors.deleteDoctor);
 
+/* Get Doctors between Dates - queries for Admins */
+doctorRouter.get("/data/queries/", controllerDoctors.countDoctorsBetweenDates);
+
 module.exports = doctorRouter;
