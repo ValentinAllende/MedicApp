@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import doctor2 from "../../../../Imagenes compartidas/doctor2.png"
+import doctora from "../../../../Imagenes compartidas/doctora.png"
 // import { Link } from "react-router-dom";
 
 import {
@@ -59,13 +61,19 @@ export default function SearchBar() {
 
   return (
   <div className=" items-stretch justify-center  ">
-    <div className=" grid flex-col border-width: 2px justify-items-center text-center items-center  bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 h-96">
+    <div className=" flex flex-col border-width: 2px justify-items-center text-center items-center  bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 h-96">
+      <div className="flex  ">
+        <div><img src={doctora} className="w-[200px] mt-10 mr-[100px]"/></div>
+        <div><img src={doctor2} className="w-[200px] mt-10 ml-[100px]"/></div>
+      
+      </div>
+      
       <label
         className="text-2xl font-poppins line-height: 1.75rem; rounded  m-4 pl-2 pr-2    bg-blue-100 text-blue-800 ">
-        <span className=" font-poppins text-blue-900">ENCUENTRA </span>
+        <span className=" font-poppins text-[40px] text-blue-900">ENCUENTRA </span>
         <span a className=" font-poppins text-blue-400">a tu especialista y</span>
-        <span className=" font-poppins text-blue-900"> AGENDA</span>
-        <span className=" font-poppins text-blue-400"> una cita</span>
+        <span className=" font-poppins text-[40px] text-blue-900"> AGENDA</span>
+        <span className=" font-poppins  text-blue-400"> una cita</span>
       </label>
       <div className="flex flex-row">
         <div className="self-stretch ">
@@ -107,6 +115,7 @@ export default function SearchBar() {
               ></div>
               <div className="relative w-full">
                 <input
+                  disabled="true"
                   placeholder="ej. Odontologia"
                   value={specialities}
                   onChange={(e) => {
@@ -160,6 +169,7 @@ export default function SearchBar() {
               ></div>
               <div className="relative w-full">
                 <input
+                  disabled="true"
                   value={cities}
                   onChange={(e) => {
                     citySelected(e);
