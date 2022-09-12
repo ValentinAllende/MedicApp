@@ -12,7 +12,7 @@ import {Link} from 'react-router-dom'
 function DetalleDoctor (){
 
   const { idDoctor } = useParams();
-
+  // const { _id } = useParams();
   
   const dispatch = useDispatch();
   let doctor = useSelector((state)=> state.doctores.detail.data)
@@ -57,7 +57,9 @@ function DetalleDoctor (){
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
   },[dispatch, idDoctor]);
-  
+  // useEffect(() => {
+  //   dispatch(getDocbyId(_id))
+  // },[dispatch, _id]);
 
  localStorage.setItem('hour',selectedHour)
  localStorage.setItem('date',selectedDate)

@@ -59,6 +59,8 @@ export default function SearchBar() {
     // history.push("/dummy/doctors");
   };
 
+  const rol = JSON.parse(sessionStorage.getItem('Rol'))
+
   return (
   <div className=" items-stretch justify-center  ">
     <div className=" flex flex-col border-width: 2px justify-items-center text-center items-center  bg-indigo-100 rounded-md border-spacing-24 border-2 border-indigo-400 h-96">
@@ -189,7 +191,7 @@ export default function SearchBar() {
           class="text-sm font-medium text-white bg-blue-900 rounded-r-lg border border-blue-900 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-000"
           onClick={() => {
             handlerSearchButton();
-            setTimeout(navigate("/dummy/doctors", 1000));
+            setTimeout( rol === 'ADMIN'? navigate("/admin/doctors", 1000) : rol === 'DOCTOR'? navigate("/admin/doctors", 1000) : rol === 'PATIENT'? navigate("/patient/doctors", 1000) :  navigate("/doctors", 1000));
           }}
         >
           Buscar
