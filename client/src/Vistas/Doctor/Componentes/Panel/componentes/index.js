@@ -6,9 +6,7 @@ import Citas from "./citas";
 import Perfil from "./EditProfile/EditarPerfil";
 import Resenas from "./Resenas";
 import InfoData from "./InfoData";
-import { BsPeopleFill } from "react-icons/bs";
-import { BsFillCalendar2CheckFill } from "react-icons/bs";
-import { BsCurrencyExchange } from "react-icons/bs";
+import { BsPeopleFill, BsChatRightQuoteFill, BsFillCalendar2CheckFill, BsCurrencyExchange } from "react-icons/bs";
 import TopBar from "./TopBar/TopBar.jsx";
 import NavBar from "./NavBar/NavBar";
 import Main from "./Main/Principal";
@@ -61,6 +59,14 @@ export default function PanelDoctor() {
                 text="Dinero Total"
                 icon={<BsCurrencyExchange />}
                 dato={Math.round(valorCita)}
+              />
+              <InfoData
+                className={
+                  "w-48 bg-orange-300 h-24 rounded m-3 flex flex-col justify-around"
+                }
+                text="Resenas"
+                icon={<BsChatRightQuoteFill />}
+                dato="0"
               />
             </div>
           ) : null}
