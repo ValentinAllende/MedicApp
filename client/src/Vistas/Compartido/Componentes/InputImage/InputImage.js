@@ -30,7 +30,7 @@ export default function InputImage({ action, imgUrl, className }) {
       </label>
       <div className="shrink-0">
         <img
-          className="object-cover w-40 rounded-full border"
+          className="object-cover w-40 h-40 rounded-full border"
           src={image}
           alt="Perfil"
         />
