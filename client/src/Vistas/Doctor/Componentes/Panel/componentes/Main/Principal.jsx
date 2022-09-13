@@ -5,7 +5,9 @@ const Main = ({ doctor }) => {
   return (
     <div>
       <div>
-        <p className="text-[#292F53] text-xl font-poppins mb-3">Asi apareces en MedicApp:</p>
+        <p className="text-[#292F53] text-xl font-poppins mb-5">
+          Asi apareces en MedicApp:
+        </p>
         <section className="bg-white w-[550px] h-fit flex flex-row p-3 rounded items-center">
           <img
             src={doctor && doctor.image}
