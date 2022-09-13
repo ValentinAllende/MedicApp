@@ -12,7 +12,7 @@ return(
         <h3 className='font-bold flex justify-center items-center gap-3 pb-4 text-lg'> <img src={Icon1} alt="icon-services" className="w-11"/>Encuentra tu Especialista</h3>
         <p className='text-center text-base'>Las opiniones reales de miles de pacientes te ayudarán a tomar siempre la mejor decisión.</p>
         </div>
-        <div className='text-center text-medium bg-slate-900 p-10'>
+        <div className='text-center text-medium bg-[#292F53] p-10'>
 {/*         <h2 className="flex justify-center"><HiOutlineSearchCircle/></h2> */}
         <h3 className='font-bold flex justify-center items-center gap-3 pb-4 text-lg'> <img src={Icon2} alt="icon-services" className="w-11"/> Pide cita de forma fácil</h3>
         <p className='text-center text-base'>Elige la hora que prefieras y pide tu cita sin necesidad de llamar. Es fácil y muy cómodo.</p>

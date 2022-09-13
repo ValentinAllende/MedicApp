@@ -13,9 +13,9 @@ export default function NavBar ({avaliable}){
 
     return (
         <div className=''>
-            <div className="flex flex-row bg-[#E7EFFD] px-12 justify-between py-2">
+            <div className="flex flex-row justify-center md:justify-between bg-[#E7EFFD] px-12 py-2">
             <Link to = {user?.rol === 'ADMIN' ? '/admin/home' : user?.rol === 'DOCTOR' ? '/doctor/home' : user?.rol === 'PATIENT' ? '/patient/home' : '/'}>
-            <img className="object-contain w-16" src={imagen} alt='logo'/>
+            <img className="object-contain w-16 hidden md:block" src={imagen} alt='logo'/>
             </Link>
             <div className="flex items-center">
             
@@ -53,7 +53,7 @@ export default function NavBar ({avaliable}){
             
             </div>
             </div>
-            <hr className='border-solid border-1 border-gray-400'></hr>
+            <hr className='border-solid border-1 border-gray-500 opacity-20'></hr>
             
             
             {/* <div className="flex items-center space-x-10 ">
