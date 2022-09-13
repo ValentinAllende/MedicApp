@@ -13,20 +13,23 @@ export default function NavBar ({avaliable}){
 
     return (
         <div className=''>
-            <div className="flex flex-row  bg-[#E7EFFD] px-10 justify-between">
-            <Link  to = {user?.rol === 'ADMIN' ? '/admin/home' : user?.rol === 'DOCTOR' ? '/doctor/home' : user?.rol === 'PATIENT' ? '/patient/home' : '/'}>
-            <img className="object-contain w-16 my-3" src={imagen} alt='logo'/>
+            <div className="flex flex-row bg-[#E7EFFD] px-12 justify-between py-2">
+            <Link to = {user?.rol === 'ADMIN' ? '/admin/home' : user?.rol === 'DOCTOR' ? '/doctor/home' : user?.rol === 'PATIENT' ? '/patient/home' : '/'}>
+            <img className="object-contain w-16" src={imagen} alt='logo'/>
             </Link>
             <div className="flex items-center">
             
             {
                 user ? 
-                <div className="flex flex-col items-end mx-2">
-                    <p className="text-xs">{user?.email}</p>
-                    <p className="text-xs">Rol: {user?.rol}</p>
+                <div className="flex items-center mx-2 gap-2">
+                    <div className="flex flex-col items-end justify-center gap-1"> 
+                        <p className="text-xs font-poppins">{user?.email}</p>
+                        <p className="text-xs font-semibold opacity-75">Rol: {user?.rol}</p>
+                    </div>
                     <Link to={user?.rol === 'ADMIN' ? '/admin' : user?.rol === 'DOCTOR' ? '/doctor' : user?.rol === 'PATIENT' ? '/patient' : null}>
-                    <p className="text-xs text-[#1479FF]">Panel</p>
+                        <p className="bg-[#1479FF] hover:bg-[#292F53] font-poppins text-white py-2 px-4 rounded">Panel</p>
                     </Link>
+
                 </div>
                 : null
             }
@@ -34,17 +37,17 @@ export default function NavBar ({avaliable}){
             {
                 JSON.parse(session) ? 
                         user.rol === 'ADMIN' ?
-                    <Link to={LOGOUT_ADMIN}><p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Logout</p> </Link>
+                    <Link to={LOGOUT_ADMIN}><p className="bg-[#292F53] hover:bg-[#1479FF] font-poppins text-white py-2 px-4 rounded">Logout</p> </Link>
                     :  user.rol === 'DOCTOR' ?
-                    <Link to={LOGOUT_DOCTOR}> <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Logout</p></Link>
+                    <Link to={LOGOUT_DOCTOR}> <p className="bg-[#292F53] hover:bg-[#1479FF] font-poppins text-white py-2 px-4 rounded">Logout</p></Link>
                     :   user.rol === 'PATIENT'?
-                    <Link to={LOGOUT_PATIENT}><p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Logout</p> </Link> 
+                    <Link to={LOGOUT_PATIENT}><p className="bg-[#292F53] hover:bg-[#1479FF] font-poppins text-white py-2 px-4 rounded">Logout</p> </Link> 
                     : 
                     <Link to ='/login'>
-                        <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Ingresar</p>
+                        <p className="bg-[#1479FF] hover:bg-[#292F53] font-poppins text-white py-2 px-4 rounded">Ingresar</p>
                     </Link>
                     : <Link to ='/login'>
-                        <p className="bg-[#1479FF] font-poppins text-white p-2 rounded">Ingresar</p>
+                        <p className="bg-[#1479FF] hover:bg-[#292F53] font-poppins text-white py-2 px-4 rounded">Ingresar</p>
                     </Link>
             }
             
