@@ -15,10 +15,6 @@ const TopBar = () => {
   const onClickMenu = () => {
     setToggle(!toggle);
   };
-  const logOut = () => {
-    localStorage.clear()
-    navigate('/login')
-  };  
 
   const dataAdmin = JSON.parse(window.localStorage.getItem('User'));
 
@@ -42,7 +38,7 @@ const TopBar = () => {
           <ul className={toggle ?`${styles.Menu} ${styles.MenuOpen}`: styles.Menu}>
             <li><Link to="/admin/home">Inicio</Link></li>
             <li>Configuración</li>
-            <Link to={LOGOUT_ADMIN}> cerrar sesion</Link>
+            <Link to={LOGOUT_ADMIN}>Cerrar sesion</Link>
           </ul>
         </div>
         

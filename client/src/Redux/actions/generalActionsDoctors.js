@@ -4,7 +4,8 @@ import {
   getAllDoctors,
   getDoctorById,
   changeStatus,
-  getDoctorsByDates
+  getDoctorsByDates,
+  getTopDoctors
 } from "../Slicer/slicerGeneralDoctors";
 
 export const getDoctor = (idDoctor) => async (dispatch) => {
@@ -65,3 +66,11 @@ export const postDoctor = (data) => async (dispatch) => {
   }
 };
 
+export const getTopDoctorsHome = () => async (dispatch) => {
+  try {
+    const doctors = await axios.get(`/doctors/data/top`);
+    return dispatch(getTopDoctors(doctors.data));
+  } catch (error) {
+    console.log(error);
+  }
+};
