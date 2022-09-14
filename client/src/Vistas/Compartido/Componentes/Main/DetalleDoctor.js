@@ -97,7 +97,7 @@ function DetalleDoctor (){
 
             <div className='text-[#1479FF] mt-4 mb-2 '>
               {<StarDetail
-              stars={rating}/>}
+              stars={4}/>}
             </div>
            
             </div>
