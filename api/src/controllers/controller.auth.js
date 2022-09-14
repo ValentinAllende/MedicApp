@@ -22,13 +22,14 @@ const controllerAuth = {
           "31532081050-nrgri514im6srt8c3e4thvg2dg6ionem.apps.googleusercontent.com",
       })
       .then(async (response) => {
-        console.log("respones");
+     
         //   console.log(response)
         const { email} = response.payload;
 
         const patient = await Patient.findOne({ email: email });
         const doctor = await Doctor.findOne({ email: email });
         const admin = await Admin.findOne({ email: email });
+        console.log(patient,"paciente")
 
         try{
         if (patient) {

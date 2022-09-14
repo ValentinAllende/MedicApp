@@ -134,7 +134,7 @@ export default function Login(email, password) {
                     Entrar
                   </button>
                 </div>
-                <Google/>
+                <Google login={login}/>
                 <div className="px-4 pb-2 pt-4">
                   <Link to="/registerPatient">
                     {/* <Link to='/admin'> */}
