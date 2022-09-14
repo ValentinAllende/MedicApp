@@ -86,25 +86,23 @@ export default function Login(email, password) {
           <div className="lg:w-1/2 w-full flex items-center justify-center text-center bg-[#292F53] md:px-16 px-0 z-0">
             <form
               onSubmit={(e) => handleSubmit(e)}
-              className="bg-[#E7EFFD] rounded-[20px] sm:w-2/3 flex flex-col gap-3 p-10 items-center w-full px-4 lg:px-0 mx-auto"
+              className="bg-[#E7EFFD] rounded-[20px] sm:w-2/3 flex flex-col gap-3 p-10 items-center w-full mx-auto"
             >
-              <div className="">
-                <div className="">
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    value={input.email}
-                    onChange={(e) => handleChange(e)}
-                    className="w-80 p-4 text-sm font-poppins rounded-lg bg-white mb-1 shadow-md"
-                  />
-                  <div className="h-6 text-xs font-poppins text-red-600 text-start">
-                    {errors.email}
-                  </div>
+              <div className="w-full">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  value={input.email}
+                  onChange={(e) => handleChange(e)}
+                  className="w-full p-4 text-sm font-poppins rounded-lg bg-white mb-1 shadow-md"
+                />
+                <div className="h-6 text-xs font-poppins text-red-600 text-start">
+                  {errors.email}
                 </div>
                 <input
-                  className="w-80 p-4 text-sm font-poppin rounded-lg bg-white mb-1 shadow-md"
+                  className="w-full p-4 text-sm font-poppin rounded-lg bg-white mb-1 shadow-md"
                   value={input.password}
                   onChange={(e) => handleChange(e)}
                   type="password"
@@ -123,22 +121,24 @@ export default function Login(email, password) {
                 </div>
               </div>
 
-              <button className="text-white w-80 p-4 font-poppins text-sm rounded-lg bg-blue-500 hover:bg-blue-600 focus:outline-none ">
+              <button className="text-white w-full p-4 font-poppins text-sm rounded-lg bg-blue-500 hover:bg-blue-600 focus:outline-none ">
                 Entrar
               </button>
-              <div className="text-white hover:bg-gray-600 bg-gray-400 text-sm rounded-lg flex justify-center font-poppins w-80 p-4">
+              <div className="text-white hover:bg-gray-600 bg-gray-400 text-sm rounded-lg flex justify-center font-poppins w-full p-4">
                 <Google login={login} />
               </div>
-              <Link to="/registerPatient">
-                <button className="text-white w-80 p-4 font-poppins text-sm rounded-lg bg-lime-500 hover:bg-lime-600 focus:outline-none">
-                  Registrate como Paciente
-                </button>
+              <Link
+                to="/registerPatient"
+                className="text-white w-full p-4 font-poppins text-sm rounded-lg bg-lime-500 hover:bg-lime-600 focus:outline-none"
+              >
+                <button>Registrate como Paciente</button>
               </Link>
-              <Link to="/registerDoctor">
+              <Link
+                to="/registerDoctor"
+                className="text-white w-full p-4 font-poppins text-sm rounded-lg bg-lime-500 hover:bg-lime-600 focus:outline-none"
+              >
                 {/* <Link to='/doctor'> */}
-                <button className="text-white w-80 px-8 py-4 font-poppins text-sm rounded-lg bg-lime-500 hover:bg-lime-600 focus:outline-none">
-                  Registrate como Doctor
-                </button>
+                <button>Registrate como Doctor</button>
               </Link>
             </form>
           </div>
