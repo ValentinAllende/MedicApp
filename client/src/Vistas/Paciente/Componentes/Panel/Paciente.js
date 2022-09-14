@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BsPeopleFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPatients } from '../../../../Redux/actions/generalActionsPatients';
+import { getPatients, getPatientToken } from '../../../../Redux/actions/generalActionsPatients';
 
 import InfoData from '../../../Doctor/Componentes/Panel/componentes/InfoData';
 import Citas from './Citas';
@@ -15,6 +15,7 @@ export default function Paciente() {
 
     useEffect(() => {
       dispatch(getPatients())
+      dispatch(getPatientToken())
     }, [dispatch]);
 
     let pacientes1 = useSelector((state)=> state.generalPatients)
