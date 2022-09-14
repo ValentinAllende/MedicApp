@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const FaqIndividual = ({ title, info, img}) => {
-  console.log(img);
   const [showInfo, setShowInfo] = useState(false);
   return (
     <article className='m-2 bg-[#f9f9fb] rounded-xl border-l-4 border-b-2 border-b-[#1479FF] border-l-[#1479FF] border-r-transparent border-t-transparent'>

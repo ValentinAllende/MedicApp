@@ -4,7 +4,6 @@ import FaqIndividual from './FaqIndividual';
 
 function Faq() {
   const [questions] = useState(data);
-  console.log(questions);
   return (
     <main>
       <div className='flex flex-col items-center'>

@@ -60,7 +60,7 @@ function DetalleDoctor (){
 
   useEffect(() => {
     dispatch(getDocbyId(idDoctor))
-    console.log(rating);
+    console.log(rating, 'dispatch');
 
   },[dispatch, doctor?.rating, idDoctor, rating]);
   
