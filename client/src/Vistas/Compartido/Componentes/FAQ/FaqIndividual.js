@@ -10,12 +10,12 @@ const FaqIndividual = ({ title, info, img}) => {
         </button>
         <h4 className='text-[#1479FF] font-poppins ml-2'>{title}</h4>
       </header>
-      <div className='flex flex-row items-center '>
+      <div className='flex flex-row justify-between '>
       {showInfo &&
         <>
-          <p className='ml-6 -mt-2 mb-4 font-raleway flex flex-wrap'>{info}</p>
-          <img className='w-40 h-32 m-4 -mt-2' src={img} alt='foto1'/>
-       </>
+        <p className='ml-6 -mt-2 mb-4 font-raleway flex flex-wrap'>{info}</p>
+        <img className='w-40 h-32 m-4 -mt-2' src={img} alt='foto1'/>
+        </>
        }
 
       </div>
