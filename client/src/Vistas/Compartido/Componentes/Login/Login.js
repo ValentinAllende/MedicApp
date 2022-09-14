@@ -19,7 +19,7 @@ const Validate = (input) => {
   return errors;
 };
 
-export default function Login() {
+export default function Login(email, password) {
   const { login } = useAuthContext();
 
   // const navigate = useNavigate()
