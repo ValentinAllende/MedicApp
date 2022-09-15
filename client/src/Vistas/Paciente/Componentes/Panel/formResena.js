@@ -10,7 +10,6 @@ const FormResena = ({idCita}) => {
     console.log(idCita);
 
     const [input, setInput] = useState({
-        idAppointment: idCita,
         comment: '',
         score: ''
     })
@@ -31,7 +30,7 @@ const FormResena = ({idCita}) => {
 
     async function  handleSubmit(e) {
         e.preventDefault()
-        await axios.patch('http://localhost:3004/appointments/addRating',input)
+        await axios.patch(`http://localhost:3004/appointments/addreview/${idCita}`,input)
         swal({
             title: "Reseña Creada!",
             icon: "success"
