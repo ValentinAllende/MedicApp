@@ -113,6 +113,27 @@ const controllerAppointments = {
       return res.status(error.code || 500).send({ errors: error.message });
     }
   },
+
+  addRatingwithoutParams: async (req, res, next) => {
+    console.log(req.body, 'lo que llega por body');
+    const { score, comment, idAppointment } = req.body;
+    try {
+      const appointment = await Appointment.findById(idAppointment);
+      if (!appointment) {
+        throwError(1402);
+      }
+      appointment.score = score;
+      appointment.comment = comment;
+      await appointment.save();
+      res.status(200).send({ data: appointment });
+    } catch (error) {
+      if (error.kind === "ObjectId") {
+        return res.status(403).send({ errors: "Formato de ID incorrecto" });
+      }
+      return res.status(error.code || 500).send({ errors: error.message });
+    }
+  },
+
   deleteAppointment: async (req, res, next) => {
     const { idAppointment } = req.params;
     try {
