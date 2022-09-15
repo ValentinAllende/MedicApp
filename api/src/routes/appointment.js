@@ -17,7 +17,7 @@ appointmentRouter.patch("/status/:idAppointment", paramIdAppointmentValidator, c
 /* Add Rating - Appointment*/
 appointmentRouter.patch("/addRating/:idAppointment", paramIdAppointmentValidator, bodyAppointmentValidatorRATING, controllerAppointments.addRating);
 /* Add Rating - Appointment sin params*/
-appointmentRouter.patch("/addRating", controllerAppointments.addRatingwithoutParams);
+appointmentRouter.patch("/addreview/:id", controllerAppointments.addReview);
 /* Delete Appointment */
 appointmentRouter.delete("/:idAppointment", paramIdAppointmentValidator, controllerAppointments.deleteAppointment);
 

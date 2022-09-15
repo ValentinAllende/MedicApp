@@ -113,26 +113,18 @@ const controllerAppointments = {
       return res.status(error.code || 500).send({ errors: error.message });
     }
   },
-
-  addRatingwithoutParams: async (req, res, next) => {
-    console.log(req.body, 'lo que llega por body');
-    const { score, comment, idAppointment } = req.body;
+  addReview: async (req, res, next) => {
+  // console.log(req.params.id);
     try {
-      const appointment = await Appointment.findById(idAppointment);
-      if (!appointment) {
-        throwError(1402);
-      }
-      appointment.score = score;
-      appointment.comment = comment;
-      await appointment.save();
-      res.status(200).send({ data: appointment });
-    } catch (error) {
-      if (error.kind === "ObjectId") {
-        return res.status(403).send({ errors: "Formato de ID incorrecto" });
-      }
-      return res.status(error.code || 500).send({ errors: error.message });
-    }
-  },
+      const appointmentR = await Appointment.updateOne({
+      _id: req.params.id}, 
+      {$set: {score:req.body.score, comment: req.body.comment}
+    })
+    res.status(200).send({ data: appointmentR });
+  } catch (error) {
+    return res.status(error.code || 500).send({ errors: error.message });
+  }
+},
 
   deleteAppointment: async (req, res, next) => {
     const { idAppointment } = req.params;
