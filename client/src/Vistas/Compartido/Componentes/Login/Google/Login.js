@@ -25,9 +25,9 @@ export default function Google({ login, className, rol }) {
         rol: rol
       },
     });
-    console.log(respuesta, 'esteban');
-    console.log(respuesta.data.token, "token");
-    console.log(respuesta.data.data, "data");
+    console.log(respuesta.data, 'respuesta.data en login google');
+    // console.log(respuesta.data.token, "token");
+    // console.log(respuesta.data.data, "data");
     localStorage.setItem("auth-token", JSON.stringify(respuesta.data.token));
     localStorage.setItem("User", JSON.stringify(respuesta.data.data));
     window.sessionStorage.setItem(
@@ -35,10 +35,11 @@ export default function Google({ login, className, rol }) {
       JSON.stringify(respuesta.data.data.rol)
     );
     window.sessionStorage.setItem("isAuth", true);
-    login();
-    // if (respuesta.data.data.rol === 'PATIENT') {
-    //         navigate('/')
-    //     }
+    if(!respuesta.data.isActive){
+      return navigate("/")
+  }else{
+  login();
+}
   };
 
   const customStyle = {

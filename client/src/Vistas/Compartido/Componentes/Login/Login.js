@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import imgLogin from "../../imagenes compartidas/login.png";
 import NavBar from "../Header/NavBar";
 import axios from "axios";
@@ -21,6 +21,7 @@ const Validate = (input) => {
 };
 
 export default function Login(email, password) {
+    const navigate = useNavigate()
     const { login } = useAuthContext();
     const [rol, setRol] = useState('')
     const [input, setInput] = useState({
@@ -63,7 +64,7 @@ const handleRol = (e) => {
                 method: "POST",
                 data: input,
             });
-
+            console.log(response.data.isActive,"response en login")
             localStorage.setItem("auth-token", JSON.stringify(response.data.token));
             localStorage.setItem("User", JSON.stringify(response.data.data));
             window.sessionStorage.setItem(
@@ -76,7 +77,11 @@ const handleRol = (e) => {
                 email: "",
                 password: "",
             });
+            if(!response.data.isActive){
+                return navigate("/")
+            }else{
             login();
+        }
         } catch (error) {
             Swal.fire(error.response.data.error);
             // console.log(error);
@@ -137,7 +142,7 @@ const handleRol = (e) => {
                                 />
                             </div>
                             <div className="text-white hover:bg-gray-600 bg-gray-400 text-sm rounded-lg flex justify-center font-poppins w-full p-4">
-                                <Google login={login} rol={rol} />
+                                <Google  login={login} rol={rol} />
                             </div>
                             <Link
                                 to="/registerPatient"

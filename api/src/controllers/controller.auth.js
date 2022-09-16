@@ -80,7 +80,7 @@ const controllerAuth = {
         };
         return res.status(200).json({ data: data, token: tokenAdmin });
         }
-        if (!patient || !doctor || !admin) {
+        if (!patient && !doctor && !admin) {
             return res
               .status(404)
               .json({
@@ -114,7 +114,9 @@ const controllerAuth = {
       // console.log(user, 'user');
       // console.log(user.payload.email, 'user');
       const patient = await Patient.findOne({ email: user.payload.email });
-      
+
+
+   
       if(!patient && rol === 'PATIENT'){
         const newPatient = await Patient.create({
               email: user.payload.email,
@@ -123,8 +125,10 @@ const controllerAuth = {
               password:'nuevo',
               phoneNumber: 44444,
             })
+            console.log("newPatient", newPatient)
             const tokenPatient = Jwt.sign({ user_id: newPatient.id }, "pacientetoken"); // process.env.TOKEN_SECRET_ADMIN )
             const data = {
+              isActive:newPatient.active ? true : false,
               name: newPatient.name,
               email: newPatient.email,
               image: newPatient.image,
@@ -138,6 +142,7 @@ const controllerAuth = {
             "pacientetoken"
           ); // process.env.TOKEN_SECRET_ADMIN )
           const data = {
+            isActive:patient.active ? true : false,
             name: patient.name,
             email: patient.email,
             image: patient.image,
@@ -145,10 +150,6 @@ const controllerAuth = {
           };
           return res.status(200).json({ data: data, token: tokenPatient });
         }
-
-
-
-      // const doctor = await Doctor.findOne({ email: payload.email });
 
       console.log(user ,'user');
     } catch (error) {
@@ -176,6 +177,7 @@ const controllerAuth = {
         }
         const tokenPatient = Jwt.sign({ user_id: patient.id }, "pacientetoken"); // process.env.TOKEN_SECRET_ADMIN )
         const data = {
+          isActive:patient.active,
           name: patient.name,
           email: patient.email,
           image: patient.image,
@@ -192,13 +194,15 @@ const controllerAuth = {
         }
         const tokenDoctor = Jwt.sign({ user_id: doctor.id }, "doctortoken"); // process.env.TOKEN_SECRET_ADMIN )
         const data = {
+          isActive:doctor.active,
           name: doctor.name,
           email: doctor.email,
           rol: "DOCTOR",
         };
         return res.status(200).json({ data: data, token: tokenDoctor });
       }
-      if (admin) {
+      if (admin) { 
+
         const comparePassword = bcrypt.compareSync(password, admin.password);
         if (!comparePassword) {
           return res
@@ -207,17 +211,16 @@ const controllerAuth = {
         }
         const tokenAdmin = Jwt.sign({ user_id: admin.id }, "admintoken"); // process.env.TOKEN_SECRET_ADMIN )
         const data = {
+          isActive:admin.active,
           name: admin.name,
           email: admin.email,
           rol: "ADMIN",
         };
         return res.status(200).json({ data: data, token: tokenAdmin });
       }
-      if (!patient || !doctor || !admin) {
+      if (!patient && !doctor && !admin) {
         return res
-          .status(404)
-          .json({
-            succes: false,
+          .status(404).json({succes: false,
             error: "Email ó Password Incorrecto paciente",
           });
       }
@@ -229,3 +232,6 @@ const controllerAuth = {
 };
 
 module.exports = controllerAuth;
+
+
+
