@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getProfileDoc } from "../../../../../Redux/actions/doctorActions";
-import icon from "../Assets/ico-dark.png"
+import { getProfileDoc } from "../../../../../../Redux/actions/doctorActions";
+import icon from "../../Assets/ico-dark.png"
 
 const Citas = () => {
   let doctor = useSelector((state) => state.doctores.profile.data);

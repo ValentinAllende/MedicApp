@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getProfileDoc } from "../../../../../Redux/actions/doctorActions";
-import Citas from "./citas";
+import Citas from "./Citas/citas";
 import Perfil from "./EditProfile/EditarPerfil";
 import InfoData from "./InfoData";
 import { BsPeopleFill, BsChatRightQuoteFill, BsFillCalendar2CheckFill, BsCurrencyExchange } from "react-icons/bs";

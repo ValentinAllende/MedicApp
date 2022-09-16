@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editDoctor } from "../../../../../../Redux/actions/generalActionsDoctors";
 import InputImage from "../../../../../Compartido/Componentes/InputImage/InputImage";
-import icon from "../../Assets/ico-dark.png"
+import icon from "../../Assets/ico-dark.png";
 
 const EditProfile = ({ info, setSection }) => {
   const dispatch = useDispatch();
@@ -13,6 +13,8 @@ const EditProfile = ({ info, setSection }) => {
     phoneNumber: doctor?.doctor.phoneNumber,
     address: doctor?.doctor.address,
     image: doctor?.doctor.image,
+    hour: doctor?.doctor.schedule ? doctor.doctor.schedule.hour.split("-") : null,
+    checkUpPrice: doctor?.doctor.checkUpPrice,
   });
 
   const handleChange = (e) => {
@@ -24,6 +26,11 @@ const EditProfile = ({ info, setSection }) => {
   };
 
   const handleEdit = (e) => {
+    input = {
+      ...input, 
+      schedule: {hour: input.hour.join(" - ")}
+    }
+    console.log(input)
     dispatch(editDoctor(id, input));
     alert("Edicion exitosa");
   };
@@ -31,6 +38,17 @@ const EditProfile = ({ info, setSection }) => {
   function handleImage(imgUrl) {
     setInput({ ...input, image: imgUrl });
   }
+
+  function handleHour(e) {
+    let hour = [...input.hour];
+    if (e.target.id === "first") hour[0] = e.target.value;
+    if (e.target.id === "second") hour[1] = e.target.value;
+    console.log(input.hour[0].substring(0, 2));
+    console.log(input.hour[1].substring(0, 2));
+    setInput({ ...input, hour });
+  }
+
+  console.log(input)
 
   return (
     <div className="">
@@ -69,6 +87,57 @@ const EditProfile = ({ info, setSection }) => {
                 value={input.phoneNumber}
                 onChange={(e) => handleChange(e)}
                 className="w-full w-4/5 sm:ml-[10px] px-[10px] rounded bg-gray-200 font-raleway"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row">
+              <p className="w-1/5">Horario:</p>
+              <div className="w-full w-4/5 sm:ml-[10px] px-[10px] rounded bg-gray-200 font-raleway">
+                <select id="first" onChange={(e) => handleHour(e)}>
+                  <option value="07:00" selected>
+                    7 AM
+                  </option>
+                  <option value="08:00">8 AM</option>
+                  <option value="09:00">9 AM</option>
+                  <option value="10:00">10 AM</option>
+                  <option value="11:00">11 AM</option>
+                  <option value="12:00">12 AM</option>
+                  <option value="13:00">1 PM</option>
+                  <option value="14:00">2 PM</option>
+                  <option value="15:00">3 PM</option>
+                  <option value="16:00">4 PM</option>
+                  <option value="17:00">5 PM</option>
+                  <option value="18:00">6 PM</option>
+                  <option value="19:00">7 PM</option>
+                </select>
+                -
+                <select id="second" onChange={(e) => handleHour(e)}>
+                  <option value="08:00" selected>
+                    8 AM
+                  </option>
+                  <option value="09:00">9 AM</option>
+                  <option value="10:00">10 AM</option>
+                  <option value="11:00">11 AM</option>
+                  <option value="12:00">12 AM</option>
+                  <option value="13:00">1 PM</option>
+                  <option value="14:00">2 PM</option>
+                  <option value="15:00">3 PM</option>
+                  <option value="16:00">4 PM</option>
+                  <option value="17:00">5 PM</option>
+                  <option value="18:00">6 PM</option>
+                  <option value="19:00">7 PM</option>
+                </select>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row">
+              <p className="w-1/5">Tarifa:</p>
+              <input
+                type="text"
+                name="checkUpPrice"
+                placeholder="$"
+                value={input.checkUpPrice}
+                onChange={(e) => handleChange(e)}
+                className="w-full w-4/5 sm:ml-[10px] px-[10px] rounded bg-gray-200 font-raleway"
+                required=""
               />
             </div>
             <InputImage
