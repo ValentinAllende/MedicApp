@@ -54,7 +54,7 @@ export default function CreatePatient() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    
+
     try {
       const res = await axios.post("/patients", {
         name: input.name,
