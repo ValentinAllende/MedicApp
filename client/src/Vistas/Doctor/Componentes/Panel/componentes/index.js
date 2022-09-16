@@ -15,7 +15,7 @@ export default function PanelDoctor() {
   const dispatch = useDispatch();
   let doctor = useSelector((state) => state.doctores.profile.data);
   const [section, setSection] = useState("principal");
-
+  console.log(doctor?.active, "doctor");
   const citaTotal = doctor?.appointments.length;
   const valorCita = doctor?.doctor.checkUpPrice * citaTotal;
 
