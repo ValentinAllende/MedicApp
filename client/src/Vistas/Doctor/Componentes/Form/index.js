@@ -52,7 +52,7 @@ export default function Registro() {
     if (!input.address) errors.address = "Ingrese una Ciudad";
     if (!input.license) errors.license = "Ingrese una Licencia";
     if (!input.phoneNumber) errors.phoneNumber = "Ingrese un Telefono";
-    if (input.hour[0].substr(0, 2) < input.hour[1].substr(0, 2))
+    if (Number(input.hour[0].substr(0, 2)) > Number(input.hour[1].substr(0, 2)))
       errors.hour = "Horario invalido";
     if (!input.checkUpPrice) errors.checkUpPrice = "Ingrese una Tarifa";
     if (!input.lastName) errors.lastName = "Ingrese un apellido";
@@ -138,7 +138,7 @@ export default function Registro() {
     setInputErrors(
       validar({
         ...input,
-        [e.target.name]: e.target.value,
+        hour
       })
     );
   }
@@ -319,7 +319,7 @@ export default function Registro() {
             className="flex flex-col-reverse gap-3 mt-3 items-center text-xs xl:flex-row p-4 shadow-md border rounded-lg my-2"
           />
           <div className="h-3 text-xs font-poppins text-red-600 text-end">
-            {inputErrors.email}
+            {}
           </div>
           <label>Correo Electronico:</label>
           <input
