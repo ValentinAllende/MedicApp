@@ -73,8 +73,8 @@ export default function Login(email, password) {
         password: "",
       });
       if (!response.data.data.isActive) {
-        localStorage.setItem("auth-token",JSON.stringify(""));
-        localStorage.setItem("User", JSON.stringify(""));
+        sessionStorage.clear();
+        localStorage.clear();
         Swal.fire("Esta cuenta ha sido temporalmente baneada. Por favor comunicate con el adminisrtador o ingresa con otra cuenta")
         return navigate("/");
       } else{
