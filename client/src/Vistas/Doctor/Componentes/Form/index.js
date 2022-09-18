@@ -93,7 +93,7 @@ export default function Registro() {
         city: input.city,
         specialities: input.specialities,
         license: input.license,
-        address: input.address,
+        address: `${input.address},${input.city} ${input.country}`,
         email: input.email,
         password: input.password,
         phoneNumber: input.phoneNumber,
