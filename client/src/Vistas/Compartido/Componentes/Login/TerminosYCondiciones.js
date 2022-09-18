@@ -94,7 +94,7 @@ export default function TerminosYCondiciones() {
           sido creadas con propósitos fraudulentos. El registro en la Plataforma
           se realizará por medio del uso de los Medios Digitales. Los Usuarios
           podrán llevar a cabo un registro asociado con los datos que tengan
-          registrados en la red social Facebook® o la cuenta de correo
+          registrados en  la cuenta de correo
           electrónico de Google. Todos los Usuarios declaran que cuentan con
           capacidad para contratar, de acuerdo con la legislación aplicable en
           sus respectivos domicilios. Únicamente podrán solicitar la
@@ -152,15 +152,7 @@ export default function TerminosYCondiciones() {
           MedicApp una licencia no exclusiva, ilimitada en el tiempo, libre de
           regalías para usar los Contenidos con los propósitos relativos a la
           prestación del Servicio. El Servicio es gratuito para los Pacientes.
-          Los Especialistas en Salud tendrán la opción de optar por un perfil
-          básico (que será gratuito) o en su caso, por un perfil "Premium" (que
-          tendrá un costo). Los Centros Médicos únicamente podrán contrata un
-          Perfil "Premium SAAS Clínicas" o "Premium solo SAAS" (que tendrán un
-          costo). El perfil "Premium" otorgará a los Especialistas en Salud y a
-          los Centros Médicos que lo adquieran una serie de beneficios que se
-          encontrará desglosada en el Sitio Web y que forma parte del Servicio.
-          Las contraprestaciones aplicables a los perfiles "Premium" se
-          publicarán en el Sitio Web. Únicamente se aceptan pagos con tarjeta
+          Únicamente se aceptan pagos con tarjeta
           bancaria, mismos que deberán ser procesados en los Medios Digitales.
           <h2>VI.- ALCANCE DEL SERVICIO</h2>
           Por lo que hace a los Usuarios en general,
@@ -175,18 +167,18 @@ export default function TerminosYCondiciones() {
           reserva de citas con los Especialistas en Salud y con los Centros
           Médicos que han puesto a disposición dicha posibilidad. Permitir a los
           Pacientes registrados y a aquellos que proporcionen su cuenta de
-          Facebook, de correo electrónico de Google, o número de teléfono móvil
+          correo electrónico de Google, o número de teléfono móvil
           publicar una calificación correspondiente a los Especialistas en Salud
           y a los Centros Médicos con base en las opiniones formuladas por los
           Pacientes. Permitir a los Pacientes registrados y a aquellos que
-          proporcionen su cuenta de Facebook, de correo electrónico de Google, o
+          proporcionen su cuenta de correo electrónico de Google, o
           número de teléfono móvil y hayan realizado el proceso de validación de
           identidad redactar opiniones respecto de los servicios profesionales
           independientes que les hayan sido prestados por los Especialistas en
           Salud o por los Centros Médicos. Por lo que hace a los Especialistas
           en Salud con Perfil "Premium", el Servicio incluye, además, las
           siguientes funcionalidades: Tener acceso a una agenda en línea
-          denominada "Docplanner ®" que permite, entre otras cosas, lo
+          denominada "Agenda Medica ®" que permite, entre otras cosas, lo
           siguiente: (i) publicar un calendario de disponibilidad para citas
           profesionales, mediante el Calendario de Visitas; (ii) gestionar citas
           con los Pacientes y ofrecer el acceso a una agenda virtual; (iii)
@@ -194,7 +186,7 @@ export default function TerminosYCondiciones() {
           respecto de las citas agendadas; (iv) fomentar que los Pacientes
           emitan opiniones y valoraciones sobre el Especialista en Salud en
           cuestión; y (v) permitir que los Pacientes reserven citas a través de
-          los Medios Digitales, durante las veinticuatro (24) horas del día.
+          los Medios Digitales, durante las horas del día a disponer.
           Podrá publicar información ampliada sobre los datos de contacto del
           Especialista en Salud (v. gr., número(s) telefónico(s) de contacto,
           servicios y precios, experiencia profesional, contenidos
@@ -209,60 +201,24 @@ export default function TerminosYCondiciones() {
           Salud la posibilidad de configurar y personalizar su propio dominio de
           Internet (asociado al dominio de la Empresa) y la opción de generar un
           código o "Widget" que permita integrar su Perfil en su sitio de
-          internet particular. Las demás funcionalidades que expresamente se
-          incluyan en el Sitio Web al momento en que el Especialista en Salud
-          contrate su membresía para el Perfil "Premium". Los Especialista en
-          Salud que hayan adquirido el Servicio Premium podrán contar con el
-          servicio adicional de recepción de llamadas telefónicas, en sus
-          distintas modalidades, proporcionado por un centro de llamadas (en
-          idioma inglés conocido como "Call-Center") operado por un tercero
-          ajeno a MedicApp. El precio de este servicio podrá variar
-          dependiendo del tipo de Perfil y/o membresía del Especialista en Salud
-          de conformidad con lo expresamente establecido en Sitio Web. Al
-          respecto, Especialista en Salud acepta y consiente lo siguiente: (i)
-          que MedicApp podrá desplegar un teléfono troncal cuya línea es
-          propiedad del centro de llamadas o "Call-Center" en el perfil del
-          Especialista en Salud y en su caso, en el portal de "Google My
-          Business" que tenga habilitado dicho Especialista en Salud, esto, en
-          sustitución del (de los) número(s) telefónico(s) que sea(n) propio(s)
-          del Especialista en Salud; (ii) que el servicio aquí pactado será
-          predeterminado para el Especialista en Salud al contratar los
-          Servicios de MedicApp, bajo el entendido de que el Especialista en
-          Salud deberá declinar expresamente su utilización en caso de no
-          requerir de este servicio; y (iii) que el personal del centro de
-          llamadas o "Call-Center" podrá agendar directamente citas para el
-          Especialista en Salud únicamente consultando la herramienta denominada
-          "Docplanner ®". MedicApp podrá invitar (por correo electrónico) a
-          los Especialistas en Salud que hayan adquirido el Perfil "Premium" a
-          participar en la categoría "First Class", cuya principal funcionalidad
-          constituye la promoción y la colocación del Perfil del Usuario en los
-          primeros lugares de su respectiva especialidad, esto dentro de los
-          Medios Digitales. El precio de la membresía "First Class" se
-          determinará atendiendo a un algoritmo que calcula, entre otros
-          factores, la demanda de una especialidad dentro de una población. El
-          precio, la descripción detallada de los beneficios que dicha categoría
-          ofrece y los términos a que se encuentra sujeta se informarán al
-          Especialista en Salud en la invitación respectiva. Por lo que hace a
-          los Centros Médicos con Perfil "Premium SAAS Clínicas", el Servicio
-          incluye, además, las siguientes funcionalidades: Tener acceso a una
-          agenda en línea denominada "Docplanner ®" que permite, entre otras
+          internet particular. Tener acceso a una
+          agenda en línea denominada "Agenda Medica ®" que permite, entre otras
           cosas, lo siguiente: (i) publicar un calendario de disponibilidad para
           citas profesionales, mediante el Calendario de Visitas; (ii) gestionar
           citas con los Pacientes y ofrecer el acceso a una agenda virtual;
           (iii) enviar recordatorios a los Pacientes y al Centro Médico respecto
           de las citas agendadas; (iv) fomentar que los Pacientes emitan
-          opiniones y valoraciones sobre el Centro Médico en cuestión; y (v)
+          opiniones y valoraciones sobre el  Médico en cuestión; y (v)
           permitir que los Pacientes reserven citas a través de los Medios
-          Digitales, durante las veinticuatro (24) horas del día. Que el Centro
-          Médico pueda dar de alta dentro de su perfil a Especialistas en Salud
-          con perfiles propios. Publicar información ampliada sobre los datos de
-          contacto del Centro Médico (v. gr., número(s) telefónico(s) de
+          Digitales, durante las  horas del día a diponer. 
+          Publicar información ampliada sobre los datos de
+          contacto del Médico (v. gr., número(s) telefónico(s) de
           contacto, servicios y precios, experiencia profesional, contenidos
           audiovisuales, formas de pago aceptadas, compañías aseguradoras con
           las que el profesional tenga convenios, etc.). Llevar a cabo el
-          posicionamiento del Perfil del Centro Médico en los motores de
+          posicionamiento del Perfil del Médico en los motores de
           búsqueda en Internet, así como en el Sitio Web de MedicApp. Que los
-          Pacientes describan al Centro Médico, por conducto de la Plataforma,
+          Pacientes describan al Médico, por conducto de la Plataforma,
           la descripción de un episodio clínico relativo al (los)
           padecimiento(s) que en específico motiven la solicitud de una cita
           profesional o de una consulta médica. Proporcionar al Centro Médico la
@@ -272,41 +228,21 @@ export default function TerminosYCondiciones() {
           Médico contrate su membresía para el Perfil "Premium SAAS Clínicas".
           Por lo que hace a los Centros Médicos con Perfil "Premium solo SAAS",
           el Servicio incluye, además, las siguientes funcionalidades: Tener
-          acceso a una agenda en línea denominada "Docplanner ®" que permite,
+          acceso a una agenda en línea denominada "Agenda Medica ®" que permite,
           entre otras cosas, lo siguiente: (i) gestionar citas con los Pacientes
           y ofrecer el acceso a una agenda virtual; (ii) enviar recordatorios a
           los Pacientes y al Centro Médico respecto de las citas agendadas;
           (iii) fomentar que los Pacientes emitan opiniones y valoraciones sobre
-          el Centro Médico en cuestión. Que el Centro Médico pueda dar de alta
-          dentro de su perfil a Especialistas de Salud sin perfiles propios.
+          el Centro Médico en cuestión.
           Publicar información ampliada sobre los datos de contacto del Centro
           Médico (v. gr., número(s) telefónico(s) de contacto, equipamiento,
           servicios, y contenidos audiovisuales). Llevar a cabo el
-          posicionamiento del Perfil del Centro Médico en los motores de
-          búsqueda en Internet. Proporcionar al Centro Médico la opción de
+          posicionamiento del Perfil del Médico en los motores de
+          búsqueda en Internet. Proporcionar al Médico la opción de
           generar un código o "Widget" que permita integrar su Perfil en su
-          sitio de internet particular. Las demás funcionalidades que
-          expresamente se incluyan en el Sitio Web al momento en que el Centro
-          Médico contrate su membresía para el Perfil "Premium SAAS Clínicas".
+          sitio de internet particular.
           <h2>VII.- DURACIÓN Y TERMINACIÓN</h2>
-          Los Usuarios que contraten cualquier
-          Perfil (incluyendo las distintas membresía y modalidades) con costo
-          estarán sujetos a permanecer en la plataforma por un plazo forzoso
-          mínimo de 12 meses (el "Período Mínimo"), contados a partir del día en
-          que el Usuario haya realizado el pago del servicio, siendo renovado de
-          manera automática, por un periodo igual al inicialmente contratado,
-          salvo aviso de no renovación por cualquiera de las Partes, con 7
-          (siete) días de antelación al siguiente periodo de facturación. En el
-          caso de que, antes de la terminación del Período Mínimo, el Usuario
-          decida dar de baja y/o dejar de utilizar el Servicio, o de que el
-          contrato sea rescindido por MedicApp debido a la falta de pago de
-          las contraprestaciones por parte del Usuario, el Usuario deberá pagar
-          a MedicApp, como indemnización, el resto de las cuotas de
-          contraprestaciones restantes hasta la finalización del Período Mínimo
-          (la "Indemnización"). Esta Indemnización podrá ser requerida por parte
-          de MedicApp en un solo pago y dentro de los 30 (treinta) días
-          posteriores a la fecha en que la Indemnización se haya hecho exigible
-          al Usuario. La terminación del presente Contrato no perjudicará en
+          La terminación del presente Contrato no perjudicará en
           modo alguno el derecho de la Parte afectada por tal incumplimiento a
           reclamar la correspondiente indemnización por los daños y perjuicios
           causados. Después de la terminación del Contrato, el Usuario tendrá la
@@ -544,7 +480,7 @@ export default function TerminosYCondiciones() {
           aclaración soliciten. Centro de Atención y Soporte: Teléfono desde la
           Ciudad de México: (+52) 55 4164 7819 Teléfono desde el interior de la
           República Mexicana: (+52) 55 4164 7819 Correo electrónico:
-          terminosycondiciones@docplanner.com 
+          terminosycondiciones@Agenda Medica.com 
           <h2>XIII.- USO DE LOS MEDIOS DIGITALES</h2>
           Los Usuarios se comprometen a hacer un uso adecuado y lícito de los
           Medios Digitales, de conformidad con la legislación aplicable, el
