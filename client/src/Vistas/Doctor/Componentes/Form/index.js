@@ -161,6 +161,7 @@ export default function Registro() {
           className="w-full font-poppins text-sm bg-white flex flex-col rounded-lg p-10 lg:w-1/2 text-[#292F53]"
           onSubmit={(e) => handleSubmit(e)}
         >
+          <h1 className="text-center text-3xl mb-5">Registro Doctor</h1>
           <label>Nombre:</label>
           <input
             type="text"
