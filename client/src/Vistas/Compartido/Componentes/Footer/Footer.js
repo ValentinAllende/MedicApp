@@ -1,11 +1,14 @@
 import react from 'react'
+import {Link} from 'react-router-dom'
 export default function Footer(){
 return(
         <footer className="text-center bg-indigo-100 pt-2 pb-2">
             <div className='grid grid-cols-3 gap-4'>
                 <div>
                     <aside>
+                        <Link to = "">
                         <div>Servicios</div>
+                        </Link>
                         <ul className=" dark:text-slate-400"><li><a>Quienes Somos</a></li>
                         <li><a>Contacto</a></li>
                         </ul>

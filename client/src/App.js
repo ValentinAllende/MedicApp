@@ -10,7 +10,7 @@ import RegisterPatient from "./Vistas/Paciente/Componentes/Form/index";
 import Login from "./Vistas/Compartido/Componentes/Login/Login";
 import PanelDoctor from "./Vistas/Doctor/Componentes/Panel/componentes";
 import Dashboard from "./Vistas/Admin/componentes/Dashboard/Dashboard";
-import { HOME, LOGIN,DOCTORS, PROFILE_ADMIN, LOGOUT_ADMIN, PROFILE_DOCTOR, HOME_DOCTOR, DOCTORS_DOCTOR, DOCTORS_ID_DOCTOR, LOGOUT_DOCTOR,  PROFILE_PATIENT, LOGOUT_PATIENT, REGISTER_DOCTOR, REGISTER_PATIENT, DOCTORS_ID, HOME_ADMIN, DOCTORS_ADMIN, DOCTORS_ID_ADMIN, HOME_PATIENT, DOCTORS_PATIENT, DOCTORS_ID_PATIENT, BUY_APPOINTMENT_PATIENT, } from "./context/config/routes/paths";
+import { HOME, LOGIN,DOCTORS, TERMINOS, PROFILE_ADMIN, LOGOUT_ADMIN, PROFILE_DOCTOR, HOME_DOCTOR, DOCTORS_DOCTOR, DOCTORS_ID_DOCTOR, LOGOUT_DOCTOR,  PROFILE_PATIENT, LOGOUT_PATIENT, REGISTER_DOCTOR, REGISTER_PATIENT, DOCTORS_ID, HOME_ADMIN, DOCTORS_ADMIN, DOCTORS_ID_ADMIN, HOME_PATIENT, DOCTORS_PATIENT, DOCTORS_ID_PATIENT, BUY_APPOINTMENT_PATIENT, } from "./context/config/routes/paths";
 import Logout from "./context/components/Logout";
 import PublicRoute from "./context/components/router/PublicRoutes";
 import AdminRoute from "./context/components/router/AdminRoutes";
@@ -18,6 +18,7 @@ import DoctorRoute from "./context/components/router/DoctorRoutes";
 import { AuthContextProvider } from "./context/authContext";
 import Paciente from "./Vistas/Paciente/Componentes/Panel/Paciente";
 import PatientRoute from "./context/components/router/PatientRoute";
+import TerminosYCondiciones from "./Vistas/Compartido/Componentes/Login/TerminosYCondiciones";
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
                 <Route path="/" element={<PublicRoute/>}>
                     <Route  path={HOME} element={<Home />} />
                     <Route  path={LOGIN} element={<Login />} />
+                    <Route  path={TERMINOS} element={<TerminosYCondiciones />} />
                     <Route  path={DOCTORS} element={<DoctorsRoster />} />
                     <Route  path={DOCTORS_ID} element={<DetalleDoctor />}/>
                     <Route  path={REGISTER_DOCTOR} element={<RegisterDoctor />} />

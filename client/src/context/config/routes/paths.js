@@ -1,5 +1,6 @@
 export const HOME = '/'
 export const LOGIN = '/login'
+export const TERMINOS = '/login/terminos'
 export const REGISTER_DOCTOR = '/registerDoctor'
 export const REGISTER_PATIENT = '/registerPatient'
 export const DOCTORS = '/doctors'
