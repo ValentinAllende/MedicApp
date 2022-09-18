@@ -6,7 +6,7 @@ return(
             <div className='grid grid-cols-3 gap-4'>
                 <div>
                     <aside>
-                        <Link to = "">
+                        <Link to = "/services">
                         <div>Servicios</div>
                         </Link>
                         <ul className=" dark:text-slate-400"><li><a>Quienes Somos</a></li>
