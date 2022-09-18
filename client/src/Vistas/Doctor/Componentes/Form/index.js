@@ -7,6 +7,15 @@ import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 import InputImage from "../../../Compartido/Componentes/InputImage/InputImage";
 import Swal from "sweetalert2";
 
+const modal = Swal.mixin({
+  customClass: {
+    popup: "rounded-lg",
+    title: "font-poppins",
+    confirmButton: "bg-[#292F53] hover:bg-[#1479FF] py-4 px-8 rounded-lg border-0 text-white font-poppins"
+  },
+  buttonsStyling: false
+});
+
 export default function Registro() {
   const navigate = useNavigate();
   const [input, setInput] = useState({
@@ -112,16 +121,17 @@ export default function Registro() {
         image: input.image,
       });
       if (res.status === 201) {
-        alert("Usted se a registrado");
+        modal.fire("Usted se a registrado");
         navigate("/");
       }
     } catch (error) {
       console.log(error);
+
       if (
         error.response.data.error ===
         "Ya existe un usuario con ese correo electronico"
       )
-        Swal.fire(error.response.data.error);
+        modal.fire(error.response.data.error)
     }
   }
 
