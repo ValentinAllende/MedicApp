@@ -111,7 +111,7 @@ const controllerAuth = {
       // console.log(user.payload.email, 'user');
       const patient = await Patient.findOne({ email: user.payload.email });
 
-      if (!patient && rol === "PATIENT") {
+      if (!patient) {
         const newPatient = await Patient.create({
           email: user.payload.email,
           name: user.payload.name,
