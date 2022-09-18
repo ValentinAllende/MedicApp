@@ -8,7 +8,7 @@ import { HiOutlinePhone } from "react-icons/hi";
 //import Stripe from '../../../Paciente/StripeCheckOut'
 import NavBar from '../Header/NavBar';
 import {Link} from 'react-router-dom'
-
+import mapa from '../../imagenes compartidas/mapa.jfif';
 function DetalleDoctor (){
 
   const { idDoctor } = useParams();
@@ -100,8 +100,14 @@ function DetalleDoctor (){
               })}
             <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 flex flex-row '> <span className='mr-2'><HiLocationMarker/></span>  {doctor?.city}, <span className='ml-2'>{doctor?.country}</span></p>
             <p className='font-raleway text-[#292f536f] mt-2 mb-2 '> Precio consulta: {doctor?.checkUpPrice}</p>
-            <a href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>mapa</a>
-            
+            <div class= 'relative bg-blue-800 flex justify-center'>
+            <img src={mapa} class='z-0'/>
+            <div class='absolute my-12 py-4'> 
+            <a href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`} target='_blank'>
+            <span class=" z-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ampliar</span>
+            </a>
+            </div>
+            </div>
             <span className='font-raleway w-fit text-[#1479FF] align-middle rounded flex flex-row '> <span className='mt-1'><HiOutlinePhone/></span>: <span className='text-[#1479FF] tracking-[.10em]'>{doctor?.phoneNumber}</span> </span>
 
             <div className='text-[#1479FF] mt-2 mb-2 '>
