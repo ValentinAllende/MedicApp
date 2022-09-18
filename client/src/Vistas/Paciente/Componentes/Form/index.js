@@ -3,16 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 import InputImage from "../../../Compartido/Componentes/InputImage/InputImage";
-import Swal from "sweetalert2";
-
-const modal = Swal.mixin({
-  customClass: {
-    popup: "rounded-lg p-10",
-    title: "font-poppins p-0",
-    confirmButton: "bg-[#292F53] hover:bg-[#1479FF] py-4 px-8 rounded-lg border-0 text-white font-poppins"
-  },
-  buttonsStyling: false,
-});
+import Modal from "../../../Compartido/Componentes/SwalStyled/index"
 
 export default function CreatePatient() {
   const navigate = useNavigate();
@@ -76,7 +67,7 @@ export default function CreatePatient() {
       });
       console.log(res);
       if (res.status === 201) {
-        modal.fire("Registro exitoso");
+        Modal.fire("Registro exitoso");
         navigate("/");
       }
     } catch (error) {
@@ -85,7 +76,7 @@ export default function CreatePatient() {
         error.response.data.error ===
         "Ya existe un usuario con ese correo electronico"
       )
-        modal.fire(error.response.data.error);
+        Modal.fire(error.response.data.error);
     }
   }
 
