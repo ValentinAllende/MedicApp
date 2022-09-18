@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 import InputImage from "../../../Compartido/Componentes/InputImage/InputImage";
+import Swal from 'sweetalert2'
 
 export default function CreatePatient() {
   const navigate = useNavigate();
@@ -68,8 +69,13 @@ export default function CreatePatient() {
         alert("Usted se a registrado");
         navigate("/");
       }
-    } catch (e) {
-      console.log(e.toJSON());
+    } catch (error) {
+      console.log(error)
+      if (
+        error.response.data.error ===
+        "Ya existe un usuario con ese correo electronico"
+      )
+        Swal.fire(error.response.data.error);
     }
   }
 

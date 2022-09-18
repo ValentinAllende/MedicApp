@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../../../Compartido/Componentes/Header/NavBar";
 import InputImage from "../../../Compartido/Componentes/InputImage/InputImage";
+import Swal from "sweetalert2";
 
 export default function Registro() {
   const navigate = useNavigate();
@@ -55,7 +56,6 @@ export default function Registro() {
     if (Number(input.hour[0].substr(0, 2)) > Number(input.hour[1].substr(0, 2)))
       errors.hour = "Horario invalido";
     if (!input.checkUpPrice) errors.checkUpPrice = "Ingrese una Tarifa";
-    if (!input.lastName) errors.lastName = "Ingrese un apellido";
     if (!input.password) errors.password = "Debe ingresar una contraseña";
     if (!input.password) errors.password = "Ingrese una contraseña.";
     if (!input.specialities)
@@ -115,8 +115,13 @@ export default function Registro() {
         alert("Usted se a registrado");
         navigate("/");
       }
-    } catch (e) {
-      console.log(e.toJSON());
+    } catch (error) {
+      console.log(error);
+      if (
+        error.response.data.error ===
+        "Ya existe un usuario con ese correo electronico"
+      )
+        Swal.fire(error.response.data.error);
     }
   }
 
@@ -138,7 +143,7 @@ export default function Registro() {
     setInputErrors(
       validar({
         ...input,
-        hour
+        hour,
       })
     );
   }
