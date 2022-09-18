@@ -8,9 +8,11 @@ import { HiOutlinePhone } from "react-icons/hi";
 //import Stripe from '../../../Paciente/StripeCheckOut'
 import NavBar from '../Header/NavBar';
 import {Link} from 'react-router-dom'
+import Mapa from "./mapa";
 
 function DetalleDoctor (){
 
+ //console.log(mapa)
   const { idDoctor } = useParams();
 
   
@@ -59,7 +61,8 @@ function DetalleDoctor (){
   // }
 
   useEffect(() => {
-    dispatch(getDocbyId(idDoctor))
+    dispatch(getDocbyId(idDoctor)
+    )
     /* console.log(rating, 'dispatch'); */
 
   },[dispatch, doctor?.rating, idDoctor, rating]);
@@ -77,10 +80,10 @@ function DetalleDoctor (){
   // console.log(selectedHour, 'selectred hour');
 
   const user = JSON.parse(window.localStorage.getItem('User'))
-  
+   //const mapa = Mapa();
   //trae datos de mapa
-  const lng = localStorage.getItem('longitude');
-  const lat = localStorage.getItem('latitude');
+  const params = localStorage.getItem('params');
+  
 
   return(
       <>
@@ -100,7 +103,7 @@ function DetalleDoctor (){
               })}
             <p className='font-raleway text-[#292f53b8] text-sm mt-2 mb-2 flex flex-row '> <span className='mr-2'><HiLocationMarker/></span>  {doctor?.city}, <span className='ml-2'>{doctor?.country}</span></p>
             <p className='font-raleway text-[#292f536f] mt-2 mb-2 '> Precio consulta: {doctor?.checkUpPrice}</p>
-            <a href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>mapa</a>
+            <a href={`https://www.google.com/maps/search/?api=1&query=${params}`}>mapa</a>
             
             <span className='font-raleway w-fit text-[#1479FF] align-middle rounded flex flex-row '> <span className='mt-1'><HiOutlinePhone/></span>: <span className='text-[#1479FF] tracking-[.10em]'>{doctor?.phoneNumber}</span> </span>
 

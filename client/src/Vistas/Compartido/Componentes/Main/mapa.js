@@ -1,10 +1,12 @@
-import React from "react";
+import React,{useEffect} from "react";
 import axios from "axios";
 const API_KEY = 'd79d92e140e62ddd296f0c1bf031f2b5';
 const adds= localStorage.getItem('address');
 const country = localStorage.getItem('country');
 const Mapa = async(address) => {
-//console.log(address)
+// useEffect(() => {
+//   localStorage.removeItem('latitude');
+// })//console.log(address)
     // const number = '168'
     // const street = 'St Fenchurch Street'
     // const city = 'London UK'
@@ -27,10 +29,9 @@ const Mapa = async(address) => {
       //console.log('ESTE ES EL FILTER ',dataMapFilter)
       let filterData = await dataMapFilter[0].latitude
       let filterData1 = await dataMapFilter[0].longitude
-      localStorage.setItem('latitude',filterData)
-      localStorage.setItem('longitude',filterData1)
-      //console.log('filter data',filterData)
-    let  finalData = [filterData, filterData1]
+      //console.log('filter data',dataMapFilter)
+    let  finalData = `${filterData}, ${filterData1}`
+    localStorage.setItem('params',finalData)
     return finalData;
 }
 
