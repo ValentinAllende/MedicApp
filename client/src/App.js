@@ -18,10 +18,15 @@ import DoctorRoute from "./context/components/router/DoctorRoutes";
 import { AuthContextProvider } from "./context/authContext";
 import Paciente from "./Vistas/Paciente/Componentes/Panel/Paciente";
 import PatientRoute from "./context/components/router/PatientRoute";
+
 import TerminosYCondiciones from "./Vistas/Compartido/Componentes/Login/TerminosYCondiciones";
 import Servicios from "../src/Vistas/Compartido/Componentes/Footer/Servicios"
 import QuienesSomos from "../src/Vistas/Compartido/Componentes/Footer/QuienesSomos"
 import Contactanos from "../src/Vistas/Compartido/Componentes/Footer/Contactanos"
+
+import ForgotPassword from "./Vistas/Compartido/Componentes/Login/forgotPassword/forgot";
+import ChangePassword from "./Vistas/Compartido/Componentes/Login/changePassword/changePassword";
+
 
 
 function App() {
@@ -64,7 +69,8 @@ function App() {
                     <Route  path={DOCTORS_ID} element={<DetalleDoctor />}/>
                     <Route  path={REGISTER_DOCTOR} element={<RegisterDoctor />} />
                     <Route  path={REGISTER_PATIENT} element={<RegisterPatient />} />
-
+                    <Route  path="/forgotPassword" element={<ForgotPassword />} />
+                    <Route  path="/changePassword/:token" element={<ChangePassword />} />
 
                 </Route>
 
