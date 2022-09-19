@@ -2,7 +2,12 @@ import {Link} from "react-router-dom"
 export default function TerminosYCondiciones() {
   return (
       <div className="flex mt-5 align-middle justify-center">
-        <Link to="/login" className="font-poppins bg-blue-500 max-h-6 text-center border-2 border-black mr-[50px] w-[80px]">Volver</Link>
+        <Link
+          className="font-poppins  bg-blue-500 max-h-7 text-center  m-[20px] p-1 text-white mr-[50px] w-[100px] rounded-md"
+          to="/login"
+        >
+          Volver
+        </Link>
       <div className="w-[80%] flex flex-col justify-center text-center align-middle bg-white ">
         <label className="text-[30px]">TÉRMINOS Y CONDICIONES</label>
         <p className="text-slate-800 p-5 font-serif justify-center text-justify">
@@ -310,8 +315,8 @@ export default function TerminosYCondiciones() {
           los Especialistas en Salud o en su caso, a los Centros Médicos. Si es
           necesario cancelar la visita, las partes interesadas deben cancelar la
           reserva a través de los Medios Digitales. 
-          <h2>X.- DESCRIPCIÓN DE OPINIONES</h2>
-          Y PREGUNTAS En la presente sección, se enumeran los lineamientos
+          <h2>X.- DESCRIPCIÓN DE OPINIONES Y PREGUNTAS</h2>
+           En la presente sección, se enumeran los lineamientos
           generales que impone la Empresa para la publicación de opiniones y
           preguntas por los Pacientes: Las opiniones y preguntas contendrán el
           nombre del Paciente, o aquél con el que este se identifique. Las

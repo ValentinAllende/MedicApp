@@ -1,31 +1,32 @@
 import { Link } from "react-router-dom";
-import Ecografia from "./img especialidades/Ecografia.png";
+import icon from "./iconimg/ico-dark.png"
+
 
 export default function Servicios() {
   return (
-    <div className="p-2">
+    <div className="">
       <div className="h-[100px] bg-indigo-100 p-4">
         <Link
-          className="font-poppins  bg-blue-500 max-h-6 text-center  m-[20px] p-1 text-white mr-[50px] w-[100px] rounded-md"
+          className=""
           to="/"
         >
-          Volver
+          <img class="h-[60px] ml-[50px]" src={icon}/>
         </Link>
       </div>
       <div className="flex flex-col justify-center align-middle text-center">
         <br />
         <label className="text-[30px] font-poppins">Servicios</label>
         <br />
-        <div className="flex-col text-[30px] font-poppins text-center align-middle justify-center w-[90%] self-center">
-          MedicApp te brinda un lugar de conexion con nuestros medicos
-          especialistas de las siguientes ramas.
+        <div className="flex-col p-6 text-[30px] font-poppins text-center align-middle border-gray-400 rounded border-[1px] bg-blue-500 text-cyan-500 justify-center w-[90%] self-center">
+          MedicApp te provee servicios medicos
+           de las siguientes ramas.
           <br />
           <br />
-          <div className="">
+          <div className="text-[#292F53] text-xl font-poppins mb-5 ">
             <label className="text-gray-500">Ecografía</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white  text-[15px]">
                 {" "}
                 Es una prueba muy segura porque no usa radiación. La técnica se
                 hace con ondas sonoras de alta frecuencia emitidas por un
@@ -54,7 +55,7 @@ export default function Servicios() {
             <label className="text-gray-500">Cardiología</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white  text-[15px]">
                 {" "}
                 El Servicio de Cardiología Clínica ambulatoria brinda
                 diagnóstico y tratamiento para todo el espectro de enfermedades
@@ -84,7 +85,7 @@ export default function Servicios() {
             <label className="text-gray-500">Ginecología</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white text-[15px]">
                 {" "}
                 La ginecología es una especialidad de la medicina que se centra
                 en el estudio del sistema reproductor femenino. Los
@@ -101,7 +102,7 @@ export default function Servicios() {
             <label className="text-gray-500">Dermatología</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white text-[15px]">
                 Dermatología Información del Servicio | Equipo de Salud |
                 Prestaciones Presentación El área de Dermatologia brinda
                 atención a adultos mayores de 16 años con enfermedades en piel,
@@ -121,10 +122,10 @@ export default function Servicios() {
                 especialidad.
               </p>
             </div>
-            <label className="text-gray-500">Gastroentrología</label>
+            <label className="text-gray-500">Gastroenterología</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white  text-[15px]">
                 El Servicio de Gastroenterología y Endoscopia Digestiva es un
                 equipo integrado por especialistas con una amplia preparación
                 profesional y científica que desarrolla sus actividades en
@@ -140,7 +141,7 @@ export default function Servicios() {
             <label className="text-gray-500">Medicina General</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white text-[15px]">
                 La medicina general constituye el primer nivel de atención
                 médica y es imprescindible para la prevención, detección,
                 tratamiento y seguimiento de las enfermedades crónicas
@@ -162,7 +163,7 @@ export default function Servicios() {
             <label className="text-gray-500">Alergología</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white  text-[15px]">
                 La alergología es la especialidad que comprende el conocimiento,
                 diagnóstico y tratamiento de la patología producida por
                 mecanismos inmunológicos, con especial atención en la alergia .
@@ -194,7 +195,7 @@ export default function Servicios() {
             <label className="text-gray-500">Oncológica</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify  text-white text-[15px]">
                 El tratamiento oncológico es el uso de cirugías, radiación,
                 medicamentos y otras terapias para curar el cáncer, encoger un
                 cáncer o detener la progresión de un cáncer. Existen muchos
@@ -211,7 +212,7 @@ export default function Servicios() {
             <label className="text-gray-500">Hematología</label>
 
             <div className="flex flex-row text-left m-5 text-blue-500  ">
-              <p className="text-justify  text-[15px]">
+              <p className="text-justify text-white  text-[15px]">
                 En el Servicio de Hematología atendemos, controlamos y
                 realizamos tratamientos de pacientes adultos con patologías de
                 la sangre, ganglios linfáticos, médula ósea, entre otros.
