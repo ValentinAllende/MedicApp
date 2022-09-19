@@ -9,6 +9,7 @@ import { HiOutlinePhone } from "react-icons/hi";
 import NavBar from '../Header/NavBar';
 import {Link} from 'react-router-dom'
 import mapa from '../../imagenes compartidas/mapa.jfif';
+import Mapa from "./mapa";
 function DetalleDoctor (){
 
   const { idDoctor } = useParams();
@@ -59,7 +60,9 @@ function DetalleDoctor (){
   // }
 
   useEffect(() => {
-    dispatch(getDocbyId(idDoctor))
+    dispatch(getDocbyId(idDoctor),
+    Mapa()
+    )
     /* console.log(rating, 'dispatch'); */
 
   },[dispatch, doctor?.rating, idDoctor, rating]);
@@ -81,7 +84,7 @@ function DetalleDoctor (){
   //trae datos de mapa
   const lng = localStorage.getItem('longitude');
   const lat = localStorage.getItem('latitude');
-
+  console.log('latitude: ', lat,'Longitude: ', lng)
   return(
       <>
       <NavBar/>
@@ -89,7 +92,7 @@ function DetalleDoctor (){
 
         <div>
           <section className='bg-white w-[550px] h-fit mt-10 flex flex-row p-3 rounded items-center' >
-            <img src={doctor && doctor.image} alt={doctor && doctor.name} className='w-40 h-40 rounded-full object-cover border-solid border-2 border-[#1479FF] '/>
+            <img src={doctor && doctor.image} alt={doctor && doctor.name} className='w-40 h-40 rounded-full object-cover border-solid border-2 border-[#1479FF]'/>
             <div className='ml-4'>
             <p className='font-poppins tracking-wide mt-1 mb-2 '>{doctor && doctor.name}</p>
             <p className='font-raleway text-[#292f536f] -mt-2 mb-2  text-xs'>Licencia: {doctor?.license}</p>
