@@ -223,7 +223,6 @@ const controllerAuth = {
   },
   forgotPassword: async (req, res, next) => {
     const { email } = req.body;
-    console.log(email);
     if (!email) return res.status(400).send("Email faltante");
     const patient = await Patient.findOne({ email: email });
     const doctor = await Doctor.findOne({ email: email });
@@ -238,7 +237,6 @@ const controllerAuth = {
         token = Jwt.sign({ user_id: doctor.id }, "doctortoken");
       }
       const link = `http://localhost:3000/changePassword/${token}`;
-      console.log(link)
       mailer.sendMailForgotPassword(email, link);
       return res.send("Se ha enviado un correo de recuperacion a " + email)
     } catch (error) {
@@ -248,7 +246,6 @@ const controllerAuth = {
   },
   changePassword: async (req, res, next) => {
     const { password, token } = req.body;
-    console.log(jwt_decode(token).user_id);
     const id = jwt_decode(token).user_id;
     try {
       const patient = await Patient.findOne({ _id: id });
@@ -265,7 +262,7 @@ const controllerAuth = {
       }
       return res.send("Contraseña cambiada")
     } catch (error) {
-      console.log(error);
+      return res.status(500).send(error);
     }
   },
 };
