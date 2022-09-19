@@ -16,7 +16,7 @@ return(
                         </Link></li>
                         
                         <li><Link className='text-white hover:text-blue-900 font-poppins text-[25px]'  to = "/contacto">
-                        Contactos
+                        Contactanos
                         </Link></li>
                        
                       
