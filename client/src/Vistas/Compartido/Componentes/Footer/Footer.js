@@ -5,17 +5,17 @@ return(
         <footer className="text-center bg-indigo-100 pt-2 pb-2">
             <div className='grid grid-cols-3 gap-4'>
                 <div>
-                    <aside class=" text-left ml-[200px] mt-[20px] bg-blue-500 w-[100%] rounded p-2">
+                    <aside class=" text-left ml-[200px] mt-[20px] w-[100%] rounded p-2">
                         <ul className=" dark:text-slate-400">
-                        <li><Link className='text-white hover:text-blue-900 font-poppins text-[25px]'  to = "/servicios">
+                        <li><Link className='text-blue-500 hover:text-blue-900 font-poppins text-[25px]'  to = "/servicios">
                         Servicios
                         </Link></li>
                         
-                        <li><Link className='text-white hover:text-blue-900 font-poppins text-[25px]'  to = "/somos">
-                        Quienes somos
+                        <li><Link className='text-blue-500 hover:text-blue-900 font-poppins text-[25px]'  to = "/somos">
+                        A que nos dedicamos
                         </Link></li>
                         
-                        <li><Link className='text-white hover:text-blue-900 font-poppins text-[25px]'  to = "/contacto">
+                        <li><Link className='text-blue-500 hover:text-blue-900 font-poppins text-[25px]'  to = "/contacto">
                         Contactanos
                         </Link></li>
                        
