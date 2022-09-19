@@ -156,7 +156,9 @@ export default function Login(email, password) {
                 {/* <Link to='/doctor'> */}
                 <button>Registrate como Doctor</button>
               </Link>
+          <Link to="/login/terminos" className="text-indigo-500">Terminos y Condiciones</Link>
             </form>
+
           </div>
           <div
             className="lg:flex w-1/2 hidden bg-no-repeat bg-cover relative items-center z-10"
