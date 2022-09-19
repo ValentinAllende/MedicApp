@@ -32,3 +32,5 @@ export const BUY_APPOINTMENT_PATIENT = '/patient/buy/doctor/:idDoctor'
 export const LOGOUT_PATIENT = '/patient/logout'
 
 // /patient/buy/doctor/undefined
+
+export const ABOUT_US = '/about'
