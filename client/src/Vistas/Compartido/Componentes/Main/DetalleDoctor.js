@@ -128,7 +128,7 @@ function DetalleDoctor (){
           </section>
         </div>
 
-        <div>
+        {user.rol === "PATIENT" ? <div>
         <section className='bg-white w-[550px] h-fit mt-10 rounded mb-2' >
 
           <p className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t' >Agenda tu cita</p>
@@ -141,7 +141,7 @@ function DetalleDoctor (){
           <br></br>
 
 
-
+          
           <p className='font-poppins tracking-wide mt-1 mb-2 ml-2'> Selecciona tu Hora:</p>
           <div>
           {(() => {
@@ -166,7 +166,7 @@ function DetalleDoctor (){
             <span></span>
             )}
         </section>
-        </div>
+        </div> : <spam></spam>}
       </div>
       </>
   )
