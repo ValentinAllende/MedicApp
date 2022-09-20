@@ -3,7 +3,7 @@ import IconHome from "../../../../Vistas/Paciente/Componentes/Panel/iconHome.jsx
 export default function NavBar({ setSection }) {
   return (
     <>
-      <div className="flex justify-evenly">
+      <div className="lg:flex justify-evenly hidden">
         <div className="w-[200px] bg-[#292F53] px-5 py-[10px] flex h-screen flex-col items-center shadow-2xl">
           <IconHome />
           <hr className="m-2 border-solid border-1 border-white w-2/3"></hr>
