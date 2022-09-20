@@ -4,7 +4,6 @@ import { useEffect, useState} from 'react';
 import { getDocbyId, likesDoctor } from '../../../../Redux/actions/doctorActions';
 import { HiLocationMarker } from "react-icons/hi";
 import { HiOutlinePhone } from "react-icons/hi";
-//import Stripe from '../../../Paciente/StripeCheckOut'
 import NavBar from '../Header/NavBar';
 import {Link} from 'react-router-dom'
 import mapa from '../../imagenes compartidas/mapaLocation.jpeg';
@@ -21,6 +20,7 @@ function DetalleDoctor (){
   let doctor = useSelector((state)=> state.doctores.detail.data)
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedHour, setSelectedHour] = useState('')
+  const [Loading,setLoading] = useState('cargando. . . ')
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
   let hours = schedule?.hour
@@ -47,7 +47,7 @@ function DetalleDoctor (){
 
   useEffect(() => {
     dispatch(getDocbyId(idDoctor),
-    Mapa()
+    handleMapa()
     )
   },[dispatch, doctor?.rating, idDoctor, rating]);
   
@@ -58,17 +58,26 @@ function DetalleDoctor (){
   //Sets Storage
   localStorage.setItem('hour',selectedHour)
   localStorage.setItem('date',selectedDate)
-  localStorage.setItem('address',address)
-  localStorage.setItem('country', country) 
-
+ 
+  const  [map,setMap] =  useState({
+    lat: '',
+    lng: ''
+  })
+ async function handleMapa(){
+    const data = await Mapa(address,country);
+    setMap({
+      lat: data.filterData,
+      lng: data.filterData1
+    })
+    setLoading('')
+  }
+  
   const user = JSON.parse(window.localStorage.getItem('User'))
   
 
 
   //trae datos de mapa
-  const lng = localStorage.getItem('longitude');
-  const lat = localStorage.getItem('latitude');
-  console.log('latitude: ', lat,'Longitude: ', lng)
+  console.log('dettalle doctor','latitude: ', map.lat,'Longitude: ', map.lng)
 
   const rol = JSON.parse(localStorage.getItem('Rol'))
 	const [like, setLike] = useState(enable)
@@ -113,13 +122,10 @@ function DetalleDoctor (){
                           <path fillrule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                         </svg>
                       </div>
-                    {/* <p className=" font-poppins tracking-wide mt-1 mb-2 ">
-                        {like ? 'favorito' : 'añadir a fav'}
-                      </p> */}
                     </>
-							    )
-								    :
-								    null}
+						)
+							:
+								null}
 
                     </div>
 
@@ -139,9 +145,7 @@ function DetalleDoctor (){
               <div class= 'relative flex justify-center rounded-xl'>
                 <img src={mapa} className='z-0 w-40 object-cover rounded-xl shadow-lg' alt ='mapa'/>
                   <div class='absolute mt-24 py-4'> 
-                    <a href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`} target='_blank'>
-                      <span class=" z-1 font-poppins text-white bg-[#00C6C2] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center">Ampliar</span>
-                    </a>
+                  { Loading ?  <a>Loading. . .</a>  : <a href={`https://www.google.com/maps/search/?api=1&query=${map.lat},${map.lng}`} target='_blank'>ampliar</a>}
                   </div>
               </div>
           </section>
@@ -179,7 +183,6 @@ function DetalleDoctor (){
             {selectedDate.length >1 && selectedHour.length > 1 ? (
                 <div className=" flex justify-center   ">
                   <Link to={ user?.rol === 'ADMIN' ? '/admin/doctors' : user?.rol === 'DOCTOR' ? '/doctor/doctors' : user?.rol === 'PATIENT' ? '/patient/buy/doctor/' + idDoctor : "/login"} className='font-poppins text-lg text-white text-center  focus:bg-[#292F53] rounded bg-[#00C6C2] w-40 h-10 m-3 mt-8 pt-1'> Reserva tu cita</Link>
-                  {/* "/dummy/doctors/" + idDoctor + "/stripe" */}
                 </div>
                 ):(
                 <span></span>
