@@ -131,9 +131,9 @@ export const doctoresSlice = createSlice({
     // getfavoritos : (state, action) => {
     //   state.favoritos = action.payload
     // },
-    // clear: (state, action) =>{
-    //   state.favoritos = action.payload
-    // }
+    clear: (state, action) =>{
+      state.detail = action.payload
+    }
   },
 });
 

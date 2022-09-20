@@ -9,7 +9,8 @@ import {
   getProfileDoctor,
   DoctorsByRating,
   DoctorsByPrice,
-  getLikes
+  getLikes,
+  clear
 } from "../Slicer/slicer";
 
 export const getDocbyId = (id) => (dispatch) => {
@@ -84,7 +85,11 @@ export const likesDoctor = (doctorId) => async (dispatch) => {
   }
 };
 
-
+export const getClear = () => (dispatch) => {
+  try {
+    dispatch(clear({}));
+  } catch (e) {}
+}
 
 // const { data } = await axios.put(`${RUTA_APP}users/logout`, {}, {
 //   headers: { Authorization: `Bearer ${localStorage.getItem('auth-token')}` }
