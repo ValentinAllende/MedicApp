@@ -5,6 +5,7 @@ import { getPatients, getPatientToken } from '../../../../Redux/actions/generalA
 
 import InfoData from '../../../Doctor/Componentes/Panel/componentes/InfoData';
 import Citas from './Citas';
+import Favoritos from './Favoritos';
 import NavBar from './NavBar';
 import TopBar from './topBar';
 
@@ -58,6 +59,8 @@ export default function Paciente() {
             </>
             : null}
             {section === "citas" ? <Citas /> : null}
+            {section === "favoritos" ? <Favoritos /> : null}
+
         </div>
         </div>
     </div>
