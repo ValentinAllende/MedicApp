@@ -186,6 +186,7 @@ function DetalleDoctor() {
 								{/* {<StarDetail
               stars={4}/>} */}
 
+
 							</div>
 
 							{rol === 'PATIENT' ? (
@@ -307,6 +308,7 @@ function DetalleDoctor() {
 			</div>
 		</>
 	);
+
 }
 
 
