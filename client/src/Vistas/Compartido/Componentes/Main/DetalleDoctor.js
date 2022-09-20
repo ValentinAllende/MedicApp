@@ -19,6 +19,7 @@ function DetalleDoctor (){
   let doctor = useSelector((state)=> state.doctores.detail.data)
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedHour, setSelectedHour] = useState('')
+  const [Loading,setLoading] = useState('cargando. . . ')
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
   let hours = schedule?.hour
@@ -61,7 +62,8 @@ function DetalleDoctor (){
 
   useEffect(() => {
     dispatch(getDocbyId(idDoctor),
-    Mapa()
+    handleMapa()
+    //Mapa()
     )
     /* console.log(rating, 'dispatch'); */
 
@@ -74,17 +76,29 @@ function DetalleDoctor (){
   //Sets Storage
   localStorage.setItem('hour',selectedHour)
   localStorage.setItem('date',selectedDate)
-  localStorage.setItem('address',address)
-  localStorage.setItem('country', country) 
+  // localStorage.setItem('address',address)
+  // localStorage.setItem('country', country) 
   // console.log(selectedDate ,'selected date');
   // console.log(selectedHour, 'selectred hour');
-
+  const  [map,setMap] =  useState({
+    lat: '',
+    lng: ''
+  })
+ async function handleMapa(){
+    const data = await Mapa(address,country);
+    setMap({
+      lat: data.filterData,
+      lng: data.filterData1
+    })
+    setLoading('')
+  }
+  
   const user = JSON.parse(window.localStorage.getItem('User'))
   
   //trae datos de mapa
-  const lng = localStorage.getItem('longitude');
-  const lat = localStorage.getItem('latitude');
-  console.log('latitude: ', lat,'Longitude: ', lng)
+  // const lng = localStorage.getItem('longitude');
+  // const lat = localStorage.getItem('latitude');
+  console.log('dettalle doctor','latitude: ', map.lat,'Longitude: ', map.lng)
   return(
       <>
       <NavBar/>
@@ -105,10 +119,12 @@ function DetalleDoctor (){
             <p className='font-raleway text-[#292f536f] mt-2 mb-2 '> Precio consulta: {doctor?.checkUpPrice}</p>
             <div class= 'relative bg-blue-800 flex justify-center'>
             <img src={mapa} class='z-0'/>
-            <div class='absolute my-12 py-4'> 
-            <a href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`} target='_blank'>
-            <span class=" z-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ampliar</span>
-            </a>
+            <div class='absolute my-12 py-4'>
+              {/* <span  class=" z-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ampliar</span> */}
+              { Loading ?  <a>Loading. . .</a>  : <a href={ `https://www.google.com/maps/search/?api=1&query=${map.lat},${map.lng}`} target='_blank'>ampliar</a>}
+            
+            {/* </a> : null}  */} 
+            
             </div>
             </div>
             <span className='font-raleway w-fit text-[#1479FF] align-middle rounded flex flex-row '> <span className='mt-1'><HiOutlinePhone/></span>: <span className='text-[#1479FF] tracking-[.10em]'>{doctor?.phoneNumber}</span> </span>
@@ -147,7 +163,7 @@ function DetalleDoctor (){
           {(() => {
             let td = [];
             for (let i = separateHours1A; i <= separateHours2A; i++) {
-              td.push(<button className='font-raleway text-white mt-1 mb-2 focus:bg-[#292F53] rounded bg-[#1479FF] w-28 h-6 m-3' key={i} value={i + ':00'} onClick={e => handleClickHour(e)}>{i + ':00'}</button>);
+              td.push(<button className='font-raleway text-white mt-1 mb-2 focus:bg-[#292F53] rounded bg-[#1479FF] w-28 h-6 m-3 hover:bg-[#292F53]' key={i} value={i + ':00'} onClick={e => handleClickHour(e)}>{i + ':00'}</button>);
             }
             return td;
           })()}
