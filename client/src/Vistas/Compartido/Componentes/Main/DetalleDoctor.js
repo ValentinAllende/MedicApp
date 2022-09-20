@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState} from 'react';
-import { getDocbyId, likesDoctor } from '../../../../Redux/actions/doctorActions';
+import { getClear, getDocbyId, likesDoctor } from '../../../../Redux/actions/doctorActions';
 import { HiLocationMarker } from "react-icons/hi";
 import { HiOutlinePhone } from "react-icons/hi";
 import NavBar from '../Header/NavBar';
@@ -51,6 +51,11 @@ function DetalleDoctor (){
     )
   },[dispatch, doctor?.rating, idDoctor, rating]);
   
+  useEffect(() => {
+    return () => {
+      dispatch(getClear())
+    }
+  },[])
   //variables para setear localStorage
   const address = doctor && doctor.address
   const country = doctor && doctor.country
@@ -145,7 +150,7 @@ function DetalleDoctor (){
               <div class= 'relative flex justify-center rounded-xl'>
                 <img src={mapa} className='z-0 w-40 object-cover rounded-xl shadow-lg' alt ='mapa'/>
                   <div class='absolute mt-24 py-4'> 
-                  { Loading ?  <a>Loading. . .</a>  : <a href={`https://www.google.com/maps/search/?api=1&query=${map.lat},${map.lng}`} target='_blank'>ampliar</a>}
+                  { Loading ?  <a>Loading. . .</a>  : <a class=" z-1 font-poppins text-white bg-[#00C6C2] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center" href={`https://www.google.com/maps/search/?api=1&query=${map.lat},${map.lng}`} target='_blank'>ampliar</a>}
                   </div>
               </div>
           </section>
@@ -182,7 +187,7 @@ function DetalleDoctor (){
                 )}
             {selectedDate.length >1 && selectedHour.length > 1 ? (
                 <div className=" flex justify-center   ">
-                  <Link to={ user?.rol === 'ADMIN' ? '/admin/doctors' : user?.rol === 'DOCTOR' ? '/doctor/doctors' : user?.rol === 'PATIENT' ? '/patient/buy/doctor/' + idDoctor : "/login"} className='font-poppins text-lg text-white text-center  focus:bg-[#292F53] rounded bg-[#00C6C2] w-40 h-10 m-3 mt-8 pt-1'> Reserva tu cita</Link>
+                  <Link to={ user?.rol === 'ADMIN' ? '/admin/doctors' : user?.rol === 'DOCTOR' ? '/doctor/doctors' : user?.rol === 'PATIENT' ? '/patient/buy/doctor/' + idDoctor : "/login"} className='font-poppins text-lg text-white text-center  focus:bg-[#292F53] rounded bg-[#00C6C2] w-40 h-10 m-3 mt-8 pt-1 hover:bg-blue-800'> Reserva tu cita</Link>
                 </div>
                 ):(
                 <span></span>
