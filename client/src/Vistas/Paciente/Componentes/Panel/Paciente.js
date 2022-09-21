@@ -51,7 +51,7 @@ export default function Paciente() {
     <>
     <div className="flex justify-evenly">
     <NavBar setSection={setSection} />
-        <div className= "flex flex-col px-10 py-5 gap-5 w-11/12">
+        <div className= "flex flex-col lg:px-10 py-5 gap-5 w-11/12">
         <TopBar imgProfile={filtroPaciente[0]?.image} setSection={setSection} />
         <div className=" rounded  h-fit mb-5 flex flex-row items-end justify-end mt-5 mr-5">
             <InfoData 
@@ -68,7 +68,7 @@ export default function Paciente() {
             />
         </div>
 
-        <div className="border p-5 shadow-md rounded"> 
+        <div className="border p-5 shadow-md rounded "> 
             {section === "principal" ? 
             <>
             <img src={filtroPaciente[0]?.image} className=" w-20 h-20 rounded-full object-cover m-4 border-solid border-2 border-[#1479FF]  " alt='foto paciente'/>

@@ -1,7 +1,8 @@
 import {useParams} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState} from 'react';
-import { getClear, getDocbyId, likesDoctor } from '../../../../Redux/actions/doctorActions';
+import { getClear, getDocbyId, likesDoctor,  } from '../../../../Redux/actions/doctorActions';
+
 import { HiLocationMarker } from "react-icons/hi";
 import { HiOutlinePhone } from "react-icons/hi";
 import NavBar from '../Header/NavBar';
@@ -9,18 +10,21 @@ import {Link} from 'react-router-dom'
 import mapa from '../../imagenes compartidas/mapaLocation.jpeg';
 import Mapa from "./mapa";
 import axios from 'axios'
+import { getAppointments } from "../../../../Redux/actions/generalActionsAppointments"
 
 
 function DetalleDoctor (){
 
   const { idDoctor } = useParams();
-
   
   const dispatch = useDispatch();
+
   let doctor = useSelector((state)=> state.doctores.detail.data)
+
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedHour, setSelectedHour] = useState('')
   const [Loading,setLoading] = useState('cargando. . . ')
+
   let schedule = useSelector((state)=> state.doctores.detail.data?.schedule)
 
   let hours = schedule?.hour
@@ -34,7 +38,34 @@ function DetalleDoctor (){
 
   const enable = useSelector(state => state.doctores.likes)
 
-  let rating = doctor?.rating
+  // Resenas doc 
+
+  let appointments = useSelector((state)=>  state.generalAppointments.appointmentsFiltered)
+
+  let appointmentsFiltered =  appointments?.filter(app => {
+    return( app.doctor._id === idDoctor)
+  })
+
+  let comentariosDoc = appointmentsFiltered?.filter(app => {
+    return (
+      app.comment.length > 10
+    )
+  })
+  console.log(comentariosDoc, 'los comments');
+
+  useEffect(() => {
+    dispatch(getDocbyId(idDoctor),
+    handleMapa(),
+    )
+    dispatch(getAppointments())
+    
+  },[dispatch, doctor?.rating, idDoctor,]);
+  
+  useEffect(() => {
+    return () => {
+      dispatch(getClear())
+    }
+  },[])
 
   function handleClickDate(e){
     setSelectedDate(e.target.value)
@@ -43,19 +74,7 @@ function DetalleDoctor (){
   function handleClickHour(e){
     setSelectedHour(e.target.value)
   }
-  
 
-  useEffect(() => {
-    dispatch(getDocbyId(idDoctor),
-    handleMapa()
-    )
-  },[dispatch, doctor?.rating, idDoctor, rating]);
-  
-  useEffect(() => {
-    return () => {
-      dispatch(getClear())
-    }
-  },[])
   //variables para setear localStorage
   const address = doctor && doctor.address
   const country = doctor && doctor.country
@@ -128,10 +147,7 @@ function DetalleDoctor (){
                         </svg>
                       </div>
                     </>
-						)
-							:
-								null}
-
+						        ) : null}
                     </div>
 
                 {doctor && doctor.specialities.map((speciality) => {
@@ -155,11 +171,28 @@ function DetalleDoctor (){
               </div>
           </section>
 
+          {/* Las resenas */}
+
             <section className='bg-[#f9f9fa] lg:w-[520px] h-fit mt-10 rounded-xl w-[330px] shadow-lg' >
               <h1 className='bg-[#1479FF] font-poppins text-white h-10 align-middle	p-2 rounded-t-xl' >Reseñas</h1>
-              <p className='font-raleway text-[#030304b8] text-sm mt-4 mb-2 text-center' >{doctor?.name} Aun no tiene reseñas</p>
+              <div className="flex flex-col m-2">
+              {comentariosDoc.length  ? (
+                comentariosDoc.map(comentario => {
+                  return (
+                    <div className="inline-flex ml-4 bg-transparent m-2 rounded-lg shadow-md">
+                    <p className='font-poppins text-[#292F53] text-sm m-2 text-center'>{comentario.patient.name} dice:</p>
+                    <p className='font-raleway text-[#292F53] text-sm m-2 text-center'>{comentario.comment}</p>
+                    </div>
+                    
+                        )
+                })
+                ) : (
+                  <p className='font-raleway text-[#030304b8] text-sm mt-4 mb-2 text-center' >{doctor?.name} Aun no tiene reseñas</p>
+                )}
+                </div>
               <br></br>
             </section>
+            
         </div>
 
         <div>
